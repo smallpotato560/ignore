@@ -39,6 +39,7 @@
         <div class="container">
             <div class="content">
                 <div class="title">God damn it!</div>
+                <?var_dump($result);?>
                 <?foreach($result as $obj):?>
 		            <ul>
 			            <li><?echo $obj['name'];?></li>
