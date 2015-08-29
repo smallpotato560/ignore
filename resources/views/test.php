@@ -39,7 +39,6 @@
         <div class="container">
             <div class="content">
                 <div class="title">God damn it!</div>
-                <?php var_dump($result);?>
             </div>
         </div>
     </body>
