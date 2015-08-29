@@ -39,10 +39,10 @@
         <div class="container">
             <div class="content">
                 <div class="title">God damn it!</div>
-		<ul>
-			<li></li>
-			<li></li>
-		</ul>
+		            <ul>
+			            <li><?echo $name;?></li>
+			            <li><?echo $passwd;?></li>
+		            </ul>
             </div>
         </div>
     </body>
