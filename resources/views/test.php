@@ -41,6 +41,7 @@
                 <div class="title">God damn it!</div>
                 <ul>
                     <?php foreach($result as $row):?>
+                        <li><?php echo $row->test?></li>
                         <li><?php echo $row->name?></li>
                         <li><?php echo $row->passwd?></li>
                     <?php endforeach?>
