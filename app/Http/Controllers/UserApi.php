@@ -18,6 +18,9 @@ class UserApi extends Controller
         $model = new ModelUser();
         $sql = 'select * from User';
         $result = $model->getAll($sql);
+        foreach($result as $row)
+            echo $row->name;
+
         var_dump($result);
         die;
         return view('test',$result);
