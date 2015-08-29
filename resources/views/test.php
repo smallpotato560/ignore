@@ -39,10 +39,12 @@
         <div class="container">
             <div class="content">
                 <div class="title">God damn it!</div>
+                <?foreach($result as $obj):?>
 		            <ul>
-			            <li><?echo $name;?></li>
-			            <li><?echo $passwd;?></li>
+			            <li><?echo $obj['name'];?></li>
+			            <li><?echo $obj['passwd'];?></li>
 		            </ul>
+                <?endforeach;?>
             </div>
         </div>
     </body>
