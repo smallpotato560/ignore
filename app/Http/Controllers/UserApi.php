@@ -18,7 +18,7 @@ class UserApi extends Controller
         $model = new ModelUser();
         $sql = 'select * from User';
         $result = $model->getAll($sql);
-        $result[0]['test']='yes!';
+        $result[0]->test='yes!';
         var_dump($result);
         die;
         return view('test',['result'=>$result]);
