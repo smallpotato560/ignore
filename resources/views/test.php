@@ -39,6 +39,12 @@
         <div class="container">
             <div class="content">
                 <div class="title">God damn it!</div>
+                <ul>
+                    <?php foreach($result as $row):?>
+                        <li><?php echo $row->name?></li>
+                        <li><?php echo $row->passwd?></li>
+                    <?php endforeach?>
+                </ul>
             </div>
         </div>
     </body>
