@@ -40,12 +40,6 @@
             <div class="content">
                 <div class="title">God damn it!</div>
                 <?php var_dump($result);?>
-                <?php foreach($result as $obj):?>
-		            <ul>
-			            <li><?echo $obj['name'];?></li>
-			            <li><?echo $obj['passwd'];?></li>
-		            </ul>
-                <?php endforeach;?>
             </div>
         </div>
     </body>
