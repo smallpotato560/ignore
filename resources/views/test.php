@@ -39,13 +39,13 @@
         <div class="container">
             <div class="content">
                 <div class="title">God damn it!</div>
-                <?var_dump($result);?>
-                <?foreach($result as $obj):?>
+                <?php var_dump($result);?>
+                <?php foreach($result as $obj):?>
 		            <ul>
 			            <li><?echo $obj['name'];?></li>
 			            <li><?echo $obj['passwd'];?></li>
 		            </ul>
-                <?endforeach;?>
+                <?php endforeach;?>
             </div>
         </div>
     </body>
