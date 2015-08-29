@@ -11,7 +11,7 @@ namespace App\Http\Controllers;
 
 use App\Model\ModelUser;
 
-class UserApi
+class UserApi extends Controller
 {
     public function test()
     {
