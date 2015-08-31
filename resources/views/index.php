@@ -55,7 +55,7 @@
 </nav>
 
 <div class="container">
-    <img src="../img/banner.jpg">
+    <img src="http://tyimg.h.wap.cn//20131230/5602b899165e6cafadf145986b78a196.jpg">
 </div><!-- /.container -->
 
 
