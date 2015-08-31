@@ -18,7 +18,7 @@
     <![endif]-->
 </head>
 <body>
-<h1>ÄãºÃ£¬ÊÀ½ç£¡</h1>
+<h1>Hello World!</h1>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
