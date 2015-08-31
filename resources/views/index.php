@@ -43,9 +43,14 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li class="active"><a href="#">网站首页</a></li>
+                <li><a href="#about">动态信息</a></li>
+                <li><a href="#contact">自贸咨询</a></li>
+                <li><a href="#contact">发展动态</a></li>
+                <li><a href="#contact">自贸协定</a></li>
+                <li><a href="#contact">成功经验</a></li>
+                <li><a href="#contact">如何审领</a></li>
+                <li><a href="#contact">社区论坛</a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>
