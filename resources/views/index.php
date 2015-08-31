@@ -39,7 +39,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Project name</a>
+            <a class="navbar-brand" href="#"><img src="http://tyimg.h.wap.cn//20131230/5602b899165e6cafadf145986b78a196.jpg"></a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
@@ -59,7 +59,7 @@
 <div style="padding: 50px;"></div>
 
 <div class="container">
-    <img src="http://tyimg.h.wap.cn//20131230/5602b899165e6cafadf145986b78a196.jpg">
+
 </div><!-- /.container -->
 
 
