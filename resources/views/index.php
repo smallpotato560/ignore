@@ -77,7 +77,7 @@
                 </ol>
                 <div class="carousel-inner">
                     <div class="item">
-                        <img alt="" src="img/1.jpg" />
+                        <img alt="" src="http://tyimg.h.wap.cn//20131230/5602b899165e6cafadf145986b78a196.jpg" />
                         <div class="carousel-caption">
                             <h4>
                                 棒球
@@ -88,7 +88,7 @@
                         </div>
                     </div>
                     <div class="item">
-                        <img alt="" src="img/2.jpg" />
+                        <img alt="" src="http://tyimg.h.wap.cn//20131230/5602b899165e6cafadf145986b78a196.jpg" />
                         <div class="carousel-caption">
                             <h4>
                                 冲浪
@@ -99,7 +99,7 @@
                         </div>
                     </div>
                     <div class="item active">
-                        <img alt="" src="img/3.jpg" />
+                        <img alt="" src="http://tyimg.h.wap.cn//20131230/5602b899165e6cafadf145986b78a196.jpg" />
                         <div class="carousel-caption">
                             <h4>
                                 自行车
@@ -115,7 +115,6 @@
     </div>
 </div>
 
-
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
@@ -123,5 +122,8 @@
 <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+<!--unslider-->
+<script src="//code.jquery.com/jquery-latest.min.js"></script>
+<script src="//unslider.com/unslider.js"></script>
 </body>
 </html>
