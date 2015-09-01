@@ -20,7 +20,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
-
+    <link href="../datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css">
     <!-- Custom styles for this template -->
     <link href="starter-template.css" rel="stylesheet">
 
