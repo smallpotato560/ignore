@@ -59,63 +59,57 @@
     <div class="row">
         <img class="img-thumbnail img-responsive" src="http://tyimg.h.wap.cn//20131230/5602b899165e6cafadf145986b78a196.jpg">
         <input type="text">
-    </div>
-</div><!-- /.container -->
-<div class="container-fluid">
-    <div class="row-fluid">
-        <div class="span12">
-            <div class="carousel slide" id="carousel-758084">
-                <ol class="carousel-indicators">
-                    <li data-slide-to="0" data-target="#carousel-758084">
-                    </li>
-                    <li data-slide-to="1" data-target="#carousel-758084">
-                    </li>
-                    <li data-slide-to="2" data-target="#carousel-758084" class="active">
-                    </li>
-                </ol>
-                <div class="carousel-inner">
-                    <div class="item">
-                        <img alt="" src="http://tyimg.h.wap.cn//20131230/5602b899165e6cafadf145986b78a196.jpg" />
-                        <div class="carousel-caption">
-                            <h4>
-                                棒球
-                            </h4>
-                            <p>
-                                棒球运动是一种以棒打球为主要特点，集体性、对抗性很强的球类运动项目，在美国、日本尤为盛行。
-                            </p>
-                        </div>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span12">
+                    <div class="carousel slide" id="carousel-758084">
+                        <ol class="carousel-indicators">
+                            <li data-slide-to="0" data-target="#carousel-758084">
+                            </li>
+                            <li data-slide-to="1" data-target="#carousel-758084">
+                            </li>
+                            <li data-slide-to="2" data-target="#carousel-758084" class="active">
+                            </li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="item">
+                                <img alt="" src="http://tyimg.h.wap.cn//20131230/5602b899165e6cafadf145986b78a196.jpg" />
+                                <div class="carousel-caption">
+                                </div>
+                            </div>
+                            <div class="item">
+                                <img alt="" src="http://tyimg.h.wap.cn//20131230/5602b899165e6cafadf145986b78a196.jpg" />
+                                <div class="carousel-caption">
+                                </div>
+                            </div>
+                            <div class="item active">
+                                <img alt="" src="http://tyimg.h.wap.cn//20131230/5602b899165e6cafadf145986b78a196.jpg" />
+                                <div class="carousel-caption">
+                                </div>
+                            </div>
+                        </div> <a data-slide="prev" href="#carousel-758084" class="left carousel-control">‹</a> <a data-slide="next" href="#carousel-758084" class="right carousel-control">›</a>
                     </div>
-                    <div class="item">
-                        <img alt="" src="http://tyimg.h.wap.cn//20131230/5602b899165e6cafadf145986b78a196.jpg" />
-                        <div class="carousel-caption">
-                            <h4>
-                                冲浪
-                            </h4>
-                            <p>
-                                冲浪是以海浪为动力，利用自身的高超技巧和平衡能力，搏击海浪的一项运动。运动员站立在冲浪板上，或利用腹板、跪板、充气的橡皮垫、划艇、皮艇等驾驭海浪的一项水上运动。
-                            </p>
-                        </div>
-                    </div>
-                    <div class="item active">
-                        <img alt="" src="http://tyimg.h.wap.cn//20131230/5602b899165e6cafadf145986b78a196.jpg" />
-                        <div class="carousel-caption">
-                            <h4>
-                                自行车
-                            </h4>
-                            <p>
-                                以自行车为工具比赛骑行速度的体育运动。1896年第一届奥林匹克运动会上被列为正式比赛项目。环法赛为最著名的世界自行车锦标赛。
-                            </p>
-                        </div>
-                    </div>
-                </div> <a data-slide="prev" href="#carousel-758084" class="left carousel-control">‹</a> <a data-slide="next" href="#carousel-758084" class="right carousel-control">›</a>
+                </div>
             </div>
         </div>
     </div>
-</div>
+    <div class="banner" style=".banner { position: relative; overflow: auto; }
+    .banner li { list-style: none; }
+        .banner ul li { float: left; }">
+        <ul>
+            <li>This is a slide.</li>
+            <li>This is another slide.</li>
+            <li>This is a final slide.</li>
+        </ul>
+    </div>
+</div><!-- /.container -->
 
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
+<script>$(function() {
+        $('.banner').unslider();
+    });</script>
 <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
