@@ -32,7 +32,6 @@
         .banner ul li { float: left; }
     </style>
 </head>
-
 <body>
 
 <nav class="navbar navbar-inverse navbar-fixed-top">
