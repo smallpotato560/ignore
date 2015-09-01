@@ -16,3 +16,4 @@ Route::get('/', function () {
 });
 Route::get('/UserApi/test','UserApi@test');
 Route::get('/UserApi/','UserApi@index');
+Route::get('/list/','UserApi@listpage');
