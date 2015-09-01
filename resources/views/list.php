@@ -14,13 +14,13 @@
         <div class="span12">
             <ul class="breadcrumb">
                 <li>
-                    <a href="#">��ҳ</a> <span class="divider">/</span>
+                    <a href="#">主页</a> <span class="divider">/</span>
                 </li>
                 <li>
-                    <a href="#">��Ŀ</a> <span class="divider">/</span>
+                    <a href="#">类目</a> <span class="divider">/</span>
                 </li>
                 <li class="active">
-                    ����
+                    主题
                 </li>
             </ul>
             <div class="row-fluid">
@@ -31,13 +31,13 @@
                                 <img alt="300x200" src="img/people.jpg" />
                                 <div class="caption">
                                     <h3>
-                                        ��ŵ�����ṹ
+                                        冯诺尔曼结构
                                     </h3>
                                     <p>
-                                        Ҳ������˹�ٽṹ����һ�ֽ�����ָ��洢�������ݴ洢���ϲ���һ��Ĵ洢���ṹ������ָ��洢��ַ�����ݴ洢��ַָ��ͬһ���洢���Ĳ�ͬ����λ�á�
+                                        也称普林斯顿结构，是一种将程序指令存储器和数据存储器合并在一起的存储器结构。程序指令存储地址和数据存储地址指向同一个存储器的不同物理位置。
                                     </p>
                                     <p>
-                                        <a class="btn btn-primary" href="#">���</a> <a class="btn" href="#">����</a>
+                                        <a class="btn btn-primary" href="#">浏览</a> <a class="btn" href="#">分享</a>
                                     </p>
                                 </div>
                             </div>
@@ -47,13 +47,13 @@
                                 <img alt="300x200" src="img/city.jpg" />
                                 <div class="caption">
                                     <h3>
-                                        ����ṹ
+                                        哈佛结构
                                     </h3>
                                     <p>
-                                        ����ṹ��һ�ֽ�����ָ��洢�����ݴ洢�ֿ��Ĵ洢���ṹ��������Ҫ�ص��ǽ���������ݴ洢�ڲ�ͬ�Ĵ洢�ռ��У����ж�����ַ��
+                                        哈佛结构是一种将程序指令存储和数据存储分开的存储器结构，它的主要特点是将程序和数据存储在不同的存储空间中，进行独立编址。
                                     </p>
                                     <p>
-                                        <a class="btn btn-primary" href="#">���</a> <a class="btn" href="#">����</a>
+                                        <a class="btn btn-primary" href="#">浏览</a> <a class="btn" href="#">分享</a>
                                     </p>
                                 </div>
                             </div>
@@ -63,13 +63,13 @@
                                 <img alt="300x200" src="img/sports.jpg" />
                                 <div class="caption">
                                     <h3>
-                                        �Ľ��͹���ṹ
+                                        改进型哈佛结构
                                     </h3>
                                     <p>
-                                        �Ľ��͵Ĺ���ṹ����һ�������ĵ�ַ���ߺ�һ���������������ߣ����������ɳ���洢�������ݴ洢����ʱ���ã�ʹ�ṹ�����ա�
+                                        改进型的哈佛结构具有一条独立的地址总线和一条独立的数据总线，两条总线由程序存储器和数据存储器分时复用，使结构更紧凑。
                                     </p>
                                     <p>
-                                        <a class="btn btn-primary" href="#">���</a> <a class="btn" href="#">����</a>
+                                        <a class="btn btn-primary" href="#">浏览</a> <a class="btn" href="#">分享</a>
                                     </p>
                                 </div>
                             </div>
@@ -78,7 +78,7 @@
                     <div class="pagination pagination-centered">
                         <ul>
                             <li>
-                                <a href="#">��һҳ</a>
+                                <a href="#">上一页</a>
                             </li>
                             <li>
                                 <a href="#">1</a>
@@ -96,7 +96,7 @@
                                 <a href="#">5</a>
                             </li>
                             <li>
-                                <a href="#">��һҳ</a>
+                                <a href="#">下一页</a>
                             </li>
                         </ul>
                     </div>
