@@ -95,11 +95,23 @@
             </div>
         </div>
     </div>
+    <div class="banner" style=".banner { position: relative; overflow: auto; }
+    .banner li { list-style: none; }
+        .banner ul li { float: left; }">
+        <ul>
+            <li>This is a slide.</li>
+            <li>This is another slide.</li>
+            <li>This is a final slide.</li>
+        </ul>
+    </div>
 </div><!-- /.container -->
 
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
+<script>$(function() {
+        $('.banner').unslider();
+    });</script>
 <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
