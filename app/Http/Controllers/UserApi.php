@@ -27,4 +27,10 @@ class UserApi extends Controller
     {
         return view('index');
     }
+
+
+    public function listpage()
+    {
+        return view('list');
+    }
 }
