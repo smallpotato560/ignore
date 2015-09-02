@@ -93,27 +93,17 @@
                     </ul>
                 </div>
             </div>
-            <div class="row-fluid">
-                <div class="pagination pagination-centered">
+            <div class="row-fluid text-center">
+                <div class="pagination">
                     <ul>
                         <li>
                             <a href="#">上一页</a>
                         </li>
+                        <?php $total=10;$size=4;do{?>
                         <li>
                             <a href="#">1</a>
                         </li>
-                        <li>
-                            <a href="#">2</a>
-                        </li>
-                        <li>
-                            <a href="#">3</a>
-                        </li>
-                        <li>
-                            <a href="#">4</a>
-                        </li>
-                        <li>
-                            <a href="#">5</a>
-                        </li>
+                        <?php }while($total-=$size>0);?>
                         <li>
                             <a href="#">下一页</a>
                         </li>
