@@ -44,7 +44,7 @@
                     <ul class="thumbnails">
                         <li class="span4">
                             <div class="thumbnail">
-                                <img alt="300x200" src="img/people.jpg" />
+                                <img alt="300x200" />
                                 <div class="caption">
                                     <h3>
                                         冯诺尔曼结构
@@ -60,7 +60,7 @@
                         </li>
                         <li class="span4">
                             <div class="thumbnail">
-                                <img alt="300x200" src="img/city.jpg" />
+                                <img alt="300x200"/>
                                 <div class="caption">
                                     <h3>
                                         哈佛结构
@@ -76,7 +76,7 @@
                         </li>
                         <li class="span4">
                             <div class="thumbnail">
-                                <img alt="300x200" src="img/sports.jpg" />
+                                <img alt="300x200" />
                                 <div class="caption">
                                     <h3>
                                         改进型哈佛结构
@@ -91,7 +91,7 @@
                             </div>
                         </li>
                     </ul>
-                    <div class="pagination">
+                    <div class="pagination pagination-centered">
                         <ul>
                             <li>
                                 <a href="#">上一页</a>
