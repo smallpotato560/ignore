@@ -48,7 +48,7 @@
         </div>
     </div>
     <div class="row-fluid">
-        <div class="span6 column ui-sortable">
+        <div class="span3 column ui-sortable">
             <ul class="nav nav-list">
                 <li class="nav-header">
                     列表标题
@@ -78,7 +78,7 @@
                 </li>
             </ul>
         </div>
-        <div class="span6 column ui-sortable">
+        <div class="span9 column ui-sortable">
             <table class="table table-striped table-hover table-responsive">
                 <thead>
                 <tr>
