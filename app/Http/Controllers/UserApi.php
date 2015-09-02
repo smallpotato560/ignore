@@ -20,7 +20,7 @@ class UserApi extends Controller
         $result = $model->getAll($sql);
         var_dump($result);
         die;
-        return view('test',['result'=>$result]);
+        return view('test', ['result' => $result]);
     }
 
     public function index()
@@ -32,5 +32,12 @@ class UserApi extends Controller
     public function listpage()
     {
         return view('list');
+    }
+
+
+    public function manager()
+    {
+        return view('manager');
+
     }
 }
