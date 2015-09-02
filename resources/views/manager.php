@@ -26,7 +26,6 @@
     <link href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
     <link href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.css" rel="stylesheet">
     <link href="bootstrap-combined.min.css" rel="stylesheet">
-    <link href="layouit.css" rel="stylesheet">
 </head>
 <body>
 <div class="container-fluid">
