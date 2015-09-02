@@ -55,7 +55,7 @@
     <div class="container-fluid">
         <div class="row-fluid">
             <div class="span12">
-                <img class="img-rounded" alt="140x140" src="img/a.jpg" />
+                <img class="img-rounded" alt="140x140" src="img/banner.jpg" />
             </div>
         </div>
         <div class="row-fluid">
@@ -71,7 +71,7 @@
                     </ol>
                     <div class="carousel-inner">
                         <div class="item active">
-                            <img alt="" src="img/1.jpg" />
+                            <img alt="" src="img/banner.jpg" />
                             <div class="carousel-caption">
                                 <h4>
                                     棒球
@@ -82,7 +82,7 @@
                             </div>
                         </div>
                         <div class="item">
-                            <img alt="" src="img/2.jpg" />
+                            <img alt="" src="img/banner.jpg" />
                             <div class="carousel-caption">
                                 <h4>
                                     冲浪
@@ -93,7 +93,7 @@
                             </div>
                         </div>
                         <div class="item">
-                            <img alt="" src="img/3.jpg" />
+                            <img alt="" src="img/banner.jpg" />
                             <div class="carousel-caption">
                                 <h4>
                                     自行车
