@@ -103,7 +103,7 @@
                         <li>
                             <a href="#">1</a>
                         </li>
-                        <?php }while($total-=$size>0);?>
+                        <?php }while(($total-=$size)>0);?>
                         <li>
                             <a href="#">下一页</a>
                         </li>
