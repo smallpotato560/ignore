@@ -175,7 +175,7 @@
 <script>
     function toInfo() {
         var html = document.getElementById('toInfo').innerHTML;
-        document.getElementById('info').innerHTML=html;
+        document.getElementById('show').innerHTML=html;
         return 0;
     }
 </script>
