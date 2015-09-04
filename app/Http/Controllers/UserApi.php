@@ -31,7 +31,8 @@ class UserApi extends Controller
 
     public function listpage()
     {
-        die(view('list'));
+        var_dump(view('list'));
+        die;
     }
 
 
