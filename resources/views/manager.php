@@ -48,7 +48,7 @@
         </div>
     </div>
     <div class="row-fluid">
-        <div class="span3 column ui-sortable">
+        <div class="span3 column ui-sortable" style="position: fixed">
             <ul class="nav nav-list">
                 <li class="nav-header">
                     列表标题
