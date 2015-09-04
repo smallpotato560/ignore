@@ -78,7 +78,7 @@
                 </li>
             </ul>
         </div>
-        <div class="span9 column ui-sortable" id="show">
+        <div class="span9 column ui-sortable" id="show" style="overflow: auto">
             <table class="table table-striped table-hover table-responsive">
                 <thead>
                 <tr>
@@ -181,6 +181,59 @@
 </script>
 <script type="text/html" id="toInfo">
     <h3>Test</h3>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
     <p>sweety</p>
 </script>
 </body>
