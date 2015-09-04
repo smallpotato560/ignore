@@ -54,27 +54,27 @@
                     列表标题
                 </li>
                 <li class="active">
-                    <a href="#" id="index" onclick="javascript:toInfo();">首页</a>
+                    <a href="#" id="index" onclick="javascript:toIndex();">首页</a>
                 </li>
                 <li>
-                    <a href="#" id="lib">库</a>
+                    <a href="#" id="lib" onclick="javascript:toLib();">库</a>
                 </li>
                 <li>
-                    <a href="#" id="app">应用</a>
+                    <a href="#" id="app" onclick="javascript:toApp();">应用</a>
                 </li>
                 <li class="nav-header">
                     功能列表
                 </li>
                 <li>
-                    <a href="#" id="info">资料</a>
+                    <a href="#" id="info" onclick="javascript:toInfo();">资料</a>
                 </li>
                 <li>
-                    <a href="#" id="setting">设置</a>
+                    <a href="#" id="setting" onclick="javascript:toSetting();">设置</a>
                 </li>
                 <li class="divider">
                 </li>
                 <li>
-                    <a href="#" id="help">帮助</a>
+                    <a href="#" id="help" onclick="javascript:toHelp();">帮助</a>
                 </li>
             </ul>
         </div>
@@ -181,7 +181,7 @@
 </script>
 <script type="text/html" id="toInfo">
     <h3>Test</h3>
-    <p>sweet bitch</p>
+    <p>sweety</p>
 </script>
 </body>
 </html>
