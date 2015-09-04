@@ -54,31 +54,31 @@
                     列表标题
                 </li>
                 <li class="active">
-                    <a href="#">首页</a>
+                    <a href="#" id="index" onclick="javascript:toInfo();">首页</a>
                 </li>
                 <li>
-                    <a href="#">库</a>
+                    <a href="#" id="lib">库</a>
                 </li>
                 <li>
-                    <a href="#">应用</a>
+                    <a href="#" id="app">应用</a>
                 </li>
                 <li class="nav-header">
                     功能列表
                 </li>
                 <li>
-                    <a href="#">资料</a>
+                    <a href="#" id="info">资料</a>
                 </li>
                 <li>
-                    <a href="#">设置</a>
+                    <a href="#" id="setting">设置</a>
                 </li>
                 <li class="divider">
                 </li>
                 <li>
-                    <a href="#">帮助</a>
+                    <a href="#" id="help">帮助</a>
                 </li>
             </ul>
         </div>
-        <div class="span9 column ui-sortable">
+        <div class="span9 column ui-sortable" id="show">
             <table class="table table-striped table-hover table-responsive">
                 <thead>
                 <tr>
@@ -172,5 +172,16 @@
         </div>
     </div>
 </div>
+<script>
+    function toInfo() {
+        var html = document.getElementById('toInfo').innerHTML;
+        document.getElementById('info').innerHTML=html;
+        return 0;
+    }
+</script>
+<script type="text/html" id="toInfo">
+    <h3>Test</h3>
+    <p>sweet bitch</p>
+</script>
 </body>
 </html>
