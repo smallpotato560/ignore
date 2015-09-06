@@ -14,6 +14,7 @@
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
     <meta name="description" content="">
     <meta name="author" content="">
+    <meta name="_token" content="{{ csrf_token() }}"/>
     <title>Starter Template for Bootstrap</title>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -182,7 +183,12 @@
         $.ajax(
             {
                 type: 'POST',
-                url:'/manager/ajax/info'
+                url:'/manager/ajax/info',
+                headers: {
+
+                    'X-CSRF-TOKEN': $('meta[name="_token"]')
+
+                }
             }
         );
     }
