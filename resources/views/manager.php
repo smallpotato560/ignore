@@ -54,31 +54,31 @@
                     列表标题
                 </li>
                 <li class="active">
-                    <a href="#">首页</a>
+                    <a href="#" id="index" onclick="javascript:toIndex();">首页</a>
                 </li>
                 <li>
-                    <a href="#">库</a>
+                    <a href="#" id="lib" onclick="javascript:toLib();">库</a>
                 </li>
                 <li>
-                    <a href="#">应用</a>
+                    <a href="#" id="app" onclick="javascript:toApp();">应用</a>
                 </li>
                 <li class="nav-header">
                     功能列表
                 </li>
                 <li>
-                    <a href="#">资料</a>
+                    <a href="#" id="info" onclick="javascript:toInfo();">资料</a>
                 </li>
                 <li>
-                    <a href="#">设置</a>
+                    <a href="#" id="setting" onclick="javascript:toSetting();">设置</a>
                 </li>
                 <li class="divider">
                 </li>
                 <li>
-                    <a href="#">帮助</a>
+                    <a href="#" id="help" onclick="javascript:toHelp();">帮助</a>
                 </li>
             </ul>
         </div>
-        <div class="span9 column ui-sortable">
+        <div class="span9 column ui-sortable" id="show" style="overflow: auto">
             <table class="table table-striped table-hover table-responsive">
                 <thead>
                 <tr>
@@ -172,5 +172,69 @@
         </div>
     </div>
 </div>
+<script>
+    function toInfo() {
+        var html = document.getElementById('toInfo').innerHTML;
+        document.getElementById('show').innerHTML=html;
+        return 0;
+    }
+</script>
+<script type="text/html" id="toInfo">
+    <h3>Test</h3>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+    <p>sweety</p>
+</script>
 </body>
 </html>
