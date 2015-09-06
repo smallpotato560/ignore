@@ -22,7 +22,7 @@ class VerifyCsrfToken
      *
      * @var array
      */
-    protected $except = ['/manager','/manager/ajax/info'];
+    protected $except = ['/manager#','/manager/ajax/info'];
 
     /**
      * Create a new middleware instance.
@@ -49,7 +49,8 @@ class VerifyCsrfToken
         if ($this->isReading($request) || $this->shouldPassThrough($request) || $this->tokensMatch($request)) {
             return $this->addCookieToResponse($request, $next($request));
         }
-
+        print_r($request);
+        die;
         throw new TokenMismatchException;
     }
 
