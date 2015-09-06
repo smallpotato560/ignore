@@ -66,7 +66,7 @@
                     功能列表
                 </li>
                 <li>
-                    <a href="#" id="info" onclick="javascript:toInfo();">资料</a>
+                    <a href="#" id="info" onclick="javascript:test();">资料</a>
                 </li>
                 <li>
                     <a href="#" id="setting" onclick="javascript:toSetting();">设置</a>
@@ -178,67 +178,14 @@
             document.getElementById('show').innerHTML=html;
             return 0;
     }
-    $.ajax(
-        {
-            type: 'POST',
-            url: 'echo '<h3>Test</h3>
-            <p>sweety</p>
-            <p>sweety</p>
-            <p>sweety</p>
-            <p>sweety</p>
-            <p>sweety</p>
-            <p>sweety</p>
-            <p>sweety</p>
-            <p>sweety</p>
-            <p>sweety</p>
-            <p>sweety</p>
-            <p>sweety</p>
-            <p>sweety</p>
-            <p>sweety</p>
-            <p>sweety</p>
-            <p>sweety</p>
-            <p>sweety</p>
-            <p>sweety</p>
-            <p>sweety</p>
-            <p>sweety</p>
-            <p>sweety</p>
-            <p>sweety</p>
-            <p>sweety</p>
-            <p>sweety</p>
-            <p>sweety</p>
-            <p>sweety</p>
-            <p>sweety</p>
-            <p>sweety</p>
-            <p>sweety</p>
-            <p>sweety</p>
-            <p>sweety</p>
-            <p>sweety</p>
-            <p>sweety</p>
-            <p>sweety</p>
-            <p>sweety</p>
-            <p>sweety</p>
-            <p>sweety</p>
-            <p>sweety</p>
-            <p>sweety</p>
-            <p>sweety</p>
-            <p>sweety</p>
-            <p>sweety</p>
-            <p>sweety</p>
-            <p>sweety</p>
-            <p>sweety</p>
-            <p>sweety</p>
-            <p>sweety</p>
-            <p>sweety</p>
-            <p>sweety</p>
-            <p>sweety</p>
-            <p>sweety</p>
-            <p>sweety</p>
-            <p>sweety</p>
-            <p>sweety</p>
-            <p>sweety</p>
-            ';'
-        }
-    );
+    function test() {
+        $.ajax(
+            {
+                type: 'POST',
+                url:'/manager/ajax/info'
+            }
+        );
+    }
 </script>
 <script type="text/html" id="toInfo">
     <h3>Test</h3>
