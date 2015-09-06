@@ -14,7 +14,11 @@
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <meta name="_token" content="{{ Form::token() }}"/>
+    <meta name="_token" content="eyJpdiI6InVqR1pwbHVDeHFIbEhqaDl0NExqSnc9PSIsInZhbHVlIjoicmY5ZXlrR3NOYk16dFNybG94eXYrdjNnU
+HlneGdFVFwvbTdWYzNqTE9rOXJEOTE1RkxWWUVqaEk3UVBydHZBejJ5Ym5zTVRhQnZuK0l0UE1mU1JISlZnPT0iLCJtYWMiOiIzNWRjZTEzNWI5OWI0NTEwZGQ5N2E1ZWYzY2JlNmU4NGM5MTZmMWIxZDMxZDNmNDM1NmYyN2RhOTdmODQ0MDFjIn0
+%3D; laravel_session=eyJpdiI6IklTYTFTU2x1TlBpOTJmem1iV0trRnc9PSIsInZhbHVlIjoiRzI1T09ZcnhJWjJiV3VoWGJ
+NYVM2VGR5VngrNndVbFpkRnpvVGVXTjBkajVjQjJTMTQzTzM2cGxhSUd2bEFsaEFlYTNIaE4ya0NxMTZtY1dcLzlpMGlBPT0iLCJtYWMiOiJhMDUxNjQ2MmJlNzBmMTE4OTA5YTA5ZmU1N2FiOTAyMzhlNmRjZTYwNmFkODRiYjJmMzViYmJiNTBiM2E2YzE2In0
+%3D"/>
     <title>Starter Template for Bootstrap</title>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
