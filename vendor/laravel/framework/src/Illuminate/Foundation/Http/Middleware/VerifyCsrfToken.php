@@ -46,7 +46,9 @@ class VerifyCsrfToken
      */
     public function handle($request, Closure $next)
     {
-        if ($this->isReading($request) || $this->shouldPassThrough($request) || $this->tokensMatch($request)) {
+        if ($this->isReading($request)){//|| $this->shouldPassThrough($request) || $this->tokensMatch($request)) {
+            echo 'isreading';
+            die;
             return $this->addCookieToResponse($request, $next($request));
         }
         print_r($request);
