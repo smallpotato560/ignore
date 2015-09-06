@@ -185,7 +185,7 @@
                 type: 'POST',
                 url:'/manager/ajax/info',
                 headers: {
-                    'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content');
+                    'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
                 }
             }
         );
