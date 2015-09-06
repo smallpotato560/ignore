@@ -25,7 +25,9 @@ class UserApi extends Controller
 
     public function managerInfo()
     {
-        echo '<h3>Test</h3>
+        echo '
+<meta name="_token" content="{{ csrf_token() }}"/>
+<h3>Test</h3>
                     <p>sweety</p>
                     <p>sweety</p>
                     <p>sweety</p>
