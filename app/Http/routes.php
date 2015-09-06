@@ -18,3 +18,4 @@ Route::get('/UserApi/test','UserApi@test');
 Route::get('/UserApi/','UserApi@index');
 Route::get('/list/','UserApi@listpage');
 Route::get('/manager','UserApi@manager');
+Route::post('/manager/ajax/info','UserApi@managerInfo');

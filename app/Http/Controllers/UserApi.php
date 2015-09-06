@@ -23,6 +23,65 @@ class UserApi extends Controller
         return view('test', ['result' => $result]);
     }
 
+    public function managerInfo()
+    {
+        echo '<h3>Test</h3>
+                    <p>sweety</p>
+                    <p>sweety</p>
+                    <p>sweety</p>
+                    <p>sweety</p>
+                    <p>sweety</p>
+                    <p>sweety</p>
+                    <p>sweety</p>
+                    <p>sweety</p>
+                    <p>sweety</p>
+                    <p>sweety</p>
+                    <p>sweety</p>
+                    <p>sweety</p>
+                    <p>sweety</p>
+                    <p>sweety</p>
+                    <p>sweety</p>
+                    <p>sweety</p>
+                    <p>sweety</p>
+                    <p>sweety</p>
+                    <p>sweety</p>
+                    <p>sweety</p>
+                    <p>sweety</p>
+                    <p>sweety</p>
+                    <p>sweety</p>
+                    <p>sweety</p>
+                    <p>sweety</p>
+                    <p>sweety</p>
+                    <p>sweety</p>
+                    <p>sweety</p>
+                    <p>sweety</p>
+                    <p>sweety</p>
+                    <p>sweety</p>
+                    <p>sweety</p>
+                    <p>sweety</p>
+                    <p>sweety</p>
+                    <p>sweety</p>
+                    <p>sweety</p>
+                    <p>sweety</p>
+                    <p>sweety</p>
+                    <p>sweety</p>
+                    <p>sweety</p>
+                    <p>sweety</p>
+                    <p>sweety</p>
+                    <p>sweety</p>
+                    <p>sweety</p>
+                    <p>sweety</p>
+                    <p>sweety</p>
+                    <p>sweety</p>
+                    <p>sweety</p>
+                    <p>sweety</p>
+                    <p>sweety</p>
+                    <p>sweety</p>
+                    <p>sweety</p>
+                    <p>sweety</p>
+                    <p>sweety</p>';
+
+    }
     public function index()
     {
         return view('index');
