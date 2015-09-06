@@ -174,10 +174,71 @@
 </div>
 <script>
     function toInfo() {
-        var html = document.getElementById('toInfo').innerHTML;
-        document.getElementById('show').innerHTML=html;
-        return 0;
+            var html = document.getElementById('toInfo').innerHTML;
+            document.getElementById('show').innerHTML=html;
+            return 0;
     }
+    $.ajax(
+        {
+            type: 'POST',
+            url: 'echo '<h3>Test</h3>
+            <p>sweety</p>
+            <p>sweety</p>
+            <p>sweety</p>
+            <p>sweety</p>
+            <p>sweety</p>
+            <p>sweety</p>
+            <p>sweety</p>
+            <p>sweety</p>
+            <p>sweety</p>
+            <p>sweety</p>
+            <p>sweety</p>
+            <p>sweety</p>
+            <p>sweety</p>
+            <p>sweety</p>
+            <p>sweety</p>
+            <p>sweety</p>
+            <p>sweety</p>
+            <p>sweety</p>
+            <p>sweety</p>
+            <p>sweety</p>
+            <p>sweety</p>
+            <p>sweety</p>
+            <p>sweety</p>
+            <p>sweety</p>
+            <p>sweety</p>
+            <p>sweety</p>
+            <p>sweety</p>
+            <p>sweety</p>
+            <p>sweety</p>
+            <p>sweety</p>
+            <p>sweety</p>
+            <p>sweety</p>
+            <p>sweety</p>
+            <p>sweety</p>
+            <p>sweety</p>
+            <p>sweety</p>
+            <p>sweety</p>
+            <p>sweety</p>
+            <p>sweety</p>
+            <p>sweety</p>
+            <p>sweety</p>
+            <p>sweety</p>
+            <p>sweety</p>
+            <p>sweety</p>
+            <p>sweety</p>
+            <p>sweety</p>
+            <p>sweety</p>
+            <p>sweety</p>
+            <p>sweety</p>
+            <p>sweety</p>
+            <p>sweety</p>
+            <p>sweety</p>
+            <p>sweety</p>
+            <p>sweety</p>
+            ';'
+        }
+    );
 </script>
 <script type="text/html" id="toInfo">
     <h3>Test</h3>
