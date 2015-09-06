@@ -25,64 +25,9 @@ class UserApi extends Controller
 
     public function managerInfo()
     {
-        echo '
-<meta name="_token" content="{{ csrf_token() }}"/>
-<h3>Test</h3>
-                    <p>sweety</p>
-                    <p>sweety</p>
-                    <p>sweety</p>
-                    <p>sweety</p>
-                    <p>sweety</p>
-                    <p>sweety</p>
-                    <p>sweety</p>
-                    <p>sweety</p>
-                    <p>sweety</p>
-                    <p>sweety</p>
-                    <p>sweety</p>
-                    <p>sweety</p>
-                    <p>sweety</p>
-                    <p>sweety</p>
-                    <p>sweety</p>
-                    <p>sweety</p>
-                    <p>sweety</p>
-                    <p>sweety</p>
-                    <p>sweety</p>
-                    <p>sweety</p>
-                    <p>sweety</p>
-                    <p>sweety</p>
-                    <p>sweety</p>
-                    <p>sweety</p>
-                    <p>sweety</p>
-                    <p>sweety</p>
-                    <p>sweety</p>
-                    <p>sweety</p>
-                    <p>sweety</p>
-                    <p>sweety</p>
-                    <p>sweety</p>
-                    <p>sweety</p>
-                    <p>sweety</p>
-                    <p>sweety</p>
-                    <p>sweety</p>
-                    <p>sweety</p>
-                    <p>sweety</p>
-                    <p>sweety</p>
-                    <p>sweety</p>
-                    <p>sweety</p>
-                    <p>sweety</p>
-                    <p>sweety</p>
-                    <p>sweety</p>
-                    <p>sweety</p>
-                    <p>sweety</p>
-                    <p>sweety</p>
-                    <p>sweety</p>
-                    <p>sweety</p>
-                    <p>sweety</p>
-                    <p>sweety</p>
-                    <p>sweety</p>
-                    <p>sweety</p>
-                    <p>sweety</p>
-                    <p>sweety</p>';
-
+        $token = csrf_token();
+        echo '<h1>'.$token.'</h1>';
+        die;
     }
     public function index()
     {
