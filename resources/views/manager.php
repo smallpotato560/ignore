@@ -182,12 +182,10 @@
     function test() {
         $.ajax(
             {
-                type: 'POST',
+                type: 'GET',
                 url:'/manager/ajax/info',
                 headers: {
-
                     'X-CSRF-TOKEN': $('meta[name="_token"]')
-
                 }
             }
         );
