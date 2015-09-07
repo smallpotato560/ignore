@@ -51,14 +51,14 @@ class VerifyCsrfToken
         if ($this->isReading($request)|| $this->shouldPassThrough($request) || $this->tokensMatch($request)) {
             return $this->addCookieToResponse($request, $next($request));
         }
-        if(!$this->isReading($request))
-            $res=array('not isReading');
-        if(! $this->shouldPassThrough($request))
-            $res[]='not shouldPassThrough';
-        if(!$this->tokensMatch($request))
-            $res[]='not tokensMatch';
-        print_r($res);
-        die;
+//        if($this->isReading($request))
+//            $res=array('not isReading');
+//        if($this->shouldPassThrough($request))
+//            $res[]='not shouldPassThrough';
+//        if($this->tokensMatch($request))
+//            $res[]='not tokensMatch';
+//        print_r($res);
+//        die;
         throw new TokenMismatchException;
     }
 
