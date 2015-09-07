@@ -16,9 +16,17 @@ class AdminHomeController extends Controller
      */
     public function index()
     {
-        //
+         return view('index');
     }
+    public function manager()
+    {
+        return view('manager');
 
+    }
+    public function listpage()
+    {
+        return (view('list'));
+    }
     /**
      * Show the form for creating a new resource.
      *

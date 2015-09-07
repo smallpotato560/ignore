@@ -30,17 +30,6 @@ class UserApi extends Controller
         return json_encode($data);
     }
 
-    public function index()
-    {
-        return view('index');
-    }
-
-
-    public function listpage()
-    {
-        return (view('list'));
-    }
-
     public function managerIndex()
     {
         $token = csrf_token();

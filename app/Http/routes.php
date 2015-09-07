@@ -14,9 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/UserApi/test','UserApi@test');
-Route::get('/UserApi/','UserApi@index');
-Route::get('/list/','UserApi@listpage');
-Route::get('/manager','UserApi@manager');
 Route::match(['post','get'],'/manager/ajax/info','UserApi@managerInfo');
 Route::match(['post','get'],'/manager/ajax/index','UserApi@managerIndex');
+Route::group(['prefix'=>'admin','namespace'=>'Admin'],function()
+{
+    Route::get('/','AdminHomeController@index');
+    Route::get('/manager','AdminHomeController@index');
+    Route::get('/list','AdminHomeController@index');
+});
