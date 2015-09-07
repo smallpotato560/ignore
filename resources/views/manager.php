@@ -186,7 +186,8 @@
                 dataType:'json',
                 url: '/manager/ajax/info',
                 success: function (data) {
-                    alert(data);
+                    var show = document.getElementById('show');
+                    show.innerHTML = data;
                 }
             });
     }
