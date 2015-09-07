@@ -44,7 +44,7 @@ class UserApi extends Controller
     public function managerIndex()
     {
         $token = csrf_token();
-        require_once('table.php');
+        require_once('../../../resources/views/table.php');
         return $table;
     }
 
