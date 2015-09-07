@@ -26,9 +26,10 @@ class UserApi extends Controller
     public function managerInfo()
     {
         $token = csrf_token();
-        echo '<h1>'.$token.'</h1>';
-        die;
+        $data = '<h1>'.'测试成功!'.'</h1>';
+        return json_encode($data);
     }
+
     public function index()
     {
         return view('index');
