@@ -32,42 +32,26 @@
 <div class="container-fluid">
     <div class="row-fluid">
         <div class="span12">
-            <h3>
-                h3. 这是一套可视化布局系统.
-            </h3>
-            <ul class="breadcrumb">
-                <li>
-                    <a href="#">主页</a> <span class="divider">/</span>
-                </li>
-                <li>
-                    <a href="#">类目</a> <span class="divider">/</span>
-                </li>
-                <li class="active">
-                    主题
-                </li>
-            </ul>
+            <h3>后台管理系统</h3>
         </div>
     </div>
     <div class="row-fluid">
         <div class="span3 column ui-sortable">
             <ul class="nav nav-list">
                 <li class="nav-header">
-                    列表标题
+                    内容发布
                 </li>
                 <li class="active">
                     <a href="#" id="index" onclick="javascript:toIndex();">首页</a>
                 </li>
                 <li>
-                    <a href="#" id="lib" onclick="javascript:toLib();">库</a>
+                    <a href="#" id="lib" onclick="javascript:toLib();">发布</a>
                 </li>
                 <li>
-                    <a href="#" id="app" onclick="javascript:toApp();">应用</a>
+                    <a href="#" id="app" onclick="javascript:toApp();">修改</a>
                 </li>
                 <li class="nav-header">
                     功能列表
-                </li>
-                <li>
-                    <a href="#" id="info" onclick="javascript:test();">资料</a>
                 </li>
                 <li>
                     <a href="#" id="setting" onclick="javascript:toSetting();">设置</a>
@@ -80,100 +64,28 @@
             </ul>
         </div>
         <div class="span9 column ui-sortable" id="show" style="overflow: auto">
-            <table class="table table-striped table-hover table-responsive">
-                <thead>
-                <tr>
-                    <th>
-                        编号
-                    </th>
-                    <th>
-                        产品
-                    </th>
-                    <th>
-                        交付时间
-                    </th>
-                    <th>
-                        状态
-                    </th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>
-                        1
-                    </td>
-                    <td>
-                        TB - Monthly
-                    </td>
-                    <td>
-                        01/04/2012
-                    </td>
-                    <td>
-                        Default
-                    </td>
-                </tr>
-                <tr class="success">
-                    <td>
-                        1
-                    </td>
-                    <td>
-                        TB - Monthly
-                    </td>
-                    <td>
-                        01/04/2012
-                    </td>
-                    <td>
-                        Approved
-                    </td>
-                </tr>
-                <tr class="error">
-                    <td>
-                        2
-                    </td>
-                    <td>
-                        TB - Monthly
-                    </td>
-                    <td>
-                        02/04/2012
-                    </td>
-                    <td>
-                        Declined
-                    </td>
-                </tr>
-                <tr class="warning">
-                    <td>
-                        3
-                    </td>
-                    <td>
-                        TB - Monthly
-                    </td>
-                    <td>
-                        03/04/2012
-                    </td>
-                    <td>
-                        Pending
-                    </td>
-                </tr>
-                <tr class="info">
-                    <td>
-                        4
-                    </td>
-                    <td>
-                        TB - Monthly
-                    </td>
-                    <td>
-                        04/04/2012
-                    </td>
-                    <td>
-                        Call in to confirm
-                    </td>
-                </tr>
-                </tbody>
-            </table>
+
         </div>
     </div>
 </div>
 <script>
+    function toIndex() {
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $.ajax(
+            {
+                type: 'POST',
+                dataType:'json',
+                url: '/manager/ajax/index',
+                success: function (data) {
+                    var show = document.getElementById('show');
+                    show.innerHTML = data;
+                }
+            });
+    }
     function test() {
         $.ajaxSetup({
             headers: {
