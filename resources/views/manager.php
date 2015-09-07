@@ -183,6 +183,7 @@
         $.ajax(
             {
                 type: 'POST',
+                dataType:'json',
                 url: '/manager/ajax/info',
                 success: function (data) {
                     alert(data);
