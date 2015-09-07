@@ -47,7 +47,8 @@ class UserApi extends Controller
         //$include_path = '../../../resources/views/';
        // require_once($include_path.'table.php');
         //return $table;
-        die($include_path);
+        var_dump($include_path);
+        die;
     }
 
     public function manager()
