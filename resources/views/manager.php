@@ -174,11 +174,6 @@
     </div>
 </div>
 <script>
-    function toInfo() {
-            var html = document.getElementById('toInfo').innerHTML;
-            document.getElementById('show').innerHTML=html;
-            return 0;
-    }
     function test() {
         $.ajax(
             {
@@ -187,66 +182,12 @@
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
                 }
+            },
+            success: function(data) {
+                alert(data);
             }
-        );
+        )
     }
-</script>
-<script type="text/html" id="toInfo">
-    <h3>Test</h3>
-    <p>sweety</p>
-    <p>sweety</p>
-    <p>sweety</p>
-    <p>sweety</p>
-    <p>sweety</p>
-    <p>sweety</p>
-    <p>sweety</p>
-    <p>sweety</p>
-    <p>sweety</p>
-    <p>sweety</p>
-    <p>sweety</p>
-    <p>sweety</p>
-    <p>sweety</p>
-    <p>sweety</p>
-    <p>sweety</p>
-    <p>sweety</p>
-    <p>sweety</p>
-    <p>sweety</p>
-    <p>sweety</p>
-    <p>sweety</p>
-    <p>sweety</p>
-    <p>sweety</p>
-    <p>sweety</p>
-    <p>sweety</p>
-    <p>sweety</p>
-    <p>sweety</p>
-    <p>sweety</p>
-    <p>sweety</p>
-    <p>sweety</p>
-    <p>sweety</p>
-    <p>sweety</p>
-    <p>sweety</p>
-    <p>sweety</p>
-    <p>sweety</p>
-    <p>sweety</p>
-    <p>sweety</p>
-    <p>sweety</p>
-    <p>sweety</p>
-    <p>sweety</p>
-    <p>sweety</p>
-    <p>sweety</p>
-    <p>sweety</p>
-    <p>sweety</p>
-    <p>sweety</p>
-    <p>sweety</p>
-    <p>sweety</p>
-    <p>sweety</p>
-    <p>sweety</p>
-    <p>sweety</p>
-    <p>sweety</p>
-    <p>sweety</p>
-    <p>sweety</p>
-    <p>sweety</p>
-    <p>sweety</p>
 </script>
 </body>
 </html>
