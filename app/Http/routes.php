@@ -19,6 +19,6 @@ Route::match(['post','get'],'/manager/ajax/index','UserApi@managerIndex');
 Route::group(['prefix'=>'admin','namespace'=>'Admin'],function()
 {
     Route::get('/','AdminHomeController@index');
-    Route::get('/manager','AdminHomeController@index');
-    Route::get('/list','AdminHomeController@index');
+    Route::get('/manager','AdminHomeController@manager');
+    Route::get('/list','AdminHomeController@listpage');
 });
