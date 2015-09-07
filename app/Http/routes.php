@@ -19,3 +19,4 @@ Route::get('/UserApi/','UserApi@index');
 Route::get('/list/','UserApi@listpage');
 Route::get('/manager','UserApi@manager');
 Route::match(['post','get'],'/manager/ajax/info','UserApi@managerInfo');
+Route::match(['post','get'],'/manager/ajax/index','UserApi@managerIndex');

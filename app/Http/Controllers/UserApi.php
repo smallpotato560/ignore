@@ -41,6 +41,12 @@ class UserApi extends Controller
         return (view('list'));
     }
 
+    public function managerIndex()
+    {
+        $token = csrf_token();
+        require_once('table.php');
+        return $table;
+    }
 
     public function manager()
     {
