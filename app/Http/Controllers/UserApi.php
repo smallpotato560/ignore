@@ -44,11 +44,10 @@ class UserApi extends Controller
     public function managerIndex()
     {
         $token = csrf_token();
-        //$include_path = '../../../resources/views/';
-       // require_once($include_path.'table.php');
-        //return $table;
-        var_dump($include_path);
-        die;
+        $include_path = '../../../resources/views/';
+        require_once($include_path.'table.php');
+
+
     }
 
     public function manager()
