@@ -178,15 +178,14 @@
         $.ajax(
             {
                 type: 'POST',
-                url:'/manager/ajax/info',
+                url: '/manager/ajax/info',
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+                },
+                success: function (data) {
+                    alert(data);
                 }
-            },
-            success: function(data) {
-                alert(data);
-            }
-        )
+            });
     }
 </script>
 </body>
