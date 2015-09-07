@@ -14,7 +14,7 @@
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <meta name="_token" content=<?php echo csrf_token();?>/>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Starter Template for Bootstrap</title>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -175,13 +175,15 @@
 </div>
 <script>
     function test() {
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
         $.ajax(
             {
                 type: 'POST',
                 url: '/manager/ajax/info',
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
-                },
                 success: function (data) {
                     alert(data);
                 }
