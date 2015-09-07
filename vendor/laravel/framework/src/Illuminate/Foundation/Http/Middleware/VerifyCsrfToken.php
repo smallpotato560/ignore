@@ -22,7 +22,9 @@ class VerifyCsrfToken
      *
      * @var array
      */
-    protected $except = ['/manager#','/manager/ajax/info'];
+    protected $except = [
+        '/manager/*',
+    ];
 
     /**
      * Create a new middleware instance.
