@@ -16,11 +16,6 @@
     <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <style>
-        .banner { position: relative; overflow: auto; }
-        .banner li { list-style: none; }
-        .banner ul li { float: left; }
-    </style>
 </head>
 <body>
 <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -49,7 +44,6 @@
 </nav>
 
 <div style="padding: 50px;"></div>
-
 <div class="container">
     <div class="container-fluid">
         <div class="row-fluid">
@@ -104,180 +98,6 @@
                         </div>
                     </div> <a data-slide="prev" href="#carousel-616040" class="left carousel-control">‹</a> <a data-slide="next" href="#carousel-616040" class="right carousel-control">›</a>
                 </div>
-            </div>
-            <div class="span6">
-                <ul>
-                    <li>
-                        新闻资讯
-                    </li>
-                    <li>
-                        体育竞技
-                    </li>
-                    <li>
-                        娱乐八卦
-                    </li>
-                    <li>
-                        前沿科技
-                    </li>
-                    <li>
-                        环球财经
-                    </li>
-                    <li>
-                        天气预报
-                    </li>
-                    <li>
-                        房产家居
-                    </li>
-                    <li>
-                        网络游戏
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="row-fluid">
-            <div class="span6">
-                <ul>
-                    <li>
-                        新闻资讯
-                    </li>
-                    <li>
-                        体育竞技
-                    </li>
-                    <li>
-                        娱乐八卦
-                    </li>
-                    <li>
-                        前沿科技
-                    </li>
-                    <li>
-                        环球财经
-                    </li>
-                    <li>
-                        天气预报
-                    </li>
-                    <li>
-                        房产家居
-                    </li>
-                    <li>
-                        网络游戏
-                    </li>
-                </ul>
-            </div>
-            <div class="span6">
-                <ul>
-                    <li>
-                        新闻资讯
-                    </li>
-                    <li>
-                        体育竞技
-                    </li>
-                    <li>
-                        娱乐八卦
-                    </li>
-                    <li>
-                        前沿科技
-                    </li>
-                    <li>
-                        环球财经
-                    </li>
-                    <li>
-                        天气预报
-                    </li>
-                    <li>
-                        房产家居
-                    </li>
-                    <li>
-                        网络游戏
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="row-fluid">
-            <div class="span6">
-                <ul>
-                    <li>
-                        新闻资讯
-                    </li>
-                    <li>
-                        体育竞技
-                    </li>
-                    <li>
-                        娱乐八卦
-                    </li>
-                    <li>
-                        前沿科技
-                    </li>
-                    <li>
-                        环球财经
-                    </li>
-                    <li>
-                        天气预报
-                    </li>
-                    <li>
-                        房产家居
-                    </li>
-                    <li>
-                        网络游戏
-                    </li>
-                </ul>
-            </div>
-            <div class="span6">
-                <ul>
-                    <li>
-                        新闻资讯
-                    </li>
-                    <li>
-                        体育竞技
-                    </li>
-                    <li>
-                        娱乐八卦
-                    </li>
-                    <li>
-                        前沿科技
-                    </li>
-                    <li>
-                        环球财经
-                    </li>
-                    <li>
-                        天气预报
-                    </li>
-                    <li>
-                        房产家居
-                    </li>
-                    <li>
-                        网络游戏
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="row-fluid">
-            <div class="span6">
-                <ul>
-                    <li>
-                        新闻资讯
-                    </li>
-                    <li>
-                        体育竞技
-                    </li>
-                    <li>
-                        娱乐八卦
-                    </li>
-                    <li>
-                        前沿科技
-                    </li>
-                    <li>
-                        环球财经
-                    </li>
-                    <li>
-                        天气预报
-                    </li>
-                    <li>
-                        房产家居
-                    </li>
-                    <li>
-                        网络游戏
-                    </li>
-                </ul>
             </div>
             <div class="span6">
                 <ul>
