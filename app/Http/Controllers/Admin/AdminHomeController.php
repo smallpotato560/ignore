@@ -1,9 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -16,16 +14,16 @@ class AdminHomeController extends Controller
      */
     public function index()
     {
-         return view('index');
+         return view('admin/index');
     }
     public function manager()
     {
-        return view('manager');
+        return view('admin/manager');
 
     }
     public function listpage()
     {
-        return (view('list'));
+        return (view('admin/list'));
     }
     /**
      * Show the form for creating a new resource.
