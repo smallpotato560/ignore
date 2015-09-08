@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <title>Starter Template for Bootstrap</title>
     <!-- Bootstrap core CSS -->
-<!--    <link href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">-->
+    <link href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
     <link href="bootstrap-combined.min.css" rel="stylesheet">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
