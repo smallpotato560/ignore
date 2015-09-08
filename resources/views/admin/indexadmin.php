@@ -48,7 +48,7 @@
     <div class="container-fluid">
         <div class="row-fluid">
             <div class="span12">
-                <img class="img-rounded" alt="140x140" src="img/banner.jpg" />
+               
             </div>
         </div>
     </div>
