@@ -5,11 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <title>Starter Template for Bootstrap</title>
+    <meta name="description" content="我的毕业设计">
+    <meta name="author" content="Tian Chen">
+    <title>首页</title>
     <!-- Bootstrap core CSS -->
-    <link href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap.min.css">
+<!--    <link href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">-->
     <link href="bootstrap-combined.min.css" rel="stylesheet">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -52,6 +53,16 @@
             <div class="span12">
                 <img class="img-rounded" alt="140x140" src="img/banner.jpg" />
             </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="banner">
+            <ul>
+                <li>This is a slide.</li>
+                <li>This is another slide.</li>
+                <li>This is a final slide.</li>
+            </ul>
         </div>
     </div>
 
@@ -139,7 +150,12 @@
 
 <!-- Bootstrap core JavaScript
 ================================================== -->
-<script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
-<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="jquery2.1.min.js"></script>
+<script src="bootstrap.min.js"></script>
+<!--<script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>-->
+<!--<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>-->
+<!--Unslider core JavaScript-->
+<script src="//code.jquery.com/jquery-latest.min.js"></script>
+<script src="//unslider.com/unslider.js"></script>
 </body>
 </html>
