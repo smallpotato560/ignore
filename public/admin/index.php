@@ -9,14 +9,19 @@
     <meta name="author" content="Tian Chen">
     <title>首页</title>
     <!-- Bootstrap core CSS -->
-    <link href="bootstrap.min.css">
-    <link href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+<!--    <link href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">-->
     <link href="bootstrap-combined.min.css" rel="stylesheet">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
     <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <style>
+        .banner { position: relative; overflow: auto; }
+        .banner li { list-style: none; }
+        .banner ul li { float: left; }
+    </style>
 </head>
 <body>
 <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -59,9 +64,9 @@
     <div class="container-fluid">
         <div class="banner">
             <ul>
-                <li>This is a slide.</li>
-                <li>This is another slide.</li>
-                <li>This is a final slide.</li>
+                <li><img src="img/banner.jpg"></li>
+                <li><img src="img/banner.jpg"></li>
+                <li><img src="img/banner.jpg"></li>
             </ul>
         </div>
     </div>
@@ -152,10 +157,16 @@
 ================================================== -->
 <script src="jquery2.1.min.js"></script>
 <script src="bootstrap.min.js"></script>
+<script>
+    $(function() {
+        $('.banner').unslider();
+    });
+</script>
 <!--<script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>-->
 <!--<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>-->
 <!--Unslider core JavaScript-->
-<script src="//code.jquery.com/jquery-latest.min.js"></script>
-<script src="//unslider.com/unslider.js"></script>
+<!--<script src="//code.jquery.com/jquery-latest.min.js"></script>-->
+<script src="unslider.js"></script>
+<!--<script src="//unslider.com/unslider.js"></script>-->
 </body>
 </html>
