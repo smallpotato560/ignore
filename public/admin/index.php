@@ -10,163 +10,102 @@
     <title>首页</title>
     <!-- Bootstrap core CSS -->
     <link href="bootstrap.min.css" rel="stylesheet">
-<!--    <link href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">-->
-    <link href="bootstrap-combined.min.css" rel="stylesheet">
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-    <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    <style>
-        .banner { position: relative; overflow: auto; }
-        .banner li { list-style: none; }
-        .banner ul li { float: left; }
-    </style>
+    <link href="responsive-nav.css" rel="stylesheet">
+    <script src="jquery2.1.min.js"></script>
+    <!--Unslider core JavaScript-->
+    <script src="unslider.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <script src="responsive-nav.js"></script>
 </head>
 <body>
-<nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
+<div class="container">
+    <nav class="navbar navbar-default" role="navigation">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#example-navbar-collapse">
+                <span class="sr-only">切换导航</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
+            <a class="navbar-brand" href="#">自由贸易区</a>
         </div>
-
-        <div id="navbar" class="collapse navbar-collapse">
+        <div class="collapse navbar-collapse" id="example-navbar-collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">网站首页</a></li>
-                <li><a href="#about">动态信息</a></li>
-                <li><a href="#contact">自贸咨询</a></li>
-                <li><a href="#contact">发展动态</a></li>
-                <li><a href="#contact">自贸协定</a></li>
-                <li><a href="#contact">成功经验</a></li>
-                <li><a href="#contact">如何审领</a></li>
-                <li><a href="#contact">社区论坛</a></li>
-            </ul>
-        </div><!--/.nav-collapse -->
-    </div>
-</nav>
-
-<div style="padding: 50px;"></div>
-<div class="container">
-
-    <div class="container-fluid">
-        <div class="row-fluid">
-            <div class="span12">
-                <img class="img-rounded" alt="140x140" src="img/banner.jpg" />
-            </div>
-        </div>
-    </div>
-
-    <div class="container-fluid">
-        <div class="banner">
-            <ul>
-                <li><img src="img/banner.jpg"></li>
-                <li><img src="img/banner.jpg"></li>
-                <li><img src="img/banner.jpg"></li>
+                <li class="active"><a href="#">首页</a></li>
+                <li><a href="#">动态</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        Java <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">jmeter</a></li>
+                        <li><a href="#">EJB</a></li>
+                        <li><a href="#">Jasper Report</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">分离的链接</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">另一个分离的链接</a></li>
+                    </ul>
+                </li>
             </ul>
         </div>
-    </div>
-
-    <div class="container-fluid">
-        <div class="row-fluid">
-
-            <div class="span4">
-                <div class="hero-unit">
-                    <h1>
-                        Hello, world!
-                    </h1>
-                    <p>
-                        这是一个可视化布局模板, 你可以点击模板里的文字进行修改, 也可以通过点击弹出的编辑框进行富文本修改. 拖动区块能实现排序.
-                    </p>
-                    <p>
-                        <a class="btn btn-primary btn-large" href="#">参看更多 »</a>
-                    </p>
-                </div>
+    </nav>
+    <div id="myCarousel" class="carousel slide">
+        <!-- 轮播（Carousel）指标 -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+        <!-- 轮播（Carousel）项目 -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <img width="100%" height="100px" src="img/zmq2.jpg" alt="First slide">
             </div>
-
-            <div class="span4">
-                <ul>
-                    <li>
-                        新闻资讯
-                    </li>
-                    <li>
-                        体育竞技
-                    </li>
-                    <li>
-                        娱乐八卦
-                    </li>
-                    <li>
-                        前沿科技
-                    </li>
-                    <li>
-                        环球财经
-                    </li>
-                    <li>
-                        天气预报
-                    </li>
-                    <li>
-                        房产家居
-                    </li>
-                    <li>
-                        网络游戏
-                    </li>
-                </ul>
+            <div class="item">
+                <img width="100%" height="100px" src="img/jq2.jpg" alt="Second slide">
             </div>
-
-            <div class="span4">
-                <dl>
-                    <dt>
-                        Rolex
-                    </dt>
-                    <dd>
-                        劳力士创始人为汉斯.威尔斯多夫，1908年他在瑞士将劳力士注册为商标。
-                    </dd>
-                    <dt>
-                        Vacheron Constantin
-                    </dt>
-                    <dd>
-                        始创于1775年的江诗丹顿已有250年历史，
-                    </dd>
-                    <dd>
-                        是世界上历史最悠久、延续时间最长的名表之一。
-                    </dd>
-                    <dt>
-                        IWC
-                    </dt>
-                    <dd>
-                        创立于1868年的万国表有“机械表专家”之称。
-                    </dd>
-                    <dt>
-                        Cartier
-                    </dt>
-                    <dd>
-                        卡地亚拥有150多年历史，是法国珠宝金银首饰的制造名家。
-                    </dd>
-                </dl>
+            <div class="item">
+                <img width="100%" height="100px" src="img/zj.jpg" alt="Third slide">
             </div>
-
         </div>
+        <!-- 轮播（Carousel）导航 -->
+        <a class="carousel-control left" href="#myCarousel"
+           data-slide="prev">&lsaquo;</a>
+        <a class="carousel-control right" href="#myCarousel"
+           data-slide="next">&rsaquo;</a>
     </div>
-</div><!-- /.container -->
 
-<!-- Bootstrap core JavaScript
-================================================== -->
-<script src="jquery2.1.min.js"></script>
-<script src="bootstrap.min.js"></script>
+    <div class="row">
+        <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+            <code>动态信息</code>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <h5>标题一</h5>
+                        <span>这是第一条测试动态信息</span>
+                        <span>2015-12-12</span>
+                </li>
+                <li class="list-group-item">
+                    <h5>标题二</h5>
+                    <p1>这是第二条测试动态信息</p1>
+                    <span>2015-12-12</span>
+                </li>
+                <li class="list-group-item">
+                    <h5>标题三</h5>
+                    <p1>这是第三条测试动态信息</p1>
+                    <span>2015-12-12</span>
+                </li>
+            </ul>
+        </div>
+    </div
+</div>
+<div class="clearfix"></div>
+
 <script>
     $(function() {
-        $('.banner').unslider();
+       $('.carousel-inner').unslider();
     });
 </script>
-<!--<script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>-->
-<!--<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>-->
-<!--Unslider core JavaScript-->
-<!--<script src="//code.jquery.com/jquery-latest.min.js"></script>-->
-<script src="unslider.js"></script>
-<!--<script src="//unslider.com/unslider.js"></script>-->
 </body>
 </html>
