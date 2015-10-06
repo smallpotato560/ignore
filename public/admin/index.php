@@ -61,8 +61,8 @@
 <div class="container" style="border: solid black">
     <div class="row">
         <h2><strong>上海自由贸易区</strong></h2>
-        <img class="bg-primary" src="img/ljz.jpg"  height="50px" >
-        搜索一下<input class="" type="search" >
+        <img class="bg-primary col-lg-8 col-md-4" src="img/ljz.jpg" height="50px" >
+        搜索一下<input class="col-lg-4 col-md-4" type="search" >
     </div>
     <div class="clearfix"></div>
 <!--    第一行-->
