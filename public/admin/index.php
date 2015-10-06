@@ -62,7 +62,10 @@
     <div class="row">
         <h2><strong>上海自由贸易区</strong></h2>
         <img class="pull-left" src="img/ljz.jpg" height="50px" >
-        <input class="pull-right" type="search" value="搜索一下" placeholder="xxx">
+        <div class="glyphicon-search pull-right">
+        <span>搜索一下</span>
+        <input  type="search" value="搜索一下" placeholder="xxx">
+        </div>
     </div>
     <div class="clearfix" style="padding-bottom: 10px"></div>
 <!--    第一行-->
