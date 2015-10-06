@@ -57,262 +57,6 @@
     </div>
 </nav>
 </div>
-<table class="table">
-    <tr>
-        <td>
-            <table class="table-bordered">
-                <tr>
-                    <td>
-                        <h5><strong>政务公开</strong></h5>
-                    </td>
-                    <td>
-                        <h5><strong>政务公开</strong></h5>
-                    </td>
-                    <td>
-                        <h5><strong>政务公开</strong></h5>
-                    </td>
-                    <td>
-                        <h5><strong>政务公开</strong></h5>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-                        <h5><strong>政务公开</strong></h5>
-                    </td>
-                    <td>
-                        <h5><strong>政务公开</strong></h5>
-                    </td>
-                    <td>
-                        <h5><strong>政务公开</strong></h5>
-                    </td>
-                    <td>
-                        <h5><strong>政务公开</strong></h5>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-                        <h5><strong>政务公开</strong></h5>
-                    </td>
-                    <td>
-                        <h5><strong>政务公开</strong></h5>
-                    </td>
-                    <td>
-                        <h5><strong>政务公开</strong></h5>
-                    </td>
-                    <td>
-                        <h5><strong>政务公开</strong></h5>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-                        <h5><strong>政务公开</strong></h5>
-                    </td>
-                    <td>
-                        <h5><strong>政务公开</strong></h5>
-                    </td>
-                    <td>
-                        <h5><strong>政务公开</strong></h5>
-                    </td>
-                    <td>
-                        <h5><strong>政务公开</strong></h5>
-                    </td>
-                </tr>
-            </table>
-        </td>
-        <td>
-            <table class="table-bordered">
-                <tr>
-                    <td>
-                        <h5><strong>政务公开</strong></h5>
-                    </td>
-                    <td>
-                        <h5><strong>政务公开</strong></h5>
-                    </td>
-                    <td>
-                        <h5><strong>政务公开</strong></h5>
-                    </td>
-                    <td>
-                        <h5><strong>政务公开</strong></h5>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-                        <h5><strong>政务公开</strong></h5>
-                    </td>
-                    <td>
-                        <h5><strong>政务公开</strong></h5>
-                    </td>
-                    <td>
-                        <h5><strong>政务公开</strong></h5>
-                    </td>
-                    <td>
-                        <h5><strong>政务公开</strong></h5>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-                        <h5><strong>政务公开</strong></h5>
-                    </td>
-                    <td>
-                        <h5><strong>政务公开</strong></h5>
-                    </td>
-                    <td>
-                        <h5><strong>政务公开</strong></h5>
-                    </td>
-                    <td>
-                        <h5><strong>政务公开</strong></h5>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-                        <h5><strong>政务公开</strong></h5>
-                    </td>
-                    <td>
-                        <h5><strong>政务公开</strong></h5>
-                    </td>
-                    <td>
-                        <h5><strong>政务公开</strong></h5>
-                    </td>
-                    <td>
-                        <h5><strong>政务公开</strong></h5>
-                    </td>
-                </tr>
-            </table>
-        </td>
-        <td>
-            <table class="table-bordered">
-                <tr>
-                    <td>
-                        <h5><strong>政务公开</strong></h5>
-                    </td>
-                    <td>
-                        <h5><strong>政务公开</strong></h5>
-                    </td>
-                    <td>
-                        <h5><strong>政务公开</strong></h5>
-                    </td>
-                    <td>
-                        <h5><strong>政务公开</strong></h5>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-                        <h5><strong>政务公开</strong></h5>
-                    </td>
-                    <td>
-                        <h5><strong>政务公开</strong></h5>
-                    </td>
-                    <td>
-                        <h5><strong>政务公开</strong></h5>
-                    </td>
-                    <td>
-                        <h5><strong>政务公开</strong></h5>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-                        <h5><strong>政务公开</strong></h5>
-                    </td>
-                    <td>
-                        <h5><strong>政务公开</strong></h5>
-                    </td>
-                    <td>
-                        <h5><strong>政务公开</strong></h5>
-                    </td>
-                    <td>
-                        <h5><strong>政务公开</strong></h5>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-                        <h5><strong>政务公开</strong></h5>
-                    </td>
-                    <td>
-                        <h5><strong>政务公开</strong></h5>
-                    </td>
-                    <td>
-                        <h5><strong>政务公开</strong></h5>
-                    </td>
-                    <td>
-                        <h5><strong>政务公开</strong></h5>
-                    </td>
-                </tr>
-            </table>
-        </td>
-        <td>
-            <table class="table-bordered">
-                <tr>
-                    <td>
-                        <h5><strong>政务公开</strong></h5>
-                    </td>
-                    <td>
-                        <h5><strong>政务公开</strong></h5>
-                    </td>
-                    <td>
-                        <h5><strong>政务公开</strong></h5>
-                    </td>
-                    <td>
-                        <h5><strong>政务公开</strong></h5>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-                        <h5><strong>政务公开</strong></h5>
-                    </td>
-                    <td>
-                        <h5><strong>政务公开</strong></h5>
-                    </td>
-                    <td>
-                        <h5><strong>政务公开</strong></h5>
-                    </td>
-                    <td>
-                        <h5><strong>政务公开</strong></h5>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-                        <h5><strong>政务公开</strong></h5>
-                    </td>
-                    <td>
-                        <h5><strong>政务公开</strong></h5>
-                    </td>
-                    <td>
-                        <h5><strong>政务公开</strong></h5>
-                    </td>
-                    <td>
-                        <h5><strong>政务公开</strong></h5>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-                        <h5><strong>政务公开</strong></h5>
-                    </td>
-                    <td>
-                        <h5><strong>政务公开</strong></h5>
-                    </td>
-                    <td>
-                        <h5><strong>政务公开</strong></h5>
-                    </td>
-                    <td>
-                        <h5><strong>政务公开</strong></h5>
-                    </td>
-                </tr>
-            </table>
-        </td>
-    </tr>
-</table>
 <div class="container" style="border: solid black">
     <div class="row">
         <h2><strong>上海自由贸易区</strong></h2>
@@ -321,6 +65,224 @@
         <span>搜索一下</span>
         <input  type="search" value="搜索一下" placeholder="xxx">
         </div>
+    </div>
+    <div class="row">
+        <table class="table">
+            <tr>
+                <td class="col-md-3">
+                    <table class="table-bordered">
+                        <tr>
+                            <td>
+                                <a><strong>政务公开</strong></a>
+                            </td>
+                            <td>
+                                <a>test</a>
+                            </td>
+                            <td>
+                                <a>test</a>
+                            </td>
+                            <td>
+                                <a>test</a>
+                            </td>
+                            <td>|</td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <a><strong>公众服务</strong></a>
+                            </td>
+                            <td>
+                                <a>test</a>
+                            </td>
+                            <td>
+                                <a>test</a>
+                            </td>
+                            <td>
+                                <a>test</a>
+                            </td>
+                            <td>|</td>
+                        </tr>
+
+
+                        <tr>
+                            <td>
+                                <a><strong>互动交流</strong></a>
+                            </td>
+                            <td>
+                                <a>test</a>
+                            </td>
+                            <td>
+                                <a>test</a>
+                            </td>
+                            <td>
+                                <a>test</a>
+                            </td>
+                            <td>|</td>
+                        </tr>
+
+                    </table>
+                </td>
+                <td class="col-md-3">
+                    <table class="table-bordered">
+                        <tr>
+                            <td>
+                                <a><strong>政务公开</strong></a>
+                            </td>
+                            <td>
+                                <a>test</a>
+                            </td>
+                            <td>
+                                <a>test</a>
+                            </td>
+                            <td>
+                                <a>test</a>
+                            </td>
+                            <td>|</td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <a><strong>公众服务</strong></a>
+                            </td>
+                            <td>
+                                <a>test</a>
+                            </td>
+                            <td>
+                                <a>test</a>
+                            </td>
+                            <td>
+                                <a>test</a>
+                            </td>
+                            <td>|</td>
+                        </tr>
+
+
+                        <tr>
+                            <td>
+                                <a><strong>互动交流</strong></a>
+                            </td>
+                            <td>
+                                <a>test</a>
+                            </td>
+                            <td>
+                                <a>test</a>
+                            </td>
+                            <td>
+                                <a>test</a>
+                            </td>
+                            <td>|</td>
+                        </tr>
+
+                    </table>
+                </td>
+                <td class="col-md-3">
+                    <table class="table-bordered">
+                        <tr>
+                            <td>
+                                <a><strong>政务公开</strong></a>
+                            </td>
+                            <td>
+                                <a>test</a>
+                            </td>
+                            <td>
+                                <a>test</a>
+                            </td>
+                            <td>
+                                <a>test</a>
+                            </td>
+                            <td>|</td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <a><strong>公众服务</strong></a>
+                            </td>
+                            <td>
+                                <a>test</a>
+                            </td>
+                            <td>
+                                <a>test</a>
+                            </td>
+                            <td>
+                                <a>test</a>
+                            </td>
+                            <td>|</td>
+                        </tr>
+
+
+                        <tr>
+                            <td>
+                                <a><strong>互动交流</strong></a>
+                            </td>
+                            <td>
+                                <a>test</a>
+                            </td>
+                            <td>
+                                <a>test</a>
+                            </td>
+                            <td>
+                                <a>test</a>
+                            </td>
+                            <td>|</td>
+                        </tr>
+
+                    </table>
+                </td>
+                <td class="col-md-3">
+                    <table class="table-bordered">
+                        <tr>
+                            <td>
+                                <a><strong>政务公开</strong></a>
+                            </td>
+                            <td>
+                                <a>test</a>
+                            </td>
+                            <td>
+                                <a>test</a>
+                            </td>
+                            <td>
+                                <a>test</a>
+                            </td>
+                            <td>|</td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <a><strong>公众服务</strong></a>
+                            </td>
+                            <td>
+                                <a>test</a>
+                            </td>
+                            <td>
+                                <a>test</a>
+                            </td>
+                            <td>
+                                <a>test</a>
+                            </td>
+                            <td>|</td>
+                        </tr>
+
+
+                        <tr>
+                            <td>
+                                <a><strong>互动交流</strong></a>
+                            </td>
+                            <td>
+                                <a>test</a>
+                            </td>
+                            <td>
+                                <a>test</a>
+                            </td>
+                            <td>
+                                <a>test</a>
+                            </td>
+                            <td>|</td>
+                        </tr>
+
+                    </table>
+                </td>
+            </tr>
+        </table>
     </div>
     <div class="clearfix" style="padding-bottom: 10px"></div>
 <!--    第一行-->
