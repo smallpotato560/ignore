@@ -16,96 +16,206 @@
     <script src="unslider.js"></script>
     <script src="bootstrap.min.js"></script>
     <script src="responsive-nav.js"></script>
+    <style>
+        .header{
+            border: solid black;
+        }
+    </style>
 </head>
 <body>
-<div class="container">
-    <nav class="navbar navbar-default" role="navigation">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse"
-                    data-target="#example-navbar-collapse">
-                <span class="sr-only">切换导航</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">自由贸易区</a>
-        </div>
-        <div class="collapse navbar-collapse" id="example-navbar-collapse">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">首页</a></li>
-                <li><a href="#">动态</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        Java <b class="caret"></b>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">jmeter</a></li>
-                        <li><a href="#">EJB</a></li>
-                        <li><a href="#">Jasper Report</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">分离的链接</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">另一个分离的链接</a></li>
+<div class="header">
+<nav class="navbar navbar-default" role="navigation">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse"
+                data-target="#example-navbar-collapse">
+            <span class="sr-only">切换导航</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">自由贸易区</a>
+    </div>
+    <div class="collapse navbar-collapse" id="example-navbar-collapse">
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="#">首页</a></li>
+            <li><a href="#">动态</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    招商平台<b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">扩展一</a></li>
+                    <li><a href="#">扩展二</a></li>
+                    <li><a href="#">扩展三</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">独立扩展一</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">独立扩展二</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>
+</div>
+
+<div class="container" style="border: solid black">
+    <div class="row">
+        <h2><strong>上海自由贸易区</strong></h2>
+        <img class="bg-primary" src="img/ljz.jpg"  height="50px" >
+        搜索一下<input class="" type="search" >
+    </div>
+    <div class="clearfix"></div>
+<!--    第一行-->
+    <div class="row">
+<!--        项目一-->
+        <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title">最新咨询</h3>
+                </div>
+                <div class="panel-body">
+                    <ul>
+                        <li>
+                            <h5>标题一</h5>
+                            <span>这是第一条测试动态信息</span>
+                            <span>2015-12-12</span>
+                        </li>
+                        <li>
+                            <h5>标题二</h5>
+                            <p1>这是第二条测试动态信息</p1>
+                            <span>2015-12-12</span>
+                        </li>
+                        <li>
+                            <h5>标题三</h5>
+                            <p1>这是第三条测试动态信息</p1>
+                            <span>2015-12-12</span>
+                        </li>
                     </ul>
-                </li>
-            </ul>
-        </div>
-    </nav>
-    <div id="myCarousel" class="carousel slide">
-        <!-- 轮播（Carousel）指标 -->
-        <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-        </ol>
-        <!-- 轮播（Carousel）项目 -->
-        <div class="carousel-inner">
-            <div class="item active">
-                <img width="100%" height="100px" src="img/zmq2.jpg" alt="First slide">
-            </div>
-            <div class="item">
-                <img width="100%" height="100px" src="img/jq2.jpg" alt="Second slide">
-            </div>
-            <div class="item">
-                <img width="100%" height="100px" src="img/zj.jpg" alt="Third slide">
+                </div>
             </div>
         </div>
-        <!-- 轮播（Carousel）导航 -->
-        <a class="carousel-control left" href="#myCarousel"
-           data-slide="prev">&lsaquo;</a>
-        <a class="carousel-control right" href="#myCarousel"
-           data-slide="next">&rsaquo;</a>
+    <!--轮播-->
+        <div id="carousel-example-generic" class="carousel slide col-lg-4" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                    <img src="img/xys.jpg" alt="">
+                    <div class="carousel-caption">
+                        <h1>标题</h1>
+                        <p>图文并茂</p>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img src="img/zmq2.jpg" alt="">
+                    <div class="carousel-caption">
+                        <h1>标题</h1>
+                        <p>图文并茂</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Controls -->
+            <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    <!--测试栏目二-->
+        <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title">最新咨询</h3>
+                </div>
+                <div class="panel-body">
+                    <ul>
+                        <li>
+                            <h5>标题一</h5>
+                            <span>这是第一条测试动态信息</span>
+                            <span>2015-12-12</span>
+                        </li>
+                        <li>
+                            <h5>标题二</h5>
+                            <p1>这是第二条测试动态信息</p1>
+                            <span>2015-12-12</span>
+                        </li>
+                        <li>
+                            <h5>标题三</h5>
+                            <p1>这是第三条测试动态信息</p1>
+                            <span>2015-12-12</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+<!--   第一行结束-->
     </div>
 
-    <div class="row">
-        <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-            <code>动态信息</code>
-            <ul class="list-group">
-                <li class="list-group-item">
+    <table class="table">
+        <thead>
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
                     <h5>标题一</h5>
-                        <span>这是第一条测试动态信息</span>
-                        <span>2015-12-12</span>
-                </li>
-                <li class="list-group-item">
+                    <p>这是第一条测试动态信息</p>
+                    <span>2015-12-12</span>
+                </td>
+                <td>
                     <h5>标题二</h5>
-                    <p1>这是第二条测试动态信息</p1>
+                    <p>这是第一条测试动态信息</p>
                     <span>2015-12-12</span>
-                </li>
-                <li class="list-group-item">
+                </td>
+                <td>
                     <h5>标题三</h5>
-                    <p1>这是第三条测试动态信息</p1>
+                    <p>这是第一条测试动态信息</p>
                     <span>2015-12-12</span>
-                </li>
-            </ul>
-        </div>
-    </div
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h5>标题一</h5>
+                    <p>这是第一条测试动态信息</p>
+                    <span>2015-12-12</span>
+                </td>
+                <td>
+                    <h5>标题二</h5>
+                    <p>这是第一条测试动态信息</p>
+                    <span>2015-12-12</span>
+                </td>
+                <td>
+                    <h5>标题三</h5>
+                    <p>这是第一条测试动态信息</p>
+                    <span>2015-12-12</span>
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
+<!--close body-->
 </div>
+
+
 <div class="clearfix"></div>
 
 <script>
-    $(function() {
-       $('.carousel-inner').unslider();
-    });
+//    $(function() {
+//       $('.carousel-inner').unslider();
+//    });
 </script>
 </body>
 </html>
