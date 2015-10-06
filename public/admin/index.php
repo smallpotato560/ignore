@@ -61,10 +61,10 @@
 <div class="container" style="border: solid black">
     <div class="row">
         <h2><strong>上海自由贸易区</strong></h2>
-        <img class="pull-left" src="img/ljz.jpg" width="60%" height="50px" >
-        搜索一下<input class="pull-right" type="search">
+        <img class="pull-left" src="img/ljz.jpg" height="50px" >
+        <input class="pull-right" type="search" value="搜索一下" placeholder="xxx">
     </div>
-    <div class="clearfix"></div>
+    <div class="clearfix" style="padding-bottom: 10px"></div>
 <!--    第一行-->
     <div class="row">
 <!--        项目一-->
