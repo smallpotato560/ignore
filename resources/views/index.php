@@ -352,33 +352,6 @@
                 <span class="sr-only">Next</span>
             </a>
         </div>
-    <!--测试栏目二-->
-        <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
-            <div class="panel panel-info">
-                <div class="panel-heading">
-                    <h3 class="panel-title">最新咨询</h3>
-                </div>
-                <div class="panel-body">
-                    <ul>
-                        <li>
-                            <h5>标题一</h5>
-                            <span>这是第一条测试动态信息</span>
-                            <span>2015-12-12</span>
-                        </li>
-                        <li>
-                            <h5>标题二</h5>
-                            <p1>这是第二条测试动态信息</p1>
-                            <span>2015-12-12</span>
-                        </li>
-                        <li>
-                            <h5>标题三</h5>
-                            <p1>这是第三条测试动态信息</p1>
-                            <span>2015-12-12</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
 <!--   第一行结束-->
     </div>
 
