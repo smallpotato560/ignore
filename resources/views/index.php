@@ -76,7 +76,7 @@
                                 <a><strong>政务公开</strong></a>
                             </td>
                             <td>
-                                <a>test</a>
+                                <a href="<?php echo @$_SERVER['SEVER_ADDR']."admin/list/"?>">test</a>
                             </td>
                             <td>
                                 <a>test</a>
@@ -354,7 +354,6 @@
         </div>
 <!--   第一行结束-->
     </div>
-
 
 <!--close body-->
 </div>
