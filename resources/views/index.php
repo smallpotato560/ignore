@@ -9,13 +9,13 @@
     <meta name="author" content="Tian Chen">
     <title>首页</title>
     <!-- Bootstrap core CSS -->
-    <link href="../../public/bootstrap.min.css" rel="stylesheet">
-    <link href="../../public/responsive-nav.css" rel="stylesheet">
-    <script src="../../public/jquery2.1.min.js"></script>
+    <link href="bootstarp/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bootstarp/css/responsive-nav.css" rel="stylesheet">
+    <script src="bootstarp/js/jquery2.1.min.js"></script>
     <!--Unslider core JavaScript-->
-    <script src="../../public/unslider.js"></script>
-    <script src="../../public/bootstrap.min.js"></script>
-    <script src="../../public/responsive-nav.js"></script>
+    <script src="bootstarp/js/unslider.js"></script>
+    <script src="bootstarp/js/bootstrap.min.js"></script>
+    <script src="bootstarp/js/responsive-nav.js"></script>
     <style>
         .header{
             border: solid black;
@@ -60,7 +60,7 @@
 <div class="container" style="border: solid black">
     <div class="row">
         <h2><strong>上海自由贸易区</strong></h2>
-        <img class="pull-left" src="../../public/img/ljz.jpg" height="50px" >
+        <img class="pull-left" src="img/ljz.jpg" height="50px" >
         <div class="glyphicon-search pull-right">
         <span>搜索一下</span>
         <input  type="search" value="搜索一下" placeholder="xxx">
@@ -326,7 +326,7 @@
             <!-- Wrapper for slides -->
             <div class="carousel-inner" role="listbox">
                 <div class="item active">
-                    <img src="../../public/img/xys.jpg" alt="">
+                    <img src="img/xys.jpg" alt="">
                     <div class="carousel-caption">
                         <h1>标题</h1>
                         <p>图文并茂</p>
@@ -334,7 +334,7 @@
                 </div>
 
                 <div class="item">
-                    <img src="../../public/img/zmq2.jpg" alt="">
+                    <img src="img/zmq2.jpg" alt="">
                     <div class="carousel-caption">
                         <h1>标题</h1>
                         <p>图文并茂</p>
