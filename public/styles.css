@@ -1,10 +1,10 @@
 @font-face {
   font-family: "responsivenav";
-  src:url("icons/responsivenav.eot");
-  src:url("icons/responsivenav.eot?#iefix") format("embedded-opentype"),
-    url("icons/responsivenav.ttf") format("truetype"),
-    url("icons/responsivenav.woff") format("woff"),
-    url("icons/responsivenav.svg#responsivenav") format("svg");
+  src:url("../resources/views/icons/responsivenav.eot");
+  src:url("../resources/views/icons/responsivenav.eot?#iefix") format("embedded-opentype"),
+    url("../resources/views/icons/responsivenav.ttf") format("truetype"),
+    url("../resources/views/icons/responsivenav.woff") format("woff"),
+    url("../resources/views/icons/responsivenav.svg#responsivenav") format("svg");
   font-weight: normal;
   font-style: normal;
 }
