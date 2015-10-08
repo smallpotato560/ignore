@@ -20,6 +20,10 @@
         .header{
             border: solid black;
         }
+        .footer{
+            border: solid black;
+            background-color: #39b3d7;
+        }
     </style>
 </head>
 <body>
@@ -76,15 +80,14 @@
                                 <a><strong>政务公开</strong></a>
                             </td>
                             <td>
-                                <a href="<?php echo @$_SERVER['SEVER_ADDR']."admin/list/"?>">test</a>
+                                <a href="<?php echo @$_SERVER['SEVER_ADDR']."admin/list/"?>">优惠政策</a>
                             </td>
                             <td>
-                                <a>test</a>
+                                <a>胡编乱凑</a>
                             </td>
                             <td>
-                                <a>test</a>
+                                <a>毕设去死</a>
                             </td>
-                            <td>|</td>
                         </tr>
 
                         <tr>
@@ -92,15 +95,14 @@
                                 <a><strong>公众服务</strong></a>
                             </td>
                             <td>
-                                <a>test</a>
+                                <a>自贸地图</a>
                             </td>
                             <td>
-                                <a>test</a>
+                                <a>公交路线</a>
                             </td>
                             <td>
-                                <a>test</a>
+                                <a>你大爷的</a>
                             </td>
-                            <td>|</td>
                         </tr>
 
 
@@ -109,13 +111,13 @@
                                 <a><strong>互动交流</strong></a>
                             </td>
                             <td>
-                                <a>test</a>
+                                <a>社区灌水</a>
                             </td>
                             <td>
-                                <a>test</a>
+                                <a>政策吐槽</a>
                             </td>
                             <td>
-                                <a>test</a>
+                                <a>主管邮箱</a>
                             </td>
                             <td>|</td>
                         </tr>
@@ -126,40 +128,38 @@
                     <table class="table-bordered">
                         <tr>
                             <td>
-                                <a><strong>政务公开</strong></a>
+                                <a><strong>物流信息</strong></a>
                             </td>
                             <td>
-                                <a>test</a>
+                                <a>妈的发克</a>
                             </td>
                             <td>
-                                <a>test</a>
+                                <a>我不知道</a>
                             </td>
                             <td>
-                                <a>test</a>
+                                <a>输入法好卡</a>
                             </td>
-                            <td>|</td>
                         </tr>
 
                         <tr>
                             <td>
-                                <a><strong>公众服务</strong></a>
+                                <a><strong>招商平台</strong></a>
                             </td>
                             <td>
-                                <a>test</a>
+                                <a>办事点</a>
                             </td>
                             <td>
-                                <a>test</a>
+                                <a>办事流程</a>
                             </td>
                             <td>
-                                <a>test</a>
+                                <a>办事平台</a>
                             </td>
-                            <td>|</td>
                         </tr>
 
 
                         <tr>
                             <td>
-                                <a><strong>互动交流</strong></a>
+                                <a><strong></strong></a>
                             </td>
                             <td>
                                 <a>test</a>
@@ -170,7 +170,6 @@
                             <td>
                                 <a>test</a>
                             </td>
-                            <td>|</td>
                         </tr>
 
                     </table>
@@ -179,51 +178,48 @@
                     <table class="table-bordered">
                         <tr>
                             <td>
-                                <a><strong>政务公开</strong></a>
+                                <a><strong>有待开发</strong></a>
                             </td>
                             <td>
-                                <a>test</a>
+                                <a>前方有雷</a>
                             </td>
                             <td>
-                                <a>test</a>
+                                <a>前方有雷</a>
                             </td>
                             <td>
-                                <a>test</a>
+                                <a>前方有雷</a>
                             </td>
-                            <td>|</td>
                         </tr>
 
                         <tr>
                             <td>
-                                <a><strong>公众服务</strong></a>
+                                <a><strong>有待开发</strong></a>
                             </td>
                             <td>
-                                <a>test</a>
+                                <a>前方有雷</a>
                             </td>
                             <td>
-                                <a>test</a>
+                                <a>前方有雷</a>
                             </td>
                             <td>
-                                <a>test</a>
+                                <a>前方有雷</a>
                             </td>
-                            <td>|</td>
                         </tr>
 
 
                         <tr>
                             <td>
-                                <a><strong>互动交流</strong></a>
+                                <a><strong>前方有雷</strong></a>
                             </td>
                             <td>
-                                <a>test</a>
+                                <a>前方有雷</a>
                             </td>
                             <td>
-                                <a>test</a>
+                                <a>前方有雷</a>
                             </td>
                             <td>
-                                <a>test</a>
+                                <a>前方有雷</a>
                             </td>
-                            <td>|</td>
                         </tr>
 
                     </table>
@@ -232,51 +228,48 @@
                     <table class="table-bordered">
                         <tr>
                             <td>
-                                <a><strong>政务公开</strong></a>
+                                <a><strong>前方有雷</strong></a>
                             </td>
                             <td>
-                                <a>test</a>
+                                <a>前方有雷</a>
                             </td>
                             <td>
-                                <a>test</a>
+                                <a>前方有雷</a>
                             </td>
                             <td>
-                                <a>test</a>
+                                <a>前方有雷</a>
                             </td>
-                            <td>|</td>
                         </tr>
 
                         <tr>
                             <td>
-                                <a><strong>公众服务</strong></a>
+                                <a><strong>前方有雷</strong></a>
                             </td>
                             <td>
-                                <a>test</a>
+                                <a>前方有雷</a>
                             </td>
                             <td>
-                                <a>test</a>
+                                <a>前方有雷</a>
                             </td>
                             <td>
-                                <a>test</a>
+                                <a>前方有雷</a>
                             </td>
-                            <td>|</td>
                         </tr>
 
 
                         <tr>
                             <td>
-                                <a><strong>互动交流</strong></a>
+                                <a><strong>前方有雷</strong></a>
                             </td>
                             <td>
-                                <a>test</a>
+                                <a>前方有雷</a>
                             </td>
                             <td>
-                                <a>test</a>
+                                <a>前方有雷</a>
                             </td>
                             <td>
-                                <a>test</a>
+                                <a>前方有雷</a>
                             </td>
-                            <td>|</td>
                         </tr>
 
                     </table>
@@ -291,7 +284,7 @@
         <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
             <div class="panel panel-info">
                 <div class="panel-heading">
-                    <h3 class="panel-title">最新咨询</h3>
+                    <h3 class="panel-title">动态要闻</h3>
                 </div>
                 <div class="panel-body">
                     <ul>
@@ -341,20 +334,53 @@
                     </div>
                 </div>
             </div>
-
             <!-- Controls -->
-            <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
+<!--            <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">-->
+<!--                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>-->
+<!--                <span class="sr-only">Previous</span>-->
+<!--            </a>-->
+<!--            <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">-->
+<!--                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>-->
+<!--                <span class="sr-only">Next</span>-->
+<!--            </a>-->
         </div>
 <!--   第一行结束-->
-    </div>
+<!--        第二行开始-->
+        <div class="row">
+            <!--        项目一-->
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">最新咨询</h3>
+                    </div>
+                    <div class="panel-body">
+                        <ul>
+                            <li>
+                                <h5>标题一</h5>
+                                <span>这是第一条测试动态信息</span>
+                                <span>2015-12-12</span>
+                            </li>
+                            <li>
+                                <h5>标题二</h5>
+                                <p1>这是第二条测试动态信息</p1>
+                                <span>2015-12-12</span>
+                            </li>
+                            <li>
+                                <h5>标题三</h5>
+                                <p1>这是第三条测试动态信息</p1>
+                                <span>2015-12-12</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--第二行结束-->
+            <div class="row">
+                <div class="footer">
 
+                </div>
+            </div>
+    </div>
 <!--close body-->
 </div>
 
