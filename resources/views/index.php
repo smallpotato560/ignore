@@ -315,7 +315,7 @@
             </div>
         </div>
     <!--轮播-->
-        <div id="carousel-example-generic" class="carousel slide col-lg-4" data-ride="carousel">
+        <div id="carousel-example-generic" class="carousel slide col-lg-8 col-md-12 col-sm-12" data-ride="carousel">
             <!-- Indicators -->
             <ol class="carousel-indicators">
                 <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
