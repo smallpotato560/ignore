@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VagrantProjectSettings">
+    <option name="instanceFolder" value="$USER_HOME$/VirtualBox VMs/VirtualBoxVMs_default_1440345971728_35445" />
+    <option name="provider" value="virtualbox" />
+  </component>
+</project>
