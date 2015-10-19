@@ -15,20 +15,14 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Starter Template for Bootstrap</title>
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-    <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <title>后台管理系统</title>
     <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
     <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <!-- Bootstrap core CSS -->
     <link href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
-    <link href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.css" rel="stylesheet">
     <link href="bootstrap-combined.min.css" rel="stylesheet">
 </head>
-<body>
+<body onload="toHome()">
 <div class="container-fluid">
     <div class="row-fluid">
         <div class="span12">
@@ -42,13 +36,13 @@
                     内容发布
                 </li>
                 <li class="active">
-                    <a href="#" id="index" onclick="javascript:toIndex();">首页</a>
+                    <a href="#" id="index" onclick="javascript:toHome();">首页</a>
                 </li>
                 <li>
-                    <a href="#" id="lib" onclick="javascript:toLib();">发布</a>
+                    <a href="#" id="lib" onclick="javascript:toPublish();">发布</a>
                 </li>
                 <li>
-                    <a href="#" id="app" onclick="javascript:toApp();">修改</a>
+                    <a href="#" id="app" onclick="javascript:toEdit();">修改</a>
                 </li>
                 <li class="nav-header">
                     功能列表
@@ -64,12 +58,12 @@
             </ul>
         </div>
         <div class="span9 column ui-sortable" id="show" style="overflow: auto">
-
+            @yield('content')
         </div>
     </div>
 </div>
 <script>
-    function toIndex() {
+    function toHome() {
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -79,30 +73,14 @@
             {
                 type: 'POST',
                 dataType:'json',
-                url: '/manager/ajax/index',
+                url: '/manager/ajax/home',
                 success: function (data) {
                     var show = document.getElementById('show');
                     show.innerHTML = data;
                 }
             });
     }
-    function test() {
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
-        $.ajax(
-            {
-                type: 'POST',
-                dataType:'json',
-                url: '/manager/ajax/info',
-                success: function (data) {
-                    var show = document.getElementById('show');
-                    show.innerHTML = data;
-                }
-            });
-    }
+
 </script>
 </body>
 </html>

@@ -10,15 +10,24 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-
+//home page
 Route::get('/', function () {
     return view('index');
 });
-Route::match(['post','get'],'/manager/ajax/info','UserApi@managerInfo');
-Route::match(['post','get'],'/manager/ajax/index','UserApi@managerIndex');
+
+
+//http://vhost/admin/
+//if(@$username=='root')
 Route::group(['prefix'=>'admin','namespace'=>'Admin'],function()
 {
     Route::get('/','AdminHomeController@index');
-    Route::get('/manager','AdminHomeController@manager');
-    Route::get('/list','AdminHomeController@listpage');
+});
+
+//Ajax admin
+Route::group(['prefix'=>'ajax/admin','namespace=>Admin'],function()
+{
+    Route::post('/manager','AdminAjaxController@home');
+    Route::post('/setting','AdminAjaxController@setting');
+    Route::post('/publish','AdminAjaxController@publish');
+    Route::post('/help','AdminAjaxController@help');
 });
