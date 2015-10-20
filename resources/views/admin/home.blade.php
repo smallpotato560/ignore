@@ -22,7 +22,7 @@
     <link href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
     <link href="bootstrap-combined.min.css" rel="stylesheet">
 </head>
-<body onload="toHome()">
+<body onload=''>
 <div class="container-fluid">
     <div class="row-fluid">
         <div class="span12">

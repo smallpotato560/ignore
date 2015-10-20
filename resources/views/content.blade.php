@@ -322,4 +322,3 @@
     </div>
 
     <div class="clearfix"></div>
-@yield('footer')
