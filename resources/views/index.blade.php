@@ -28,9 +28,6 @@
 </head>
 <body>
 <div class="row">
-    {!! Form::open() !!}}
-    {!! Form::label('haha') !!}
-    {!! Form::text('boom') !!}
-    {!! Form::close() !!}}
+ <h1>fuck!</h1>
 </div>
 </body>
