@@ -1,11 +1,6 @@
-@section('header')
-    @extends('header')
-@endsection()
-
-@section('content')
-    @extends('content')
-@endsection()
-
-@section('footer')
-    @extends('footer')
-@endsection()
+<div class="row">
+    {!! Form::open() !!}}
+    {!! Form::label('haha') !!}}
+    {!! Form::text() !!}}
+    {!! Form::close() !!}}
+</div>
