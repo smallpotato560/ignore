@@ -1,3 +1,4 @@
+@section('content')
 <div class="container" style="border: solid black">
     <div class="row">
         <h2><strong>上海自由贸易区</strong></h2>
@@ -74,7 +75,7 @@
                                 <a>我不知道</a>
                             </td>
                             <td>
-                                <a>输入法好卡</a>
+                                <a>入法好卡</a>
                             </td>
                         </tr>
 
@@ -96,7 +97,7 @@
 
                         <tr>
                             <td>
-                                <a><strong></strong></a>
+                                <a><strong>嗯哼嗯哼</strong></a>
                             </td>
                             <td>
                                 <a>test</a>
@@ -214,7 +215,7 @@
             </tr>
         </table>
     </div>
-    <div class="clearfix" style="padding-bottom: 10px"></div>
+    {{--<div class="clearfix" style="padding-bottom: 10px"></div>--}}
     <!--    第一行-->
     <div class="row">
         <!--        项目一-->
@@ -281,44 +282,38 @@
             <!--                <span class="sr-only">Next</span>-->
             <!--            </a>-->
         </div>
+    </div>
         <!--   第一行结束-->
         <!--        第二行开始-->
-        <div class="row">
+    <div class="row">
             <!--        项目一-->
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <div class="panel panel-info">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">最新咨询</h3>
-                    </div>
-                    <div class="panel-body">
-                        <ul>
-                            <li>
-                                <h5>标题一</h5>
-                                <span>这是第一条测试动态信息</span>
-                                <span>2015-12-12</span>
-                            </li>
-                            <li>
-                                <h5>标题二</h5>
-                                <p1>这是第二条测试动态信息</p1>
-                                <span>2015-12-12</span>
-                            </li>
-                            <li>
-                                <h5>标题三</h5>
-                                <p1>这是第三条测试动态信息</p1>
-                                <span>2015-12-12</span>
-                            </li>
-                        </ul>
-                    </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title">最新咨询</h3>
                 </div>
-            </div>
-            <!--第二行结束-->
-            <div class="row">
-                <div class="footer">
-
+                <div class="panel-body">
+                    <ul>
+                        <li>
+                            <h5>标题一</h5>
+                            <span>这是第一条测试动态信息</span>
+                            <span>2015-12-12</span>
+                        </li>
+                        <li>
+                            <h5>标题二</h5>
+                            <p1>这是第二条测试动态信息</p1>
+                            <span>2015-12-12</span>
+                        </li>
+                        <li>
+                            <h5>标题三</h5>
+                            <p1>这是第三条测试动态信息</p1>
+                            <span>2015-12-12</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
-        <!--close body-->
     </div>
-
-    <div class="clearfix"></div>
+    <!--第二行结束-->
+</div>
+@endsection
