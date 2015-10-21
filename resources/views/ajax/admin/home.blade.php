@@ -1,3 +1,4 @@
+@section('home')
 {!! Form::open() !!}
 {!! Form::label('用户名') !!}
 {!! Form::text('text') !!}
@@ -5,3 +6,4 @@
 {!! Form::password('password') !!}
 {!! Form::submit('Submit') !!}
 {!! Form::close() !!}
+@endsection

@@ -58,7 +58,7 @@
             </ul>
         </div>
         <div class="span9 column ui-sortable" id="show" style="overflow: auto">
-            @yield('content')
+            @yield('home')
         </div>
     </div>
 </div>
