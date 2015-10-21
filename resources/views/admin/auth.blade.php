@@ -21,18 +21,14 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="form-control">
-            <label class="form-control">Username</label>
-            <input class="form-control" >
-        </div>
-        {!! Form::open() !!}
-        {!! Form::label('用户名') !!}
-        {!! Form::text('text') !!}
-        {!! Form::label('密码')!!}
-        {!! Form::password('password') !!}
-        {!! Form::submit('Submit') !!}
-        {!! Form::close() !!}
-    </div>
+<div class="container">
+    {!! Form::open() !!}
+    {!! Form::label('用户名') !!}
+    {!! Form::text('text') !!}
+    {!! Form::label('密码')!!}
+    {!! Form::password('password') !!}
+    {!! Form::submit('Submit') !!}
+    {!! Form::close() !!}
+</div>
 </body>
 </html>
