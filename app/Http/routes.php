@@ -19,7 +19,7 @@ Route::get('/', function () {
 //if(@$username=='root')
 Route::group(['prefix'=>'admin','namespace'=>'Admin'],function()
 {
-    Route::get('/','AdminHomeController@index');
+    Route::get('/','AdminHomeController@auth');
     Route::get('/home','AdminHomeController@home');
     Route::get('/test','AdminHomeController@test');
 
