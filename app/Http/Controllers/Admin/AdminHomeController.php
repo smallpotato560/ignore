@@ -14,7 +14,7 @@ class AdminHomeController extends Controller
      */
     public function index()
     {
-         dd(view('admin/index'));
+         return view('admin/index');
     }
     /**
      * Show the form for creating a new resource.

@@ -21,11 +21,12 @@
     </style>
 </head>
 <body>
-<div class="row">
-    {!! Form::open() !!}
-    {!! Form::label('haha') !!}
-    {!! Form::text() !!}}
-    {!! Form::close() !!}
-</div>
+{!! Form::open() !!}
+{!! Form::label('用户名') !!}
+{!! Form::text('text') !!}
+{!! Form::label('密码')!!}
+{!! Form::password('password') !!}
+{!! Form::submit('Submit') !!}
+{!! Form::close() !!}
 </body>
 </html>
