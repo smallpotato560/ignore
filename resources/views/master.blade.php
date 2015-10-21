@@ -10,10 +10,18 @@
 
     <div class="content">
         @yield('content')
+        <div class="row">
+            {!! Form::open() !!}
+            {!! Form::label('haha') !!}
+            {!! Form::text('name')  !!}
+            {!! Form::close() !!}
+        </div>
     </div>
 
-    <div class="footer">
-        @yield('footer')
+    <div class="container">
+        <div class="footer">
+            @yield('footer')
+        </div>
     </div>
 </body>
 

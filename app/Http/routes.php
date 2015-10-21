@@ -24,9 +24,9 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'],function()
 });
 
 //Ajax admin
-Route::group(['prefix'=>'ajax/admin','namespace=>Admin'],function()
+Route::group(['prefix'=>'ajax/admin','namespace'=>'Admin'],function()
 {
-    Route::post('/manager','AdminAjaxController@home');
+    Route::get('/manager','AdminAjaxController@home');
     Route::post('/setting','AdminAjaxController@setting');
     Route::post('/publish','AdminAjaxController@publish');
     Route::post('/help','AdminAjaxController@help');

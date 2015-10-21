@@ -22,10 +22,10 @@
 </head>
 <body>
 <div class="row">
-    {!! Form::open() !!}}
-    {!! Form::label('haha') !!}}
+    {!! Form::open() !!}
+    {!! Form::label('haha') !!}
     {!! Form::text() !!}}
-    {!! Form::close() !!}}
+    {!! Form::close() !!}
 </div>
 </body>
 </html>
