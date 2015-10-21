@@ -15,18 +15,18 @@ Route::get('/', function () {
     return view('index');
 });
 
-
 //http://vhost/admin/
 //if(@$username=='root')
 Route::group(['prefix'=>'admin','namespace'=>'Admin'],function()
 {
     Route::get('/','AdminHomeController@index');
+    Route::get('/home','AdminHomeController@home');
 });
 
 //Ajax admin
 Route::group(['prefix'=>'ajax/admin','namespace'=>'Admin'],function()
 {
-    Route::get('/manager','AdminAjaxController@home');
+    Route::get('/home','AdminAjaxController@home');
     Route::post('/setting','AdminAjaxController@setting');
     Route::post('/publish','AdminAjaxController@publish');
     Route::post('/help','AdminAjaxController@help');

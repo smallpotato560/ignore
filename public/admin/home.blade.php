@@ -29,7 +29,7 @@
             <h3>后台管理系统</h3>
         </div>
     </div>
-    <div class="row-fluid" onload="toHome()">
+    <div class="row-fluid">
         <div class="span3 column ui-sortable">
             <ul class="nav nav-list">
                 <li class="nav-header">
@@ -73,7 +73,7 @@
             {
                 type: 'POST',
                 dataType:'json',
-                url: '/ajax/admin/home',
+                url: '/manager/ajax/home',
                 success: function (data) {
                     var show = document.getElementById('show');
                     show.innerHTML = data;
