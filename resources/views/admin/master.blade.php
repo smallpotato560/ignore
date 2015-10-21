@@ -1,11 +1,4 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: 60194
- * Date: 2015/9/2
- * Time: 10:47
- */
-?>
+{{--管理页面首页模版--}}
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8">
@@ -22,14 +15,15 @@
     <link href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
     <link href="bootstrap-combined.min.css" rel="stylesheet">
 </head>
-<body onload=''>
+</html>
+<body>
 <div class="container-fluid">
     <div class="row-fluid">
         <div class="span12">
             <h3>后台管理系统</h3>
         </div>
     </div>
-    <div class="row-fluid" onload="toHome()">
+    <div class="row-fluid">
         <div class="span3 column ui-sortable">
             <ul class="nav nav-list">
                 <li class="nav-header">
@@ -62,25 +56,5 @@
         </div>
     </div>
 </div>
-<script>
-    function toHome() {
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
-        $.ajax(
-            {
-                type: 'POST',
-                dataType:'json',
-                url: '/ajax/admin/home',
-                success: function (data) {
-                    var show = document.getElementById('show');
-                    show.innerHTML = data;
-                }
-            });
-    }
 
-</script>
 </body>
-</html>

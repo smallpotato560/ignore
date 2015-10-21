@@ -14,7 +14,7 @@ class AdminHomeController extends Controller
      */
     public function index()
     {
-         return view('admin/index');
+         return view('admin/master');
     }
     /**
      * Show the form for creating a new resource.
@@ -82,10 +82,6 @@ class AdminHomeController extends Controller
         //
     }
 
-    public function home()
-    {
-        return view('admin/home');
-    }
 
     public function test()
     {
