@@ -11,14 +11,23 @@
     <title>后台管理系统</title>
     <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
     <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script src="admin/master.js"></script>
+    <script src="master.js"></script>
+    <script src="../datetimepicker/css/bootstrap-datetimepicker.min.css"></script>
+    <script src="../datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
     <!-- Bootstrap core CSS -->
     <link href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
     <link href="bootstrap-combined.min.css" rel="stylesheet">
+    <link href="master.css" rel="stylesheet" type="text/css">
 </head>
 </html>
 <body>
 <div class="container-fluid">
+    <div class="row-fluid">
+        <span class="colorful pull-left">天气</span>
+        <span class="colorful pull-left">时间</span>
+        <span class="colorful pull-right">用户</span>
+    </div>
+    <div class="clearfix"></div>
     <div class="row-fluid">
         <div class="span12">
             <h3>后台管理系统</h3>
@@ -53,7 +62,7 @@
             </ul>
         </div>
         <div class="span9 column ui-sortable" id="show" style="overflow: auto">
-            @yield('home')
+            @yield('content')
         </div>
     </div>
 </div>

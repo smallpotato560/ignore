@@ -10,12 +10,6 @@
 
     <div class="content">
         @yield('content')
-        <div class="row">
-            {!! Form::open() !!}
-            {!! Form::label('haha') !!}
-            {!! Form::text('name')  !!}
-            {!! Form::close() !!}
-        </div>
     </div>
 
     <div class="container">

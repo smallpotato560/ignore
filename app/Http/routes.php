@@ -14,15 +14,19 @@
 Route::get('/', function () {
     return view('index');
 });
+Route::get('login',function(){
+   // return view('admin/auth');
+    dd(view('admin/auth')->render());
+});
 
 //http://vhost/admin/
 //if(@$username=='root')
 Route::group(['prefix'=>'admin','namespace'=>'Admin'],function()
 {
-    Route::get('/','AdminHomeController@auth');
     Route::get('/home','AdminHomeController@home');
     Route::get('/test','AdminHomeController@test');
-
+    Route::get('/publish','AdminHomeController@publish');
+    Route::post('/home','AdminHomeController@store');
 });
 
 //Ajax admin

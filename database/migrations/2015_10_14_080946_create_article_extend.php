@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateArticleExtend extends Migration
+class CreateArticlesExtend extends Migration
 {
     /**
      * Run the migrations.
@@ -12,7 +12,7 @@ class CreateArticleExtend extends Migration
      */
     public function up()
     {
-        Schema::create('ArticleExtend', function (Blueprint $table) {
+        Schema::create('articles_extend', function (Blueprint $table) {
             $table->increments('id');
             $table->bigInteger('Article_id');
             $table->string('extend_key');
@@ -30,6 +30,6 @@ class CreateArticleExtend extends Migration
      */
     public function down()
     {
-        Schema::drop('ArticleExtend');
+        Schema::drop('articles_extend');
     }
 }

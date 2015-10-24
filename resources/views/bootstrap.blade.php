@@ -7,11 +7,11 @@
     <meta name="author" content="Tian Chen">
     <title>首页</title>
     <!-- Bootstrap core CSS -->
-    <link href="bootstarp/css/bootstrap.min.css" rel="stylesheet">
-    <link href="bootstarp/css/responsive-nav.css" rel="stylesheet">
-    <script src="bootstarp/js/jquery2.1.min.js"></script>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap/css/responsive-nav.css" rel="stylesheet">
+    <script src="bootstrap/js/jquery2.1.min.js"></script>
     <!--Unslider core JavaScript-->
     <script src="bootstarp/js/unslider.js"></script>
-    <script src="bootstarp/js/bootstrap.min.js"></script>
-    <script src="bootstarp/js/responsive-nav.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="bootstrap/js/responsive-nav.js"></script>
 @endsection

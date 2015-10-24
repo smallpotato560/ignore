@@ -14,7 +14,7 @@ class AdminAjaxController extends AdminHomeController
     public function home()
     {
         $token = csrf_token();
-        return view('ajax/admin/home');
+        return view('ajax/admin/home')->renderSections();
     }
     public function setting()
     {
@@ -23,7 +23,7 @@ class AdminAjaxController extends AdminHomeController
     }
     public function publish()
     {
-        return (view('ajax/admin/publish'));
+        return (view('ajax/admin/publish')->renderSections());
     }
     public function help()
     {

@@ -39,6 +39,9 @@ class AdminHomeController extends Controller
     public function store(Request $request)
     {
         //
+        $request->get('username');
+        $all = $request->all();
+        print_r($all);
     }
 
     /**
@@ -95,6 +98,12 @@ class AdminHomeController extends Controller
     public function test()
     {
         return view('admin/edit');
+    }
+
+    public function publish(Request $request)
+    {
+        return view('admin/publish');
+
     }
 
 }

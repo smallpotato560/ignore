@@ -9,11 +9,11 @@
     <meta name="author" content="Tian Chen">
     <title>首页</title>
     <!-- Bootstrap core CSS -->
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="bootstrap/css/responsive-nav.css" rel="stylesheet">
-    <script src="bootstrap/js/jquery2.1.min.js"></script>
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="responsive-nav.css" rel="stylesheet">
+    <script src="jquery2.1.min.js"></script>
     <!--Unslider core JavaScript-->
-    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="bootstrap.min.js"></script>
     <style>
         .header{
             border: solid black;
@@ -22,12 +22,12 @@
 </head>
 <body>
 <div class="container">
-    {!! Form::open() !!}
-    {!! Form::label('用户名','用户名') !!}
-    {!! Form::text('text',null,['class'=>'form-control']) !!}
-    {!! Form::label('密码','密码')!!}
-    {!! Form::password('password',['class'=>'form-control']) !!}
-    {!! Form::submit('Submit',['class'=>'btn btn-primary form-control']) !!}
+    {!! Form::open(['url'=>'/admin/home']) !!}
+    {!! Form::label('title','标题',['class'=>'form-control']) !!}
+    {!! Form::text('username',null,['class'=>'form-control']) !!}
+    {!! Form::label('passwd','密码',['class'=>'form-control']) !!}
+    {!! Form::password('password',null,['class'=>'form-control']) !!}
+    {!! Form::submit('publish',['class'=>'btn btn-primary form-control']) !!}
     {!! Form::close() !!}
 </div>
 </body>
