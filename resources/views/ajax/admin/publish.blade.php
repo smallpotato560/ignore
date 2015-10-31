@@ -1,5 +1,5 @@
 @section('publish')
-    <form method="get" action="localhost:8000">
+    <form method="get" action="">
         <label><h3><strong>发布到</strong></h3></label>
         选择发布到
         <div class="ui-tabs-selected">
