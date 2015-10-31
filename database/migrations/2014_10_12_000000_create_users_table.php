@@ -13,16 +13,16 @@ class CreateUsersTable extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('name');
+            $table->increments('id')->comment('主键');
+            $table->string('name')->unique()->comment('用户名');
             $table->string('email')->unique();
             $table->string('password', 60);
-            $table->string('role')->default('guest');
-            $table->rememberToken();
-            $table->timestamp('login_at');
-            $table->timestamp('logout_at');
-            $table->timestamp('sign_up_at');
-            $table->timestamps();
+            $table->string('role')->default('normal user')->comment('角色');
+            $table->rememberToken()->comment('是否记住用户');
+            $table->timestamp('login_at')->comment('何时登陆');
+            $table->timestamp('logout_at')->comment('何时注销');
+            $table->timestamp('sign_up_at')->comment('何时注册');
+            $table->softDeletes();
         });
     }
 

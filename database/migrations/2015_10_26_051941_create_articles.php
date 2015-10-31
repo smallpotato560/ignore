@@ -14,12 +14,13 @@ class CreateArticles extends Migration
     {
         Schema::create('articles', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('parent');
             $table->string('title');
-            $table->bigInteger('parent');
             $table->string('intro');
             $table->text('content');
-            $table->string('url');
+            $table->integer('Users_id');
             $table->timestamp('published_at');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

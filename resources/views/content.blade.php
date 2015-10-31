@@ -2,9 +2,9 @@
 <div class="container" style="border: solid black">
     <div class="row" style="background-image: url(img/ljz.jpg);-webkit-background-size: 290px ;background-size: 290px ; background-repeat: no-repeat;">
         <h2><strong>上海自由贸易区</strong></h2>
-        <div class="glyphicon-search pull-right">
-            <span>搜索一下</span>
-            <input  type="search" value="搜索一下" placeholder="xxx">
+        <div class="pull-right">
+            <i class="glyphicon glyphicon-search"></i><span>搜索一下</span>
+            <input  type="search" value="" placeholder="xxx">
         </div>
     </div>
     <div class="row">
@@ -23,7 +23,7 @@
                                 <a>胡编乱凑</a>
                             </td>
                             <td>
-                                <a>毕设去死</a>
+                                <a>毕业设计</a>
                             </td>
                         </tr>
 
@@ -38,7 +38,7 @@
                                 <a>公交路线</a>
                             </td>
                             <td>
-                                <a>你大爷的</a>
+                                <a>园区介绍</a>
                             </td>
                         </tr>
 
@@ -68,7 +68,7 @@
                                 <a><strong>物流信息</strong></a>
                             </td>
                             <td>
-                                <a>妈的发克</a>
+                                <a>十块包邮</a>
                             </td>
                             <td>
                                 <a>我不知道</a>
@@ -83,7 +83,7 @@
                                 <a><strong>招商平台</strong></a>
                             </td>
                             <td>
-                                <a>办事点</a>
+                                <a>办事地点</a>
                             </td>
                             <td>
                                 <a>办事流程</a>

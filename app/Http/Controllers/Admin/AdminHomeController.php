@@ -106,4 +106,9 @@ class AdminHomeController extends Controller
 
     }
 
+    public function rich()
+    {
+        return view('admin.richtextdemo');
+    }
+
 }

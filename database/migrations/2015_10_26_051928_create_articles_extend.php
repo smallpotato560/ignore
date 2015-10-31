@@ -13,13 +13,12 @@ class CreateArticlesExtend extends Migration
     public function up()
     {
         Schema::create('articles_extend', function (Blueprint $table) {
-            $table->increments('id');
-            $table->bigInteger('Article_id');
-            $table->string('extend_key');
-            $table->text('extend_value');
-            $table->timestamp('published_at');
+            $table->increments('id')->comment('主键');
+            $table->integer('Articles_id')->comment('作者ID');
+            $table->string('extend_key')->comment('扩展字段名');
+            $table->text('extend_value')->comment('扩展字段值');
+            $table->softDeletes();
             $table->timestamps();
-            $table->tinyInteger('flag')->default(1);
         });
     }
 

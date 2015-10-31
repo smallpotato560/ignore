@@ -27,13 +27,14 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'],function()
     Route::get('/test','AdminHomeController@test');
     Route::get('/publish','AdminHomeController@publish');
     Route::post('/home','AdminHomeController@store');
+    Route::get('/rich','AdminHomeController@rich');
 });
 
 //Ajax admin
 Route::group(['prefix'=>'ajax/admin','namespace'=>'Admin'],function()
 {
-    Route::post('/home','AdminAjaxController@home');
+    Route::post('/home','AdminAjaxController@ajaxHome');
     Route::post('/setting','AdminAjaxController@setting');
-    Route::post('/publish','AdminAjaxController@publish');
+    Route::any('/publish','AdminAjaxController@ajaxPublish');
     Route::post('/help','AdminAjaxController@help');
 });

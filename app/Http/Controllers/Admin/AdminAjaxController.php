@@ -11,7 +11,7 @@ namespace App\Http\Controllers\Admin;
 
 class AdminAjaxController extends AdminHomeController
 {
-    public function home()
+    public function ajaxHome()
     {
         $token = csrf_token();
         return view('ajax/admin/home')->renderSections();
@@ -21,7 +21,7 @@ class AdminAjaxController extends AdminHomeController
         $token = csrf_token();
         return view('ajax/admin/setting');
     }
-    public function publish()
+    public function ajaxPublish()
     {
         return (view('ajax/admin/publish')->renderSections());
     }

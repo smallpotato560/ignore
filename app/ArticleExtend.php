@@ -20,7 +20,7 @@ class ArticleExtend extends Model
     public function getArticleExtends($Article_id)
     {
         //just test how Eloquent worked
-        $ex =  self::where('Article_id','=',$Article_id)->all();
+        $ex =  self::where('Articles_id','=',$Article_id)->all();
          foreach($ex as $val) {
              var_dump($val);
          }

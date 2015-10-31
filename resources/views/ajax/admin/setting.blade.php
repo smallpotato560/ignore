@@ -1,0 +1,3 @@
+@section('setting')
+
+@endsection

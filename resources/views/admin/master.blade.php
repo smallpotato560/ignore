@@ -9,17 +9,18 @@
     <meta name="author" content="">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>后台管理系统</title>
-    <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
-    <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script src="master.js"></script>
-    <script src="../datetimepicker/css/bootstrap-datetimepicker.min.css"></script>
-    <script src="../datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
     <!-- Bootstrap core CSS -->
-    <link href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
-    <link href="bootstrap-combined.min.css" rel="stylesheet">
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap/css/bootstrap-combined.min.css" rel="stylesheet">
     <link href="master.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../font-awesome-4.4.0/css/font-awesome.min.css">
+    {{--Bootstrap extends JS--}}
+    <script type="text/javascript" src="bootstrap/js/jquery2.1.min.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap-wysiwyg.js"></script>
+    <script type="text/javascript" src="bootstrap/js/jquery.hotkeys.js"></script>
+    <script src="master.js"></script>
 </head>
-</html>
 <body>
 <div class="container-fluid">
     <div class="row-fluid">
@@ -34,7 +35,7 @@
         </div>
     </div>
     <div class="row-fluid">
-        <div class="span3 column ui-sortable">
+        <div class="span2 column ui-sortable">
             <ul class="nav nav-list">
                 <li class="nav-header">
                     内容发布
@@ -61,10 +62,11 @@
                 </li>
             </ul>
         </div>
-        <div class="span9 column ui-sortable" id="show" style="overflow: auto">
-            @yield('content')
+        <div class="span10 column ui-sortable" id="show" style="overflow: auto">
+
         </div>
     </div>
 </div>
 
 </body>
+</html>

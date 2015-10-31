@@ -52,5 +52,4 @@ class ComposerAutoloaderInitb2c8fef7d9fb7d1be1655640262b4aa3
 function composerRequireb2c8fef7d9fb7d1be1655640262b4aa3($file)
 {
     require $file;
-    ;
 }

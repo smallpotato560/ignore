@@ -11,13 +11,7 @@ function toHome() {
             url: '/ajax/admin/home',
             success: function (data) {
                 var show = document.getElementById('show');
-                if(data) {
-                    console.log(data);
-                    show.innerHTML = data['content'];
-                } else {
-
-                    console.log('failed!');
-                }
+                show.innerHTML = data["homepage"];
             }
         });
 
@@ -36,15 +30,14 @@ function toPublish() {
             url: '/ajax/admin/publish',
             success: function (data) {
                 var show = document.getElementById('show');
-                if(data) {
-                    console.log(data);
-                    show.innerHTML = data['publish'];
-                } else {
-
-                    console.log('failed!');
-                }
+                show.innerHTML = data['publish'];
+                var mode = document.designMode;
+                document.designMode = "on";
+                $('#editor').wysiwyg();
             }
         });
 
+
 }
+
 
