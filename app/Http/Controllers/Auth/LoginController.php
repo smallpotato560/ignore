@@ -38,7 +38,7 @@ class LoginController extends Controller
     public function store(Requests\LoginRequest $request)
     {
         //
-        print_r($request->all());
+//        print_r($request->all());
         $user = new \App\User();
         $all = $request->all();
         $user->name=$all['username'];
