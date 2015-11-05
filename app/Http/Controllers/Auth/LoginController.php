@@ -46,7 +46,8 @@ class LoginController extends Controller
         }
         try {
             $user->create($all);
-        } catch(QueryExceptionException$e) {
+        } catch(QueryException $e) {
+            $message = $e->getMessage();
             response()->redirectToAction("SignUpController@create")->withInput($all);
         }
     }
