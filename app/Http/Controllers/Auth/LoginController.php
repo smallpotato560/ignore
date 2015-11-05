@@ -45,7 +45,8 @@ class LoginController extends AuthController
         }
             //login action
             //return view(homepage);
-        $resource = parent::create($all);
+        $auth = new AuthController();
+        $resource = $auth->create($all);
         return view("index",["id"=>$resource->getKey()]);
 //        \App\User::create($all);
     }
