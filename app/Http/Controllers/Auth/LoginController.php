@@ -38,9 +38,7 @@ class LoginController extends Controller
     {
         $all = $request->all();
         $all["password"]=Hash::make($all['password']);
-        print_r($all);
         $user = new \App\User();
-
         if($user->isExist($all['email'])){
             dd("exist!");
         }
