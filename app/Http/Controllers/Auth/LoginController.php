@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Auth;
+use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Requests;
@@ -45,7 +46,7 @@ class LoginController extends Controller
         }
         try {
             $user->create($all);
-        } catch(Exception$e) {
+        } catch(QueryExceptionException$e) {
             response()->redirectToAction("SignUpController@create")->withInput($all);
         }
     }
