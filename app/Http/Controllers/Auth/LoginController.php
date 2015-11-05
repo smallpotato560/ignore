@@ -41,11 +41,11 @@ class LoginController extends Controller
         $user = new \App\User();
         if($user->isExist($all['email'])){
             dd("exist!");
-            \Auth::check($all);
         }
             //login action
             //return view(homepage);
-        $resource = $user->create();
+        $resource = $user::create();
+        var_dump($resource);
         return view("index",["id"=>$resource->getKey()]);
 //        \App\User::create($all);
     }
