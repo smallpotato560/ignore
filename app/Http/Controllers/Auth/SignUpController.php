@@ -1,12 +1,12 @@
 <?php
 
 namespace App\Http\Controllers\Auth;
+
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class LoginController extends Controller
+class SignUpController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,7 @@ class LoginController extends Controller
      */
     public function index()
     {
-
+        //
     }
 
     /**
@@ -25,7 +25,8 @@ class LoginController extends Controller
      */
     public function create()
     {
-        return  view("auth.login");
+        //
+        print_r(@$_SESSION["all"]);
     }
 
     /**
@@ -34,19 +35,9 @@ class LoginController extends Controller
      * @param  Request  $request
      * @return Response
      */
-    public function store(Requests\LoginRequest $request)
+    public function store(Request $request)
     {
-        $all = $request->all();
-        $all["password"]=Hash::make($all['password']);
-        $user = new \App\User();
-        if($user->isExist($all['email'])){
-            response()->redirectToAction("SignUpController@create")->withInput($all);
-        }
-            //login action
-            //return view(homepage);
-        $user->create($all);
-//        $resource = \App\User::create($all);
-//        return view("index",["id"=>$resource->getKey()]);
+        //
     }
 
     /**
