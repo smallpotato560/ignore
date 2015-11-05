@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Hash;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class LoginController extends AuthController
+class LoginController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -45,8 +45,7 @@ class LoginController extends AuthController
         }
             //login action
             //return view(homepage);
-        $auth = new AuthController();
-        $resource = $auth->create($all);
+        $resource = $user->create();
         return view("index",["id"=>$resource->getKey()]);
 //        \App\User::create($all);
     }
