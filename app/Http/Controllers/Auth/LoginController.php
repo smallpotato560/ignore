@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Validate;
+namespace App\Http\Controllers\Auth;
 
 use Illuminate\Http\Request;
+
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class ValidateValidateController extends Controller
+class LoginController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -34,17 +35,10 @@ class ValidateValidateController extends Controller
      * @param  Request  $request
      * @return Response
      */
-    public function store(Request $request)
+    public function store(Requests\LoginRequest $request)
     {
         //
-        $this->validate($request,
-            [
-                "name"=>"require|min:5|unique|max:20",
-                "passwd"=>"require|min:8|max:32",
-                "email"=>"require|email|unique:users",
-            ]
-        );
-        //MODAL
+        print_r($request->all());
     }
 
     /**

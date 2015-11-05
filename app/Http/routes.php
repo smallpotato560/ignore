@@ -16,12 +16,14 @@ Route::get('/', function () {
 });
 
 //Auth
+Route::post('signup','Auth\AuthController@create');
+Route::post('login','Auth\LoginController@store');
 Route::get('login',function(){
     return view('login');
 });
 
-Route::post('signup','Auth\AuthController@create');
-Route::post('login','Validate\ValidateController@store');
+
+
 
 //http://vhost/admin/
 //if(@$username=='root')

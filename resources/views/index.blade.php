@@ -1,4 +1,4 @@
-@extends('master')
+@extends('layout.master')
 @extends('bootstrap')
 @extends('nav')
 @extends('content')
