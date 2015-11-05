@@ -4,14 +4,21 @@
 </head>
 <body>
 {{--登陆表单--}}
+<div class="container">
     {!! Form::open(["url"=>"/login"]) !!}
-    {!! Form::label(null,"Email",["class"=>"form-control text-primary"]) !!}
+    <div class="form-group">
+    {!! Form::label(null,"Email",["class"=>"text-primary"]) !!}
     {!! Form::email("email",null,["class"=>"form-control"]) !!}
-    {!! Form::label(null,"Username",["class"=>"form-control text-primary"]) !!}
+    </div>
+    <div class="form-group">
+    {!! Form::label(null,"Username",["class"=>"text-primary"]) !!}
     {!! Form::text("username",null,["class"=>"form-control"]) !!}
-    {!! Form::label(null,"Password",["class"=>"form-control text-primary"]) !!}
-    {!! Form::password("password",null,["class"=>"form-control"]) !!}
-    {!! Form::submit("submit",["class"=>"btn btn-default btn-block form-control"]) !!}
+    </div>
+    <div class="form-group">
+    {!! Form::label(null,"Password",["class"=>"text-primary"]) !!}
+    {!! Form::password("password",["class"=>"form-control"]) !!}
+    </div>
+    {!! Form::submit("submit",["class"=>"btn btn-primary btn-block"]) !!}
     {!! Form::close() !!}
     @if($errors->any())
         <ul class="alert alert-danger">
@@ -22,5 +29,6 @@
             @endforeach
         </ul>
     @endif
+</div>
 </body>
 </html>
