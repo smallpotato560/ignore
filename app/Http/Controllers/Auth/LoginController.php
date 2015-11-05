@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Mockery\Exception;
 
 class LoginController extends Controller
 {
@@ -42,11 +43,11 @@ class LoginController extends Controller
         if($user->isExist($all['email'])){
             response()->redirectToAction("SignUpController@create")->withInput($all);
         }
-            //login action
-            //return view(homepage);
-        $user->create($all);
-//        $resource = \App\User::create($all);
-//        return view("index",["id"=>$resource->getKey()]);
+        try {
+            $user->create($all);
+        } catch(Exception$e) {
+            response()->redirectToAction("SignUpController@create")->withInput($all);
+        }
     }
 
     /**
