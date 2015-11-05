@@ -7,4 +7,4 @@
 .test{
     background: #e0e0e0;
 }
-#editor {overflow:scroll; height:340px;max-height:400px}
+#editor {overflow:scroll; min-height:300px;max-height:400px}

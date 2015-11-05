@@ -7,214 +7,37 @@
             <input  type="search" value="" placeholder="xxx">
         </div>
     </div>
+    {{--门户点--}}
     <div class="row">
-        <table class="table">
-            <tr class="row">
-                <td class="col-md-3">
-                    <table class="table-bordered">
-                        <tr>
-                            <td>
-                                <a><strong>政务公开</strong></a>
-                            </td>
-                            <td>
-                                <a href="<?php echo @$_SERVER['SEVER_ADDR']."admin/list/"?>">优惠政策</a>
-                            </td>
-                            <td>
-                                <a>胡编乱凑</a>
-                            </td>
-                            <td>
-                                <a>毕业设计</a>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>
-                                <a><strong>公众服务</strong></a>
-                            </td>
-                            <td>
-                                <a>自贸地图</a>
-                            </td>
-                            <td>
-                                <a>公交路线</a>
-                            </td>
-                            <td>
-                                <a>园区介绍</a>
-                            </td>
-                        </tr>
-
-
-                        <tr>
-                            <td>
-                                <a><strong>互动交流</strong></a>
-                            </td>
-                            <td>
-                                <a>社区灌水</a>
-                            </td>
-                            <td>
-                                <a>政策吐槽</a>
-                            </td>
-                            <td>
-                                <a>主管邮箱</a>
-                            </td>
-                            <td>|</td>
-                        </tr>
-
-                    </table>
-                </td>
-                <td class="col-md-3">
-                    <table class="table-bordered">
-                        <tr>
-                            <td>
-                                <a><strong>物流信息</strong></a>
-                            </td>
-                            <td>
-                                <a>十块包邮</a>
-                            </td>
-                            <td>
-                                <a>我不知道</a>
-                            </td>
-                            <td>
-                                <a>入法好卡</a>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>
-                                <a><strong>招商平台</strong></a>
-                            </td>
-                            <td>
-                                <a>办事地点</a>
-                            </td>
-                            <td>
-                                <a>办事流程</a>
-                            </td>
-                            <td>
-                                <a>办事平台</a>
-                            </td>
-                        </tr>
-
-
-                        <tr>
-                            <td>
-                                <a><strong>嗯哼嗯哼</strong></a>
-                            </td>
-                            <td>
-                                <a>test</a>
-                            </td>
-                            <td>
-                                <a>test</a>
-                            </td>
-                            <td>
-                                <a>test</a>
-                            </td>
-                        </tr>
-
-                    </table>
-                </td>
-                <td class="col-md-3">
-                    <table class="table-bordered">
-                        <tr>
-                            <td>
-                                <a><strong>有待开发</strong></a>
-                            </td>
-                            <td>
-                                <a>前方有雷</a>
-                            </td>
-                            <td>
-                                <a>前方有雷</a>
-                            </td>
-                            <td>
-                                <a>前方有雷</a>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>
-                                <a><strong>有待开发</strong></a>
-                            </td>
-                            <td>
-                                <a>前方有雷</a>
-                            </td>
-                            <td>
-                                <a>前方有雷</a>
-                            </td>
-                            <td>
-                                <a>前方有雷</a>
-                            </td>
-                        </tr>
-
-
-                        <tr>
-                            <td>
-                                <a><strong>前方有雷</strong></a>
-                            </td>
-                            <td>
-                                <a>前方有雷</a>
-                            </td>
-                            <td>
-                                <a>前方有雷</a>
-                            </td>
-                            <td>
-                                <a>前方有雷</a>
-                            </td>
-                        </tr>
-
-                    </table>
-                </td>
-                <td class="col-md-3">
-                    <table class="table-bordered">
-                        <tr>
-                            <td>
-                                <a><strong>前方有雷</strong></a>
-                            </td>
-                            <td>
-                                <a>前方有雷</a>
-                            </td>
-                            <td>
-                                <a>前方有雷</a>
-                            </td>
-                            <td>
-                                <a>前方有雷</a>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>
-                                <a><strong>前方有雷</strong></a>
-                            </td>
-                            <td>
-                                <a>前方有雷</a>
-                            </td>
-                            <td>
-                                <a>前方有雷</a>
-                            </td>
-                            <td>
-                                <a>前方有雷</a>
-                            </td>
-                        </tr>
-
-
-                        <tr>
-                            <td>
-                                <a><strong>前方有雷</strong></a>
-                            </td>
-                            <td>
-                                <a>前方有雷</a>
-                            </td>
-                            <td>
-                                <a>前方有雷</a>
-                            </td>
-                            <td>
-                                <a>前方有雷</a>
-                            </td>
-                        </tr>
-
-                    </table>
-                </td>
-            </tr>
-        </table>
+        <div class="col-md-3" style="position: relative;display: inline-block;">
+            <ul >
+                <li><a>1</a></li>
+                <li><a>1</a></li>
+                <li><a>1</a></li>
+            </ul>
+        </div>
+        <div class="col-md-3" style="position: relative;display: inline-block;">
+            <ul>
+                <li><a>1</a></li>
+                <li><a>1</a></li>
+                <li><a>1</a></li>
+            </ul>
+        </div>
+        <div class="col-md-3" style="position: relative;display: inline-block;">
+            <ul>
+                <li><a>1</a></li>
+                <li><a>1</a></li>
+                <li><a>1</a></li>
+            </ul>
+        </div>
+        <div class="col-md-3" style="position: relative;display: inline-block;">
+            <ul>
+                <li><a>1</a></li>
+                <li><a>1</a></li>
+                <li><a>1</a></li>
+            </ul>
+        </div>
     </div>
-    {{--<div class="clearfix" style="padding-bottom: 10px"></div>--}}
     <!--    第一行-->
     <div class="row">
         <!--        项目一-->
@@ -271,15 +94,6 @@
                     </div>
                 </div>
             </div>
-            <!-- Controls -->
-            <!--            <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">-->
-            <!--                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>-->
-            <!--                <span class="sr-only">Previous</span>-->
-            <!--            </a>-->
-            <!--            <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">-->
-            <!--                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>-->
-            <!--                <span class="sr-only">Next</span>-->
-            <!--            </a>-->
         </div>
     </div>
         <!--   第一行结束-->

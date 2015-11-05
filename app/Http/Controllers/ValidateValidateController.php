@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Validate;
+
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class AdminHomeController extends Controller
+class ValidateValidateController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,12 +15,9 @@ class AdminHomeController extends Controller
      */
     public function index()
     {
+        //
+    }
 
-    }
-    public function auth()
-    {
-        return view('admin/auth');
-    }
     /**
      * Show the form for creating a new resource.
      *
@@ -39,8 +37,14 @@ class AdminHomeController extends Controller
     public function store(Request $request)
     {
         //
-        $all = $request->all();
-        return view('admin/richtextdemo',['res'=>$all]);
+        $this->validate($request,
+            [
+                "name"=>"require|min:5|unique|max:20",
+                "passwd"=>"require|min:8|max:32",
+                "email"=>"require|email|unique:users",
+                ""
+            ]
+        );
     }
 
     /**
@@ -87,31 +91,4 @@ class AdminHomeController extends Controller
     {
         //
     }
-
-    public function home()
-    {
-        return view('admin/master');
-
-    }
-
-    public function test()
-    {
-        return view('admin/edit');
-    }
-
-    public function publish(Request $request)
-    {
-        return view('admin/publish');
-
-    }
-
-    public function rich()
-    {
-        return view('admin.richtextdemo');
-    }
-    public function ls()
-    {
-        return view("admin.lsarticles");
-    }
-
 }

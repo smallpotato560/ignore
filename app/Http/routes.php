@@ -14,21 +14,26 @@
 Route::get('/', function () {
     return view('index');
 });
+
+//Auth
 Route::get('login',function(){
-   // return view('admin/auth');
-    dd(view('admin/auth')->render());
+    return view('login');
 });
+
+Route::post('signup','Auth\AuthController@create');
+Route::post('login','Auth\AuthController@validator');
 
 //http://vhost/admin/
 //if(@$username=='root')
 Route::group(['prefix'=>'admin','namespace'=>'Admin'],function()
 {
     Route::get('/home','AdminHomeController@home');
+    Route::get('/articles','AdminHomeController@ls');
     Route::get('/test','AdminHomeController@test');
     Route::get('/publish','AdminHomeController@publish');
     Route::post('/home','AdminHomeController@store');
     Route::get('/rich','AdminHomeController@rich');
-    Route::post('/sss','AdminHomeController@store');
+    Route::any('/sss','AdminHomeController@store');
 });
 
 //Ajax admin
@@ -36,6 +41,10 @@ Route::group(['prefix'=>'ajax/admin','namespace'=>'Admin'],function()
 {
     Route::post('/home','AdminAjaxController@ajaxHome');
     Route::post('/setting','AdminAjaxController@setting');
-    Route::any('/publish','AdminAjaxController@ajaxPublish');
+    Route::patch('/publish','AdminAjaxController@ajaxPublish');
     Route::post('/help','AdminAjaxController@help');
+    Route::any('/postnew','AdminAjaxController@postnew');
 });
+
+
+

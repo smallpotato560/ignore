@@ -17,7 +17,7 @@ class CreateArticlesExtend extends Migration
             $table->integer('Articles_id')->comment('作者ID');
             $table->string('extend_key')->comment('扩展字段名');
             $table->text('extend_value')->comment('扩展字段值');
-            $table->softDeletes();
+            $table->softDeletes()->comment('软删除');
             $table->timestamps();
         });
     }
