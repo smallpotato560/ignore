@@ -37,6 +37,7 @@ class LoginController extends Controller
     public function store(Requests\LoginRequest $request)
     {
         $all = $request->all();
+        print_r($all);
         $all["password"]=Hash::make($all['password']);
         $user = new \App\User();
         if($user->isExist($all['email'])){
@@ -45,7 +46,6 @@ class LoginController extends Controller
             //login action
             //return view(homepage);
         $resource = \App\Users::create($all);
-        var_dump($resource);
 //        return view("index",["id"=>$resource->getKey()]);
 //        \App\User::create($all);
     }
