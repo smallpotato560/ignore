@@ -42,9 +42,9 @@ class ValidateValidateController extends Controller
                 "name"=>"require|min:5|unique|max:20",
                 "passwd"=>"require|min:8|max:32",
                 "email"=>"require|email|unique:users",
-                ""
             ]
         );
+        //MODAL
     }
 
     /**

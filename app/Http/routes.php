@@ -21,7 +21,7 @@ Route::get('login',function(){
 });
 
 Route::post('signup','Auth\AuthController@create');
-Route::post('login','Auth\AuthController@validator');
+Route::post('login','Validate\ValidateController@store');
 
 //http://vhost/admin/
 //if(@$username=='root')
