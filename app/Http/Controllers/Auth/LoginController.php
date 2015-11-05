@@ -39,9 +39,9 @@ class LoginController extends Controller
     {
         //
 //        print_r($request->all());
-        $user = new \App\User();
         $all = $request->all();
-        $user->create($all);
+        var_dump($all);
+        \App\User::create($all);
     }
 
     /**
