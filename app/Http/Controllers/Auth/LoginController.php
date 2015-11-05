@@ -44,9 +44,9 @@ class LoginController extends Controller
         }
             //login action
             //return view(homepage);
-        $resource = $user::create();
+        $resource = $user::create($all);
         var_dump($resource);
-        return view("index",["id"=>$resource->getKey()]);
+//        return view("index",["id"=>$resource->getKey()]);
 //        \App\User::create($all);
     }
 
