@@ -33,4 +33,9 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      */
     protected $hidden = ['password', 'remember_token'];
 
+    public function isExist($email)
+    {
+        $result = self::where("email",$email);
+        return $result;
+    }
 }

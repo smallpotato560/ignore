@@ -16,7 +16,7 @@ class LoginController extends Controller
      */
     public function index()
     {
-        //
+
     }
 
     /**
@@ -26,7 +26,7 @@ class LoginController extends Controller
      */
     public function create()
     {
-        //
+        return  view("auth.login");
     }
 
     /**
@@ -37,11 +37,17 @@ class LoginController extends Controller
      */
     public function store(Requests\LoginRequest $request)
     {
-        //
-//        print_r($request->all());
         $all = $request->all();
-        var_dump($all);
-        \App\User::create($all);
+        $user = new \App\User();
+        if($user->isExist($all['email'])){
+            dd("exist!");
+            \Auth::check($all);
+        }
+            //login action
+            //return view(homepage);
+        $resource = $user::create($all);
+        return view("index",["id"=>$resource->getKey()]);
+//        \App\User::create($all);
     }
 
     /**

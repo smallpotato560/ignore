@@ -31,4 +31,5 @@
             </ul>
         </div>
     </nav>
+    {{ $id or 'null' }}
 @endsection

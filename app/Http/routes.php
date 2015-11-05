@@ -18,9 +18,7 @@ Route::get('/', function () {
 //Auth
 Route::post('signup','Auth\AuthController@create');
 Route::post('login','Auth\LoginController@store');
-Route::get('login',function(){
-    return view('login');
-});
+Route::get('login','Auth\LoginController@create');
 
 
 
