@@ -39,6 +39,11 @@ class LoginController extends Controller
     {
         //
         print_r($request->all());
+        $user = new \App\User();
+        $all = $request->all();
+        $user->name=$all['username'];
+        $user->password=password_hash($all['password'],PASSWORD_BCRYPT);
+        $user->role="normal user";
     }
 
     /**

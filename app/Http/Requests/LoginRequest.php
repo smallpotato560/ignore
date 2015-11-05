@@ -24,9 +24,9 @@ class LoginRequest extends Request
     {
         return [
             //
-            "username"=>"required|min:5|unique|max:20",
+            "username"=>"required|min:5|max:20",
             "password"=>"required|min:8|max:32",
-            "email"=>"required|email|unique:users",
+            "email"=>"required|email",
         ];
     }
 }
