@@ -40,12 +40,13 @@ class LoginController extends Controller
         $all["password"]=Hash::make($all['password']);
         print_r($all);
         $user = new \App\User();
+        $user->create($all);
 //        if($user->isExist($all['email'])){
 //            dd("exist!");
 //        }
             //login action
             //return view(homepage);
-        $resource = \App\Users::create($all);
+        $resource = \App\User::create($all);
 //        return view("index",["id"=>$resource->getKey()]);
 //        \App\User::create($all);
     }
