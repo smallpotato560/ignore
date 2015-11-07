@@ -54,8 +54,14 @@ class LoginController extends Controller
             $user->create($all);
         } catch(QueryException $e) {
             $message = $e->getMessage();
-            print_r($message);
-            response()->redirectToAction(action("RootController@signIn",["all"=>$all]));
+            $code= $e->getCode();
+            dd(["message"=>$message,"code"=>$code]);
+        } finally{
+            $status=[
+                $message = "success",
+                $code = "200"
+            ];
+            response()->redirectToAction(action("RootController@signIn",["all"=>$all,"status"=>$status]));
         }
     }
 
