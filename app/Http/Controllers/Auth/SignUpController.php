@@ -25,8 +25,8 @@ class SignUpController extends Controller
      */
     public function create()
     {
-        //
-        print_r(@$_SESSION["all"]);
+        //sign up
+        return view();
     }
 
     /**

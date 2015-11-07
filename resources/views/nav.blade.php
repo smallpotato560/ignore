@@ -31,5 +31,6 @@
             </ul>
         </div>
     </nav>
-    {{ $id or 'null' }}
+    {{--登陆重定向的测试--}}
+    {{ $all or 'null' }}
 @endsection

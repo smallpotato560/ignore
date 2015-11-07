@@ -41,14 +41,18 @@ class LoginController extends Controller
         $all = $request->all();
         $all["password"]=Hash::make($all['password']);
         $user = new \App\User();
+        //登陆逻辑
         if($user->isExist($all['email'])){
-            response()->redirectToAction("SignUpController@create")->withInput($all);
+            //已经注册就重定向到首页登入
+            response()->redirectToAction("RootController@signIn")->withInput($all);
+            //如果登陆失败,重定向到登入页并抛出错误信息给用户,登陆失败的重定向逻辑应该在signIn中
         }
+        //注册逻辑
         try {
             $user->create($all);
         } catch(QueryException $e) {
             $message = $e->getMessage();
-            response()->redirectToAction("SignUpController@create")->withInput($all);
+            response()->redirectToAction("RootController@signIn")->withInput($all);
         }
     }
 
