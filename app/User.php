@@ -34,6 +34,6 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     public function isExist($email="")
     {
         $result = DB::table("users")->where("email",$email)->first();
-        var_dump($result);
+        return !empty($result);
     }
 }
