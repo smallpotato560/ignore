@@ -12,9 +12,8 @@ use Illuminate\Http\RedirectResponse;
 
 class RootController extends Controller
 {
-    public function signIn(RedirectResponse $redirectResponse)
+    public function signIn($all=array())
     {
-        $all=$redirectResponse->getRequest()->all();
         return view("index",["all"=>$all]);
     }
 }
