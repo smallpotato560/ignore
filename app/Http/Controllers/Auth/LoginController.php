@@ -52,7 +52,7 @@ class LoginController extends Controller
             $user->create($all);
         } catch(QueryException $e) {
             $message = $e->getMessage();
-            response()->redirectToAction("RootController@signIn")->withInput($all);
+            response()->redirectToAction(action("RootController@signIn"))->withInput($all);
         }
     }
 
