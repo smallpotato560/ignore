@@ -46,7 +46,7 @@ class LoginController extends Controller
         if($user->isExist($all['email'])){
             //已经注册就重定向到首页登入
             dd(action("RootController@signIn"));
-            response()->redirectToAction(action("RootController@signIn",["all"=>$all]));
+//            response()->redirectToAction(action("RootController@signIn",["all"=>$all]));
             //如果登陆失败,重定向到登入页并抛出错误信息给用户,登陆失败的重定向逻辑应该在signIn中
         }
         //注册逻辑
@@ -61,7 +61,8 @@ class LoginController extends Controller
                 $message = "success",
                 $code = "200"
             ];
-            response()->redirectToAction(action("RootController@signIn",["all"=>$all,"status"=>$status]));
+            dd(action("RootController@signIn"));
+//            response()->redirectToAction(action("RootController@signIn",["all"=>$all,"status"=>$status]));
         }
     }
 
