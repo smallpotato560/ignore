@@ -6,7 +6,7 @@
  * Time: 22:42
  */
 
-namespace App\Http\ROOT;
+namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\RedirectResponse;
 
