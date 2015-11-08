@@ -47,7 +47,7 @@ class LoginController extends Controller
 
         if($user->isExist($all['email'])){
             //已经注册就重定向到首页登入
-            $all=array_splice($all,0,1);
+            array_splice($all,0,1);
             $v = \Auth::validate($all);
             if(!$v)
                 dd("signin failed");
