@@ -11,17 +11,12 @@
 |
 */
 //home page
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/',"RootController@signIn");
 
 //Auth
 Route::post('signup','Auth\AuthController@create');
 Route::post('login','Auth\LoginController@store');
 Route::get('login','Auth\LoginController@create');
-
-
-
 
 //http://vhost/admin/
 //if(@$username=='root')
@@ -45,6 +40,5 @@ Route::group(['prefix'=>'ajax/admin','namespace'=>'Admin'],function()
     Route::post('/help','AdminAjaxController@help');
     Route::any('/postnew','AdminAjaxController@postnew');
 });
-
 
 

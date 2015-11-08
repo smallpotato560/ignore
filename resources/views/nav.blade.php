@@ -1,4 +1,6 @@
 @section('nav')
+    {{--登陆重定向的测试--}}
+    {{ var_dump(old()) or 'no signin' }}
     <nav class="navbar navbar-default" role="navigation">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse"
@@ -31,6 +33,5 @@
             </ul>
         </div>
     </nav>
-    {{--登陆重定向的测试--}}
-    {{ $all or 'null' }}
+
 @endsection

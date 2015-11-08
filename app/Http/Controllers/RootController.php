@@ -12,8 +12,13 @@ use Illuminate\Http\RedirectResponse;
 
 class RootController extends Controller
 {
-    public function signIn($all=array())
+    public function signIn()
     {
-        return view("index",["all"=>$all]);
+        $info = old();
+//        $v = \Auth::validate($info);
+//        var_dump($v);
+        //auth
+        //hold session
+        return view("index");
     }
 }

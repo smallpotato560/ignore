@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\RootController;
 use Illuminate\Database\QueryException;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Requests;
@@ -40,13 +41,15 @@ class LoginController extends Controller
     public function store(Requests\LoginRequest $request)
     {
         $all = $request->all();
-        $all["password"]=Hash::make($all['password']);
+        $all["password"]=\Crypt::encrypt($all["password"]);
         $user = new \App\User();
         //登陆逻辑
+
         if($user->isExist($all['email'])){
             //已经注册就重定向到首页登入
-            dd(action("RootController@signIn"));
-//            response()->redirectToAction(action("RootController@signIn",["all"=>$all]));
+            $v = \Auth::validate($all);
+            if(!$v)
+                dd("signin failed");
             //如果登陆失败,重定向到登入页并抛出错误信息给用户,登陆失败的重定向逻辑应该在signIn中
         }
         //注册逻辑
@@ -57,11 +60,8 @@ class LoginController extends Controller
             $code= $e->getCode();
             dd(["message"=>$message,"code"=>$code]);
         } finally{
-            $status=[
-                $message = "success",
-                $code = "200"
-            ];
-            dd(action("RootController@signIn"));
+            $responce = redirect()->action("RootController@signIn")->withInput($all);
+            return $responce;
 //            response()->redirectToAction(action("RootController@signIn",["all"=>$all,"status"=>$status]));
         }
     }
