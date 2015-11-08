@@ -12,7 +12,7 @@
     </div>
     <div class="form-group">
     {!! Form::label(null,"Username",["class"=>"text-primary"]) !!}
-    {!! Form::text("username",null,["class"=>"form-control"]) !!}
+    {!! Form::text("name",null,["class"=>"form-control"]) !!}
     </div>
     <div class="form-group">
     {!! Form::label(null,"Password",["class"=>"text-primary"]) !!}
@@ -23,7 +23,7 @@
     @if($errors->any())
         <ul class="alert alert-danger">
             @foreach($errors->all() as $error)
-                <li>
+                <li style="list-style: none">
                     <?php echo $error ?>
                 </li>
             @endforeach
