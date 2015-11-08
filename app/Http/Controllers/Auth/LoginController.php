@@ -46,7 +46,7 @@ class LoginController extends Controller
         //登陆逻辑
         if($user->isExist($all['email'])){
             $badvalue = $user->getPassword($all["email"]);
-            $password = \Crypt::decrypt($password);
+            $password = \Crypt::decrypt($badvalue);
             var_dump($password);
             if($badvalue && $password===$all["password"])
                return redirect()->action("RootController@signIn")->withInput($all);
