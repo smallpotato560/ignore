@@ -42,43 +42,23 @@ class LoginController extends Controller
     public function store(Requests\LoginRequest $request)
     {
         $all = $request->all();
-        $all["password"]=\Crypt::encrypt($all["password"]);
-        try {
-            $all["password"]= \Crypt::decrypt($all["password"]);
-        } catch (DecryptException $e) {
-            $e->getMessage();
-        }
-        var_dump($all["password"]);
-        die();
-        $all = $request->all();
-        $all["password"]=\Crypt::encrypt($all["password"]);
         $user = new \App\User();
         //登陆逻辑
-
         if($user->isExist($all['email'])){
-            //已经注册就重定向到首页登入
-            array_splice($all,0,1);
-            try {
-                $all["password"]= \Crypt::decrypt($all["password"]);
-            } catch (DecryptException $e) {
-                $e->getMessage();
-            }
-            $v = \Auth::validate($all);
-            if(!$v)
-                dd("signin failed");
+            $password = $user->getPassword($all["email"]);
+            if(\Crypt::decrypt($password)===$all["password"])
+               return redirect()->action("RootController@signIn")->withInput($all);
+            dd("signin failed");
             //如果登陆失败,重定向到登入页并抛出错误信息给用户,登陆失败的重定向逻辑应该在signIn中
         }
         //注册逻辑
         try {
+            $all["password"]=\Crypt::encrypt($all["password"]);
             $user->create($all);
         } catch(QueryException $e) {
             $message = $e->getMessage();
             $code= $e->getCode();
             dd(["message"=>$message,"code"=>$code]);
-        } finally{
-            $responce = redirect()->action("RootController@signIn")->withInput($all);
-            return $responce;
-//            response()->redirectToAction(action("RootController@signIn",["all"=>$all,"status"=>$status]));
         }
     }
 
