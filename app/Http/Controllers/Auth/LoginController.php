@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Hash;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Mockery\Exception;
+use Illuminate\Contracts\Encryption\DecryptException;
 
 class LoginController extends Controller
 {
@@ -48,6 +49,11 @@ class LoginController extends Controller
         if($user->isExist($all['email'])){
             //已经注册就重定向到首页登入
             array_splice($all,0,1);
+            try {
+                $all["password"]= Crypt::decrypt($all["password"]);
+            } catch (DecryptException $e) {
+                $e->getMessage();
+            }
             $v = \Auth::validate($all);
             if(!$v)
                 dd("signin failed");
