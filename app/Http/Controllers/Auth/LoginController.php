@@ -50,7 +50,7 @@ class LoginController extends Controller
             //已经注册就重定向到首页登入
             array_splice($all,0,1);
             try {
-                $all["password"]= Crypt::decrypt($all["password"]);
+                $all["password"]= \Crypt::decrypt($all["password"]);
             } catch (DecryptException $e) {
                 $e->getMessage();
             }
