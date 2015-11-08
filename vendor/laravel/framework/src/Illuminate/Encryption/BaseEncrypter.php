@@ -60,6 +60,7 @@ abstract class BaseEncrypter
      */
     protected function invalidPayload($data)
     {
+        dd($data);
         return ! is_array($data) || ! isset($data['iv']) || ! isset($data['value']) || ! isset($data['mac']);
     }
 
