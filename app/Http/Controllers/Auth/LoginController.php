@@ -43,6 +43,15 @@ class LoginController extends Controller
     {
         $all = $request->all();
         $all["password"]=\Crypt::encrypt($all["password"]);
+        try {
+            $all["password"]= \Crypt::decrypt($all["password"]);
+        } catch (DecryptException $e) {
+            $e->getMessage();
+        }
+        var_dump($all["password"]);
+        die();
+        $all = $request->all();
+        $all["password"]=\Crypt::encrypt($all["password"]);
         $user = new \App\User();
         //登陆逻辑
 
