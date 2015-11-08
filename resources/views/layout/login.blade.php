@@ -5,6 +5,8 @@
 <body>
 {{--登陆表单--}}
 <div class="container">
+    <div class="row">
+        <div class="col-lg-offset-4 col-lg-4 text-center">
     {!! Form::open(["url"=>"/login"]) !!}
     <div class="form-group">
     {!! Form::label(null,"Email",["class"=>"text-primary"]) !!}
@@ -29,6 +31,8 @@
             @endforeach
         </ul>
     @endif
+    </div>
+    </div>
 </div>
 </body>
 </html>

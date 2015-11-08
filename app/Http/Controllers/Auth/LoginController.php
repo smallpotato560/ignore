@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\RootController;
+use Illuminate\Auth\Guard;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -13,6 +14,7 @@ use Illuminate\Contracts\Encryption\DecryptException;
 
 class LoginController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -63,6 +65,11 @@ class LoginController extends Controller
             dd(["message"=>$message,"code"=>$code]);
         }
     }
+//    public function validate($data=array())
+//    {
+//        $auth = new Guard();
+//        $auth->validate($data);
+//    }
 
     /**
      * Display the specified resource.

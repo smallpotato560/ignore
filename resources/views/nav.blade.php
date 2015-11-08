@@ -16,12 +16,14 @@
                 <li class="active"><a href="#">首页</a></li>
                 <li><a href="#">动态</a></li>
                 @if(!empty(@old()))
-                    <div class="signin-pane">
-                        <div class="welcome">
-                            <span>欢迎回来</span>
-                            <i class="fa fa-user">{!! session("name") !!}</i>
+                    <li>
+                        <div class="signin-pane">
+                            <div class="welcome">
+                                <span>欢迎回来</span>
+                                <i class="fa fa-user">{!! session("name") !!}</i>
+                            </div>
                         </div>
-                    </div>
+                    </li>
                 @endif
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
