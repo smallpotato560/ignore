@@ -45,17 +45,17 @@ class LoginController extends Controller
         $user = new \App\User();
         //登陆逻辑
         if($user->isExist($all['email'])){
-            $badvalue = $user->getPassword($all["email"]);
-            $password = \Crypt::decrypt($badvalue);
-            var_dump($password);
-            if($badvalue && $password===$all["password"])
+            $payload = $user->getPassword($all["email"]);
+            if($payload && \Crypt::decrypt($payload)===$all["password"])
                return redirect()->action("RootController@signIn")->withInput($all);
             dd("signin failed");
             //如果登陆失败,重定向到登入页并抛出错误信息给用户,登陆失败的重定向逻辑应该在signIn中
         }
         //注册逻辑
         try {
-            $all["password"]=\Crypt::encrypt($all["password"]);
+            $password =$all["password"];
+            $payload = \Crypt::encrypt($password);
+            $all["password"] = $payload;
             $user->create($all);
         } catch(QueryException $e) {
             $message = $e->getMessage();
