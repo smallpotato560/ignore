@@ -7,9 +7,16 @@
     <div class="nav">
         @yield('nav')
     </div>
+    <div class="container">
+        <div class="banner">
+            @yield("banner")
+        </div>
+    </div>
 
-    <div class="content">
-        @yield('content')
+    <div class="container">
+        <div class="content">
+            @yield('content')
+        </div>
     </div>
 
     <div class="container">

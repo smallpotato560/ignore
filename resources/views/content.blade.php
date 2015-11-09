@@ -1,40 +1,36 @@
 @section('content')
-<div class="container" style="border: solid black">
-    <div class="row" style="background-image: url(img/ljz.jpg);-webkit-background-size: 290px ;background-size: 290px ; background-repeat: no-repeat;">
-        <h2><strong>上海自由贸易区</strong></h2>
-        <div class="pull-right">
-            <i class="glyphicon glyphicon-search"></i><span>搜索一下</span>
-            <input  type="search" value="" placeholder="xxx">
-        </div>
-    </div>
+{{--<div class="container">--}}
     {{--门户点--}}
     <div class="row">
+        {{--@if($portals):--}}
+        {{--@foreach($portals as $portal):--}}
+        {{--unit template--}}
         <div class="col-md-3" style="position: relative;display: inline-block;">
             <ul >
-                <li><a>1</a></li>
-                <li><a>1</a></li>
-                <li><a>1</a></li>
+                <li><a href="javascript:void(0);"><i class="fa fa-smile-o"></i></a></li>
+                <li><a><i class="fa fa-smile-o"></i></a></li>
+                <li><a><i class="fa fa-smile-o"></i></a></li>
             </ul>
         </div>
         <div class="col-md-3" style="position: relative;display: inline-block;">
-            <ul>
-                <li><a>1</a></li>
-                <li><a>1</a></li>
-                <li><a>1</a></li>
+            <ul >
+                <li><a><i class="fa fa-smile-o"></i></a></li>
+                <li><a><i class="fa fa-smile-o"></i></a></li>
+                <li><a><i class="fa fa-smile-o"></i></a></li>
             </ul>
         </div>
         <div class="col-md-3" style="position: relative;display: inline-block;">
-            <ul>
-                <li><a>1</a></li>
-                <li><a>1</a></li>
-                <li><a>1</a></li>
+            <ul >
+                <li><a><i class="fa fa-smile-o"></i></a></li>
+                <li><a><i class="fa fa-smile-o"></i></a></li>
+                <li><a><i class="fa fa-smile-o"></i></a></li>
             </ul>
         </div>
         <div class="col-md-3" style="position: relative;display: inline-block;">
-            <ul>
-                <li><a>1</a></li>
-                <li><a>1</a></li>
-                <li><a>1</a></li>
+            <ul >
+                <li><a><i class="fa fa-smile-o"></i></a></li>
+                <li><a><i class="fa fa-smile-o"></i></a></li>
+                <li><a><i class="fa fa-smile-o"></i></a></li>
             </ul>
         </div>
     </div>
@@ -49,7 +45,7 @@
                 <div class="panel-body">
                     <ul>
                         <li>
-                            <h5>标题一</h5>
+                            <h5 class="text-success">标题一</h5>
                             <span>这是第一条测试动态信息</span>
                             <span>2015-12-12</span>
                         </li>
@@ -128,5 +124,5 @@
         </div>
     </div>
     <!--第二行结束-->
-</div>
+{{--</div>--}}
 @endsection

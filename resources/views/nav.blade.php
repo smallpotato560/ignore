@@ -2,8 +2,7 @@
     {{--登陆重定向的测试--}}
     <nav class="navbar navbar-default" role="navigation">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse"
-                    data-target="#example-navbar-collapse">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example-navbar-collapse">
                 <span class="sr-only">切换导航</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -15,16 +14,10 @@
             <ul class="nav navbar-nav">
                 <li class="active"><a href="#">首页</a></li>
                 <li><a href="#">动态</a></li>
-                @if(!empty(@old()))
-                    <li>
-                        <div class="signin-pane">
-                            <div class="welcome">
-                                <span>欢迎回来</span>
-                                <i class="fa fa-user">{!! session("name") !!}</i>
-                            </div>
-                        </div>
-                    </li>
+                @if(empty(@old()))
+                    <li><a><i class="fa fa-user">{!! "Cool" !!}</i></a></li>
                 @endif
+                <li ><a href="/login">Signin</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         招商平台<b class="caret"></b>

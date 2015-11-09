@@ -8,10 +8,15 @@
     <title>首页</title>
     <!-- Bootstrap core CSS -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../font-awesome-4.4.0/css/font-awesome.min.css">
     <link href="bootstrap/css/responsive-nav.css" rel="stylesheet">
     <script src="bootstrap/js/jquery2.1.min.js"></script>
     <!--Unslider core JavaScript-->
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <script src="bootstrap/js/responsive-nav.js"></script>
-
+    <style>
+        li{
+            list-style: none;
+        }
+    </style>
 @endsection
