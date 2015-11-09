@@ -35,9 +35,10 @@ class SignUpController extends Controller
      * @param  Request  $request
      * @return Response
      */
-    public function store(Request $request)
+    public function store(Requests\SignUpRequest $request)
     {
         //
+        var_dump($request->all());
     }
 
     /**

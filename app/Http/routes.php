@@ -14,8 +14,9 @@
 Route::get('/',"RootController@signIn");
 
 //Auth
-Route::post('signup','Auth\AuthController@create');
+Route::post('signup','Auth\SignUpController@store');
 Route::post('login','Auth\LoginController@store');
+
 Route::get('login','Auth\LoginController@create');
 
 //http://vhost/admin/
@@ -38,7 +39,8 @@ Route::group(['prefix'=>'ajax/admin','namespace'=>'Admin'],function()
     Route::post('/setting','AdminAjaxController@setting');
     Route::patch('/publish','AdminAjaxController@ajaxPublish');
     Route::post('/help','AdminAjaxController@help');
-    Route::any('/postnew','AdminAjaxController@postnew');
+    Route::post("/modify","AdminAjaxController@ajaxModify");
+
 });
 
 

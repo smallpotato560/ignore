@@ -16,10 +16,6 @@ class AdminHomeController extends Controller
     {
 
     }
-    public function auth()
-    {
-        return view('admin/auth');
-    }
     /**
      * Show the form for creating a new resource.
      *
@@ -27,7 +23,7 @@ class AdminHomeController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin/create');
     }
 
     /**
@@ -40,7 +36,7 @@ class AdminHomeController extends Controller
     {
         //
         $all = $request->all();
-        return view('admin/richtextdemo',['res'=>$all]);
+        var_dump($all);
     }
 
     /**
@@ -90,7 +86,7 @@ class AdminHomeController extends Controller
 
     public function home()
     {
-        return view('admin/master');
+        return view('admin/create');
 
     }
 

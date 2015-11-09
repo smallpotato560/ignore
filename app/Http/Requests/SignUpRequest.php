@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Requests;
+
 use App\Http\Requests\Request;
 
-class LoginRequest extends Request
+class SignUpRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,9 +25,10 @@ class LoginRequest extends Request
     {
         return [
             //
-//            "name"=>"required|min:5|max:20",
+            "name"=>"required|min:5|max:20",
             "password"=>"required|min:8|max:32",
             "email"=>"required|email",
+            "tel"=>"required|min:11|max:11",
         ];
     }
 }

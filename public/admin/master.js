@@ -12,6 +12,7 @@ function toHome() {
             success: function (data) {
                 var show = document.getElementById('show');
                 show.innerHTML = data["homepage"];
+                $('#datetimepicker').datetimepicker()
             }
         });
 
@@ -527,5 +528,22 @@ function toPublish() {
         });
 }
 
+function toModify() {
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+    $.ajax(
+        {
+            type: 'POST',
+            dataType:'json',
+            url: '/ajax/admin/modify',
+            success: function (data) {
+                var show = document.getElementById('show');
+                show.innerHTML = data["modify"];
+            }
+        });
 
+}
 

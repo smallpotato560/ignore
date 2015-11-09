@@ -13,4 +13,5 @@
     <!--Unslider core JavaScript-->
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <script src="bootstrap/js/responsive-nav.js"></script>
+
 @endsection

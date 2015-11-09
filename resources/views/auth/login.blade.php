@@ -1,2 +1,5 @@
 @extends("layout.login")
 @extends("bootstrap")
+@extends("auth.signin")
+@extends("auth.signup")
+@extends("auth.error")

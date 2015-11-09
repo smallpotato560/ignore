@@ -30,8 +30,8 @@ class AdminAjaxController extends AdminHomeController
         $token = csrf_token();
         return (view('ajax/admin/help'));
     }
-    public function postnew($request)
+    public function ajaxModify()
     {
-        echo 'helo';
+        return (view('ajax/admin/modify')->renderSections());
     }
 }
