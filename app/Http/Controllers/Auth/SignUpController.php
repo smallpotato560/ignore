@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use Illuminate\Auth\Guard;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -39,13 +40,19 @@ class SignUpController extends Controller
     public function store(Requests\SignUpRequest $request)
     {
         //
-        $user = new User();
+        $usermodel = new User();
         $all = $request->all();
         try {
             $password =$all["password"];
             $payload = \Crypt::encrypt($password);
             $all["password"] = $payload;
-            $user->create($all);
+            if($user = $usermodel->create($all)){
+                $guard = new Guard();
+                $guard->login($user);
+                return redirect()->action("RootController@create");
+            }
+            dd("signup failed!");
+
         } catch(QueryException $e) {
             $message = $e->getMessage();
             $code= $e->getCode();

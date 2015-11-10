@@ -46,11 +46,11 @@ class LoginController extends Controller
         $all = $request->all();
         $usermodel = new \App\User();
         if($user = $usermodel->isExist($all['email'])){
-            $payload = $user->getPassword($all["email"]);
+            $payload = $usermodel->getPassword($all["email"]);
             if($payload && \Crypt::decrypt($payload)===$all["password"]) {
                 $guard = new Guard();
                 $guard->login($user);
-                return redirect()->action("RootController@signIn")->withInput(@$all);
+                return redirect()->action("RootController@create")->withInput(@$all);
             }
         }
         dd("signin failed");

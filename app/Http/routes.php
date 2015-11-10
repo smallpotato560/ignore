@@ -11,7 +11,7 @@
 |
 */
 //home page
-Route::get('/',"RootController@signIn");
+Route::get('/',"RootController@create");
 
 //Auth
 Route::get('login','Auth\LoginController@create');

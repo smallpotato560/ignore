@@ -12,7 +12,7 @@ use Illuminate\Http\RedirectResponse;
 
 class RootController extends Controller
 {
-    public function signIn()
+    public function create()
     {
         $info = old();
 //        $v = \Auth::validate($info);
