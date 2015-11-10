@@ -16,6 +16,12 @@ class SignUpRequest extends Request
         return true;
     }
 
+
+    public function failedAuthorize()
+    {
+       die(1);
+    }
+
     /**
      * Get the validation rules that apply to the request.
      *

@@ -14,10 +14,11 @@
             <ul class="nav navbar-nav">
                 <li class="active"><a href="#">首页</a></li>
                 <li><a href="#">动态</a></li>
-                @if(empty(@old()))
-                    <li><a><i class="fa fa-user">{!! "Cool" !!}</i></a></li>
+                @if(!empty(@old()))
+                    <li><a><i >{!! "Cool" !!}</i></a></li>
+                @else
+                <li ><a href="/login">注册/登陆</a></li>
                 @endif
-                <li ><a href="/login">Signin</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         招商平台<b class="caret"></b>

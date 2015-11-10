@@ -16,8 +16,8 @@ class CreateUsersTable extends Migration
             $table->increments('id')->comment('主键');
             $table->string('name')->unique()->comment('用户名');
             $table->string('email')->unique();
-            $table->string('password', 60);
-            $table->string('role')->default('normal user')->comment('角色规则');
+            $table->string('password',255);
+            $table->string('role')->default('1')->comment('角色规则');
             $table->rememberToken()->comment('是否记住用户');
             $table->timestamp('login_at')->comment('何时登陆');
             $table->timestamp('logout_at')->comment('何时注销');

@@ -14,10 +14,10 @@
 Route::get('/',"RootController@signIn");
 
 //Auth
-Route::post('signup','Auth\SignUpController@store');
-Route::post('login','Auth\LoginController@store');
-
 Route::get('login','Auth\LoginController@create');
+Route::post('login','Auth\LoginController@store');
+Route::post('signup','Auth\SignUpController@store');
+
 
 //http://vhost/admin/
 //if(@$username=='root')
