@@ -34,7 +34,7 @@ class SignUpRequest extends Request
             "name"=>"required|min:5|max:20",
             "password"=>"required|min:8|max:32",
             "email"=>"required|email",
-            "tel"=>"required|min:11|max:11",
+//            "tel"=>"required|min:11|max:11",
         ];
     }
 }
