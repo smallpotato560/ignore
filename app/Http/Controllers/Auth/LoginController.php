@@ -52,8 +52,8 @@ class LoginController extends Controller
                 $guard->login($user);
                 return redirect()->action("RootController@signIn")->withInput(@$all);
             }
-            dd("signin failed");
         }
+        dd("signin failed");
     }
 
     /**
