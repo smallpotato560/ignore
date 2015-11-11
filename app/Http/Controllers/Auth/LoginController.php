@@ -48,7 +48,7 @@ class LoginController extends Controller
         if($user = $usermodel->isExist($all['email'])){
             $payload = $usermodel->getPassword($all["email"]);
             if($payload && \Crypt::decrypt($payload)===$all["password"]) {
-                $guard = new Guard();
+                $guard = new Guard(null,null,$request);
                 $guard->login($user);
                 return redirect()->action("RootController@create")->withInput(@$all);
             }
