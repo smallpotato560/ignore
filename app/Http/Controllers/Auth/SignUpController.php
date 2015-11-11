@@ -47,8 +47,6 @@ class SignUpController extends Controller
             $payload = \Crypt::encrypt($password);
             $all["password"] = $payload;
             if($user = $usermodel->create($all)){
-                $guard = new Guard(null,null,$request);
-                $guard->login($user);
                 return redirect()->action("RootController@create");
             }
             dd("signup failed!");
