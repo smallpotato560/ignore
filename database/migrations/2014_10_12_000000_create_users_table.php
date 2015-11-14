@@ -21,7 +21,7 @@ class CreateUsersTable extends Migration
             $table->rememberToken()->comment('是否记住用户');
             $table->timestamp('login_at')->comment('何时登陆');
             $table->timestamp('logout_at')->comment('何时注销');
-            $table->timestamp();
+            $table->timestamps();
             $table->softDeletes();
         });
     }
