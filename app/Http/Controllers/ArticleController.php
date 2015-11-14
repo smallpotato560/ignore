@@ -1,11 +1,14 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers;
+
+use App\Article;
 use Illuminate\Http\Request;
+
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class AdminHomeController extends Controller
+class ArticleController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,16 +17,21 @@ class AdminHomeController extends Controller
      */
     public function index()
     {
-
+        //
     }
+
     /**
      * Show the form for creating a new resource.
      *
      * @return Response
      */
-    public function create()
+    public function create($id)
     {
-        return view('admin/create');
+        //
+        $model = new Article();
+        $article = $model->getArticle(["id"=>$id]);
+        return view("article.index",["article"=>$article]);
+
     }
 
     /**
@@ -35,13 +43,6 @@ class AdminHomeController extends Controller
     public function store(Request $request)
     {
         //
-        $all = $request->all();
-        $model = new \App\Article();
-        unset($all["_token"]);
-        $intro = explode('。',strip_tags($all["content"]),2);
-        $intro = implode('。',$intro)."...";
-        $all["intro"] = $intro;
-        $result = $model->newArticle($all);
     }
 
     /**
@@ -53,6 +54,7 @@ class AdminHomeController extends Controller
     public function show($id)
     {
         //
+        die($id);
     }
 
     /**
@@ -88,31 +90,4 @@ class AdminHomeController extends Controller
     {
         //
     }
-
-    public function home()
-    {
-        return view('admin/create');
-
-    }
-
-    public function test()
-    {
-        return view('admin/edit');
-    }
-
-    public function publish(Request $request)
-    {
-        return view('admin/publish');
-
-    }
-
-    public function rich()
-    {
-        return view('admin.richtextdemo');
-    }
-    public function ls()
-    {
-        return view("admin.lsarticles");
-    }
-
 }

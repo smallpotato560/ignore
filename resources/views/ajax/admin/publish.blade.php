@@ -1,13 +1,14 @@
 @section('publish')
 
         {{--工具栏--}}
-        {!! Form::open(['url'=>'/admin/sss','id'=>'myform','charset'=>'utf-8']) !!}
+        {!! Form::open(['url'=>'/admin/sss','id'=>'publish_form','charset'=>'utf-8']) !!}
         <div class="form-inline">
             <div class="form-group">
                 <label class=""><h3><strong>发布到</strong></h3></label>
-                <select name="parent" class="form-control">
-                    <option slected  value="1">政务公开</option>
-                    <option value="2">最新要闻</option>
+                <select name="" class="form-control">
+                    @foreach($portals as $portal)
+                    <option slected  value="{!! $portal->id or "1"!!}">{!! $portal->name or "政务公开" !!}</option>
+                    @endforeach
                 </select>
             </div>
         </div>

@@ -38,6 +38,11 @@ class Article extends Model
     }
     public static function getArticle($article=array())
     {
+        $article = self::getArticles($article);
+        return $article[0];
+    }
+    public static function getArticles($article=array())
+    {
 
         $result = DB::table("articles")->select()->where($article)->get();
         return $result?$result:null;

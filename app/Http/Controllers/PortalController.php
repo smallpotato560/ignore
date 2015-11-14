@@ -1,11 +1,14 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers;
+
+use App\Portal;
 use Illuminate\Http\Request;
+
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class AdminHomeController extends Controller
+class PortalController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +17,9 @@ class AdminHomeController extends Controller
      */
     public function index()
     {
-
+        //
     }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -23,7 +27,9 @@ class AdminHomeController extends Controller
      */
     public function create()
     {
-        return view('admin/create');
+        //
+        $model = new Portal();
+        $result = $model->getPortals();
     }
 
     /**
@@ -36,12 +42,12 @@ class AdminHomeController extends Controller
     {
         //
         $all = $request->all();
-        $model = new \App\Article();
         unset($all["_token"]);
-        $intro = explode('。',strip_tags($all["content"]),2);
-        $intro = implode('。',$intro)."...";
-        $all["intro"] = $intro;
-        $result = $model->newArticle($all);
+        $model = new Portal();
+        $portal = $model->newPortal($all);
+        if($portal)
+            return redirect()->back();
+        return false;
     }
 
     /**
@@ -88,31 +94,4 @@ class AdminHomeController extends Controller
     {
         //
     }
-
-    public function home()
-    {
-        return view('admin/create');
-
-    }
-
-    public function test()
-    {
-        return view('admin/edit');
-    }
-
-    public function publish(Request $request)
-    {
-        return view('admin/publish');
-
-    }
-
-    public function rich()
-    {
-        return view('admin.richtextdemo');
-    }
-    public function ls()
-    {
-        return view("admin.lsarticles");
-    }
-
 }

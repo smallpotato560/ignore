@@ -24,8 +24,12 @@ Route::get('/user/error',function(){
    return view("errors.503");
 });
 Route::get('/user/{email}','UserController@create');
-
-
+Route::get('/article/{id}','ArticleController@create');
+Route::post('/portal/create',"PortalController@store");
+Route::get('/portal/show',"PortalController@create");
+Route::get("/admin/",function(){
+   return redirect()->action('Auth\LoginController@create');
+});
 //http://vhost/admin/
 //if(@$username=='root')
 Route::group(['prefix'=>'admin','namespace'=>'Admin'],function()
@@ -37,6 +41,7 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'],function()
     Route::post('/home','AdminHomeController@store');
     Route::get('/rich','AdminHomeController@rich');
     Route::any('/sss','AdminHomeController@store');
+
 });
 
 //Ajax admin
