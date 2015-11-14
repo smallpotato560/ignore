@@ -14,11 +14,6 @@ class RootController extends Controller
 {
     public function create()
     {
-        $info = old();
-//        $v = \Auth::validate($info);
-//        var_dump($v);
-        //auth
-        //hold session
         return view("index");
     }
 }

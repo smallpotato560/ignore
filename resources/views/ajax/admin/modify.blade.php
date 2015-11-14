@@ -1,7 +1,7 @@
 @section("modify")
 <div class="container-fluid">
-    <div class="row-fluid">
-        <div class="span12">
+    <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             {{--面包导航--}}
             <ul class="breadcrumb">
                 <li>
@@ -12,20 +12,19 @@
                 </li>
             </ul>
             {{--一行文集--}}
-            <div class="row-fluid">
-                <div class="span12">
+                <div class="row">
                     <ul class="thumbnails">
-                        {{--@foreach($all as $row):--}}
-                        @yield("baron");
-                        <li class="span3">
+                        {{--@foreach($all as $row)--}}
+                        {{--@yield("baron")--}}
+                        <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding: 0px">
                             <div class="thumbnail">
                                 <i class="fa fa-image fa-2x"></i>
                                 <div class="caption">
                                     <h3>
-                                        冯诺尔曼结构
+                                        {!! $title or "default" !!}
                                     </h3>
                                     <p>
-                                        也称普林斯顿结构，是一种将程序指令存储器和数据存储器合并在一起的存储器结构。程序指令存储地址和数据存储地址指向同一个存储器的不同物理位置。
+                                        {!! $content or "" !!}
                                     </p>
                                     <p>
                                         <a class="btn btn-primary" href="#">浏览</a> <a class="btn" href="#">分享</a>

@@ -45,10 +45,11 @@ class LoginController extends Controller
     {
         $all = $request->all();
         $usermodel = new \App\User();
-        if($user = $usermodel->isExist($all['email'])){
-            $payload = $usermodel->getPassword($all["email"]);
-            if($payload && \Crypt::decrypt($payload)===$all["password"]) {
-                return redirect()->action("RootController@create")->withInput(@$all);
+        if($user = $usermodel->getAuthIdentifier($all['email'])){
+            $payload = $usermodel->getAuthPassword($all["email"]);
+            if($payload && \Crypt::decrypt($payload) == $all["password"]) {
+                session(["email"=>$all["email"]]);
+                return redirect()->action("RootController@create")->withInput($all);
             }
         }
         dd("signin failed");
@@ -97,5 +98,10 @@ class LoginController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function logout($email="")
+    {
+        session(["email"=>null]);
+        return redirect()->action("RootController@create");
     }
 }

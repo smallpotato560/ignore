@@ -2,14 +2,13 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- ����3��meta��ǩ*����*������ǰ�棬�κ��������ݶ�*����*������� -->
 <meta name="description" content="">
 <meta name="author" content="">
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <title>后台管理页面</title>
 <!-- Bootstrap core CSS -->
 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<link href="bootstrap/css/bootstrap-combined.min.css" rel="stylesheet">
+{{--<link href="bootstrap/css/bootstrap-combined.min.css" rel="stylesheet">--}}
 <link href="master.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="../font-awesome-4.4.0/css/font-awesome.min.css">
 {{--Bootstrap extends JS--}}
@@ -21,6 +20,12 @@
 <!-- github.io delivers wrong content-type - but you may want to include FontAwesome in 'wysiwyg-editor.css' -->
 <link rel="stylesheet" type="text/css" href="public/css/wysiwyg-editor.min.css" />
 <style>
+    li{
+      list-style: none;
+    }
+    #title{
+        height:50px;
+    }
     body {
         font-family: Arial,Verdana;
     }
@@ -38,7 +43,7 @@
     }
     /* CSS for the font-name + font-size plugin */
     .wysiwyg-plugin-list {
-        max-height: 16em;
+        max-height: 14em;
         overflow: auto;
         overflow-x: hidden;
         overflow-y: scroll;

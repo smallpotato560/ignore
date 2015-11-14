@@ -9,6 +9,9 @@
 namespace App\Http\Controllers\Admin;
 
 
+use App\Article;
+use Illuminate\Http\Request;
+
 class AdminAjaxController extends AdminHomeController
 {
     public function ajaxHome()
@@ -19,7 +22,7 @@ class AdminAjaxController extends AdminHomeController
     public function setting()
     {
         $token = csrf_token();
-        return view('ajax/admin/setting');
+        return view('ajax.admin.setting')->renderSections();
     }
     public function ajaxPublish()
     {
@@ -32,6 +35,10 @@ class AdminAjaxController extends AdminHomeController
     }
     public function ajaxModify()
     {
-        return (view('ajax/admin/modify')->renderSections());
+        $article = new Article();
+        $result = $article->getArticle(["id"=>2]);
+        $content = $result->content;
+        $title = $result->title;
+        return (view('ajax/admin/modify',["content"=>$content,"title"=>$title])->renderSections());
     }
 }

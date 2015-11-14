@@ -8,11 +8,18 @@
     @yield("header")
 </div>
 <div class="container-fluid">
-    @yield("sidebar")
-    @yield("content")
+    <div class="row">
+        <div class="col-lg-4">
+            @yield("sidebar")
+        </div>
+
+    <div class="col-lg-8" id="show" style="overflow: auto">
+        @yield("content")
+    </div>
+    </div>
 </div>
-<div class="container">
-    @yield("footer")
+<div class="container-fluid">
+    {{--@yield("footer")--}}
 </div>
 </body>
 </html>

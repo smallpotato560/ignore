@@ -36,7 +36,12 @@ class AdminHomeController extends Controller
     {
         //
         $all = $request->all();
-        var_dump($all);
+        $model = new \App\Article();
+        unset($all["_token"]);
+        $result = $model->newArticle($all);
+        var_dump($result);
+        die();
+        //var_dump($all);
     }
 
     /**

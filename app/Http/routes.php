@@ -11,12 +11,19 @@
 |
 */
 //home page
+use Illuminate\Support\Facades\Route;
+
 Route::get('/',"RootController@create");
 
 //Auth
 Route::get('login','Auth\LoginController@create');
 Route::post('login','Auth\LoginController@store');
 Route::post('signup','Auth\SignUpController@store');
+Route::get('/user/logout/{email}','Auth\LoginController@logout');
+Route::get('/user/error',function(){
+   return view("errors.503");
+});
+Route::get('/user/{email}','UserController@create');
 
 
 //http://vhost/admin/
