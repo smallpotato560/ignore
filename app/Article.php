@@ -39,9 +39,7 @@ class Article extends Model
     public static function getArticle($article=array())
     {
 
-        if(!(isset($article["id"]) && $id = $article["id"]))
-            return false;
-        $result = DB::table("articles")->select()->where($article)->first();
+        $result = DB::table("articles")->select()->where($article)->get();
         return $result?$result:null;
 
     }

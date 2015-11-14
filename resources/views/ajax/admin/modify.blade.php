@@ -13,18 +13,18 @@
             </ul>
             {{--一行文集--}}
                 <div class="row">
+
                     <ul class="thumbnails">
-                        {{--@foreach($all as $row)--}}
-                        {{--@yield("baron")--}}
-                        <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding: 0px">
+                        @foreach($all as $article)
+                        <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                             <div class="thumbnail">
                                 <i class="fa fa-image fa-2x"></i>
                                 <div class="caption">
                                     <h3>
-                                        {!! $title or "default" !!}
+                                        {!! $article->title or "default" !!}
                                     </h3>
                                     <p>
-                                        {!! $content or "" !!}
+                                        {!! $article->content or "" !!}
                                     </p>
                                     <p>
                                         <a class="btn btn-primary" href="#">浏览</a> <a class="btn" href="#">分享</a>
@@ -32,7 +32,7 @@
                                 </div>
                             </div>
                         </li>
-                        {{--@endforeach--}}
+                        @endforeach
                     </ul>
                 </div>
             </div>

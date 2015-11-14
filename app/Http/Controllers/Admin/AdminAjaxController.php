@@ -36,9 +36,7 @@ class AdminAjaxController extends AdminHomeController
     public function ajaxModify()
     {
         $article = new Article();
-        $result = $article->getArticle(["id"=>2]);
-        $content = $result->content;
-        $title = $result->title;
-        return (view('ajax/admin/modify',["content"=>$content,"title"=>$title])->renderSections());
+        $result = (array)$article->getArticle();
+        return (view('ajax/admin/modify',["all"=>$result])->renderSections());
     }
 }
