@@ -16,4 +16,14 @@ class RootController extends Controller
     {
         return view("index");
     }
+
+    public function getTopPortals()
+    {
+
+    }
+
+    public function getPortalArticles($Portal_id)
+    {
+
+    }
 }
