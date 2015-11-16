@@ -18,6 +18,24 @@ function toHome() {
 
 }
 
+function toSetting() {
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+    $.ajax(
+        {
+            type: 'POST',
+            dataType:'json',
+            url: '/ajax/admin/setting',
+            success: function (data) {
+                var show = document.getElementById('show');
+                show.innerHTML = data["setting"];
+            }
+        });
+
+}
 
 function toPublish() {
     $.ajaxSetup({

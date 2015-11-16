@@ -37,7 +37,7 @@
     <!--    第一行-->
     <div class="row">
         <!--        项目一-->
-        <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+        <div class="col-lg-7 col-md-12 col-sm-12 col-xs-12">
             <div class="panel panel-info">
                 <div class="panel-heading">
                     <h3 class="panel-title">动态要闻</h3>
@@ -64,32 +64,24 @@
             </div>
         </div>
         <!--轮播-->
-        <div id="carousel-example-generic" class="carousel slide col-lg-8 col-md-12 col-sm-12" data-ride="carousel">
+        <div id="carousel-example-generic" class="carousel slide col-lg-5 col-md-12 col-sm-12" data-ride="carousel">
             <!-- Indicators -->
             <ol class="carousel-indicators">
-                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                <li data-target="#carousel-example-generic" data-slide-to={!! $img_cnt or '0' !!} @if(1>0)class="active"@endif></li>
             </ol>
-
             <!-- Wrapper for slides -->
             <div class="carousel-inner" role="listbox">
-                <div class="item active">
-                    <img src="img/xys.jpg" alt="">
+                @for($i=0;$i<1;++$i)
+                <div class="item @if($i==0)active"@endif>
+                    <img class="img-rounded" src="{!! $img["url"] or "img/xys.jpg" !!}" alt="">
                     <div class="carousel-caption">
-                        <h1>标题</h1>
-                        <p>图文并茂</p>
+                        <h1>{!! $img_title or "外高桥保税区" !!}</h1>
+                        <p>{!! $img["intro"] or "这是一段简介,最好不要少于十五字!" !!}</p>
                     </div>
                 </div>
-
-                <div class="item">
-                    <img src="img/zmq2.jpg" alt="">
-                    <div class="carousel-caption">
-                        <h1>标题</h1>
-                        <p>图文并茂</p>
-                    </div>
-                </div>
+                @endfor
             </div>
+
         </div>
     </div>
         <!--   第一行结束-->

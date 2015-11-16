@@ -1,6 +1,6 @@
 @section('nav')
     {{--登陆重定向的测试--}}
-    <nav class="navbar navbar-default" role="navigation">
+    <nav id=nav_bar class="navbar navbar-default" role="navigation">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example-navbar-collapse">
                 <span class="sr-only">切换导航</span>
@@ -14,10 +14,20 @@
             <ul class="nav navbar-nav">
                 <li class="active"><a href="#">首页</a></li>
                 <li><a href="#">动态</a></li>
-                @if(empty(@old()))
-                    <li><a><i class="fa fa-user">{!! "Cool" !!}</i></a></li>
+                @if(!empty($email = session("email")))
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-user" style="padding-top: 3px">{!! $email !!}</i>
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="./user/{!! $email or "error" !!}"><i class="fa fa-info"> Info</i></a></li>
+                            <li><a href="./user/logout/{!! $email or "error"!!}"><i class="fa fa-lock"></i> Logout</a></li>
+                        </ul>
+                    </li>
+                @else
+                <li ><a href="/login">注册/登陆</a></li>
                 @endif
-                <li ><a href="/login">Signin</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         招商平台<b class="caret"></b>

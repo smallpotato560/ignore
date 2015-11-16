@@ -5,7 +5,7 @@
             <button id="signin" class="btn btn-primary signin">Signin</button>
         </div>
         <div  class="pull-right">
-            <button id="signup" class="btn btn-default signup">Signup</button>
+            <button class="btn btn-default signup">Signup</button>
         </div>
         <div class="clearfix"></div>
     </div>

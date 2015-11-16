@@ -44,32 +44,16 @@ class LoginController extends Controller
     public function store(Requests\LoginRequest $request)
     {
         $all = $request->all();
-        $user = new \App\User();
-        //鐧婚檰閫昏緫
-        if($user->isExist($all['email'])){
-            $payload = $user->getPassword($all["email"]);
-            if($payload && \Crypt::decrypt($payload)===$all["password"])
-               return redirect()->action("RootController@signIn")->withInput($all);
-            dd("signin failed");
-            //濡傛灉鐧婚檰澶辫触,閲嶅畾鍚戝埌鐧诲叆椤靛苟鎶涘嚭閿欒淇℃伅缁欑敤鎴�,鐧婚檰澶辫触鐨勯噸瀹氬悜閫昏緫搴旇鍦╯ignIn涓�
+        $usermodel = new \App\User();
+        if($user = $usermodel->getAuthIdentifier($all['email'])){
+            $payload = $usermodel->getAuthPassword($all["email"]);
+            if($payload && \Crypt::decrypt($payload) == $all["password"]) {
+                session(["email"=>$all["email"]]);
+                return redirect()->action("RootController@create")->withInput($all);
+            }
         }
-        //娉ㄥ唽閫昏緫
-        try {
-            $password =$all["password"];
-            $payload = \Crypt::encrypt($password);
-            $all["password"] = $payload;
-            $user->create($all);
-        } catch(QueryException $e) {
-            $message = $e->getMessage();
-            $code= $e->getCode();
-            dd(["message"=>$message,"code"=>$code]);
-        }
+        dd("signin failed");
     }
-//    public function validate($data=array())
-//    {
-//        $auth = new Guard();
-//        $auth->validate($data);
-//    }
 
     /**
      * Display the specified resource.
@@ -114,5 +98,10 @@ class LoginController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function logout($email="")
+    {
+        session(["email"=>null]);
+        return redirect()->action("RootController@create");
     }
 }

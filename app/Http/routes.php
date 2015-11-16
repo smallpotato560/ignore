@@ -11,14 +11,25 @@
 |
 */
 //home page
-Route::get('/',"RootController@signIn");
+use Illuminate\Support\Facades\Route;
+
+Route::get('/',"RootController@create");
 
 //Auth
-Route::post('signup','Auth\SignUpController@store');
-Route::post('login','Auth\LoginController@store');
-
 Route::get('login','Auth\LoginController@create');
-
+Route::post('login','Auth\LoginController@store');
+Route::post('signup','Auth\SignUpController@store');
+Route::get('/user/logout/{email}','Auth\LoginController@logout');
+Route::get('/user/error',function(){
+   return view("errors.503");
+});
+Route::get('/user/{email}','UserController@create');
+Route::get('/article/{id}','ArticleController@create');
+Route::post('/portal/create',"PortalController@store");
+Route::get('/portal/show',"PortalController@create");
+Route::get("/admin/",function(){
+   return redirect()->action('Auth\LoginController@create');
+});
 //http://vhost/admin/
 //if(@$username=='root')
 Route::group(['prefix'=>'admin','namespace'=>'Admin'],function()
@@ -30,6 +41,7 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'],function()
     Route::post('/home','AdminHomeController@store');
     Route::get('/rich','AdminHomeController@rich');
     Route::any('/sss','AdminHomeController@store');
+
 });
 
 //Ajax admin

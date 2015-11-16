@@ -12,13 +12,18 @@ use Illuminate\Http\RedirectResponse;
 
 class RootController extends Controller
 {
-    public function signIn()
+    public function create()
     {
-        $info = old();
-//        $v = \Auth::validate($info);
-//        var_dump($v);
-        //auth
-        //hold session
         return view("index");
+    }
+
+    public function getTopPortals()
+    {
+
+    }
+
+    public function getPortalArticles($Portal_id)
+    {
+
     }
 }

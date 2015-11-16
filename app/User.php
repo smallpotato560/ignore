@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Auth\Authenticatable;
+use Illuminate\Contracts\Auth\UserProvider;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
@@ -31,15 +32,46 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      */
     protected $hidden = ['password', 'remember_token'];
 
-    public function getPassword($email="")
+    /**
+     * Get the password for the user.
+     *
+     * @return string
+     */
+    public function getAuthPassword($email="")
     {
         $result = DB::table("users")->where("email",$email)->first(["password"]);
         return $result?$result->password:false;
     }
 
-    public function isExist($email="")
+    /**
+     * Get the unique identifier for the user.
+     *
+     * @return mixed
+     */
+    public function getAuthIdentifier($email="")
     {
-        $result = DB::table("users")->where("email",$email)->first();
-        return !empty($result);
+        $user = DB::table("users")->where("email",$email)->first(["id"]);
+        return $user?$user:null;
+    }
+
+    /**
+     * Set the token value for the "remember me" session.
+     *
+     * @param  string $value
+     * @return void
+     */
+    public function setRememberToken($value)
+    {
+
+    }
+
+    /**
+     * Get the token value for the "remember me" session.
+     *
+     * @return string
+     */
+    public function getRememberToken()
+    {
+
     }
 }

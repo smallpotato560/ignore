@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace App\Http\Controllers;
 
-use App\User;
-use Illuminate\Auth\Guard;
+use App\Article;
 use Illuminate\Http\Request;
+
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class SignUpController extends Controller
+class ArticleController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -25,10 +25,13 @@ class SignUpController extends Controller
      *
      * @return Response
      */
-    public function create()
+    public function create($id)
     {
-        //sign up
-        return view();
+        //
+        $model = new Article();
+        $article = $model->getArticle(["id"=>$id]);
+        return view("article.index",["article"=>$article]);
+
     }
 
     /**
@@ -37,25 +40,9 @@ class SignUpController extends Controller
      * @param  Request  $request
      * @return Response
      */
-    public function store(Requests\SignUpRequest $request)
+    public function store(Request $request)
     {
         //
-        $usermodel = new User();
-        $all = $request->all();
-        try {
-            $password =$all["password"];
-            $payload = \Crypt::encrypt($password);
-            $all["password"] = $payload;
-            if($user = $usermodel->create($all)){
-                return redirect()->action("RootController@create")->withInput($all);
-            }
-            dd("signup failed!");
-
-        } catch(QueryException $e) {
-            $message = $e->getMessage();
-            $code= $e->getCode();
-            dd(["message"=>$message,"code"=>$code]);
-        }
     }
 
     /**
@@ -67,6 +54,7 @@ class SignUpController extends Controller
     public function show($id)
     {
         //
+        die($id);
     }
 
     /**

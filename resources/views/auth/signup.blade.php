@@ -18,14 +18,15 @@
         {!! Form::label(null,"Username",["class"=>"text-primary"]) !!}
         {!! Form::text("name",null,["class"=>"form-control"]) !!}
     </div>
-    <div class="form-group">
-        {!! Form::label(null,"Telphone",["class"=>"text-primary"]) !!}
-        {!! Form::text("tel",null,["class"=>"form-control"]) !!}
-    </div>
+    {{--<div class="form-group">--}}
+        {{--{!! Form::label(null,"Telphone",["class"=>"text-primary"]) !!}--}}
+        {{--{!! Form::text("tel",null,["class"=>"form-control"]) !!}--}}
+    {{--</div>--}}
     <div class="form-group">
         {!! Form::label(null,"Password",["class"=>"text-primary"]) !!}
         {!! Form::password("password",["class"=>"form-control"]) !!}
     </div>
+
     {!! Form::submit("submit",["class"=>"btn btn-primary btn-block"]) !!}
     {!! Form::close() !!}
 </div>

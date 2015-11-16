@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace App\Http\Controllers;
 
-use App\User;
-use Illuminate\Auth\Guard;
+use App\Portal;
 use Illuminate\Http\Request;
+
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class SignUpController extends Controller
+class PortalController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,8 +27,9 @@ class SignUpController extends Controller
      */
     public function create()
     {
-        //sign up
-        return view();
+        //
+        $model = new Portal();
+        $result = $model->getPortals();
     }
 
     /**
@@ -37,25 +38,16 @@ class SignUpController extends Controller
      * @param  Request  $request
      * @return Response
      */
-    public function store(Requests\SignUpRequest $request)
+    public function store(Request $request)
     {
         //
-        $usermodel = new User();
         $all = $request->all();
-        try {
-            $password =$all["password"];
-            $payload = \Crypt::encrypt($password);
-            $all["password"] = $payload;
-            if($user = $usermodel->create($all)){
-                return redirect()->action("RootController@create")->withInput($all);
-            }
-            dd("signup failed!");
-
-        } catch(QueryException $e) {
-            $message = $e->getMessage();
-            $code= $e->getCode();
-            dd(["message"=>$message,"code"=>$code]);
-        }
+        unset($all["_token"]);
+        $model = new Portal();
+        $portal = $model->newPortal($all);
+        if($portal)
+            return redirect()->back();
+        return false;
     }
 
     /**
