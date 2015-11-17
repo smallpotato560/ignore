@@ -5,9 +5,9 @@
         <div class="form-inline">
             <div class="form-group">
                 <label class=""><h3><strong>发布到</strong></h3></label>
-                <select name="" class="form-control">
+                <select name="Portal_id" class="form-control">
                     @foreach($portals as $portal)
-                    <option slected  value="{!! $portal->id or "1"!!}">{!! $portal->name or "政务公开" !!}</option>
+                    <option selected  value="{!! $portal->id or "1"!!}">{!! $portal->name or "政务公开" !!}</option>
                     @endforeach
                 </select>
             </div>

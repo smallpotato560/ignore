@@ -2,14 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Article;
-use App\Portal;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class PortalController extends Controller
+class TagController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -26,20 +24,9 @@ class PortalController extends Controller
      *
      * @return Response
      */
-    public function create($id)
+    public function create()
     {
-        $model = new Article();
-        $articles = $model->getArticles(["Portal_id"=>$id]);
-        $model = new Portal();
-        while(($hasParent[] = $model->getPortal(["id"=>$id],["parent","name"]))) {
-            $current = current($hasParent);
-            $id =$current->parent;
-        }
-        unset($hasParent[count($hasParent)-1]);
-        $hasParent = array_reverse($hasParent);
-        if($articles)
-            return view("portal.index",["all"=> $articles,"hasParent"=>$hasParent]);
-        dd("no articles");
+        //
     }
 
     /**
@@ -51,13 +38,6 @@ class PortalController extends Controller
     public function store(Request $request)
     {
         //
-        $all = $request->all();
-        unset($all["_token"]);
-        $model = new Portal();
-        $portal = $model->newPortal($all);
-        if($portal)
-            return redirect()->back();
-        return false;
     }
 
     /**

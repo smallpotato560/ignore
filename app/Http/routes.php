@@ -30,6 +30,7 @@ Route::get('/portal/show',"PortalController@create");
 Route::get("/admin/",function(){
    return redirect()->action('Auth\LoginController@create');
 });
+Route::get("/portal/{id}","PortalController@create");
 //http://vhost/admin/
 //if(@$username=='root')
 Route::group(['prefix'=>'admin','namespace'=>'Admin'],function()

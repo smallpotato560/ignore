@@ -82,6 +82,16 @@
         border-color: #99baca !important;
         background: #f5fbfe !important;
     }
+    td{
+        padding: 5px;
+    }
+
+    td a{
+        min-height: 80px;
+        width: 80px;
+        text-align: center;
+        border: 1px solid #e0e0e0;
+    }
 </style>
 <script src="master.js"></script>
 @endsection

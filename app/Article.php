@@ -11,6 +11,28 @@ class Article extends Model
     //
     protected $table = 'articles';
     protected $hidden = ["_token"];
+    //
+    protected $xtable = 'article_extend';
+    protected $extends = array();
+    //是否含有扩展字段
+    public function isHasExtends($Article_id)
+    {
+
+    }
+    //获取扩展字段
+    public function getArticleExtends($Article_id)
+    {
+        //just test how Eloquent worked
+        $ex =  self::where('Articles_id','=',$Article_id)->all();
+        foreach($ex as $val) {
+            var_dump($val);
+        }
+    }
+    //合并本条记录的所有字段
+    public function merge($Article_id)
+    {
+
+    }
     public function __construct(array $attributes=array())
     {
         parent::__construct($attributes);

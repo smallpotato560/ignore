@@ -10,15 +10,16 @@ class Portal extends Model
     //
     protected $table="portals";
 
-    public static function getPortals($attr=array())
+    public static function getPortals($attr=array(),$column="*")
     {
-        $result = DB::table("portals")->select()->where($attr)->get();
+        $result = DB::table("portals")->select($column)->where($attr)->get();
         return $result?$result:null;
     }
 
-    public static function getPortal($attr=array())
+    public static function getPortal($attr=array(),$column="*")
     {
-        $result = DB::table("portals")->select()->where($attr)->first();
+        $result = DB::table("portals")->select()->where($attr)->first($column);
+        return $result?$result:null;
     }
 
     public static function newPortal($portal=array())
@@ -27,10 +28,7 @@ class Portal extends Model
         return $result?$result:null;
     }
 
-    public static function isExist($attr)
-    {
 
-    }
     public static function deletePortal()
     {
 

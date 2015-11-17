@@ -2,37 +2,18 @@
 {{--<div class="container">--}}
     {{--门户点--}}
     <div class="row">
-        {{--@if($portals):--}}
-        {{--@foreach($portals as $portal):--}}
+        @if($portals)
+        @foreach($portals as $portal_chunk)
         {{--unit template--}}
         <div class="col-md-3" style="position: relative;display: inline-block;">
-            <ul >
-                <li><a href="javascript:void(0);"><i class="fa fa-smile-o"></i></a></li>
-                <li><a><i class="fa fa-smile-o"></i></a></li>
-                <li><a><i class="fa fa-smile-o"></i></a></li>
+            <ul style="padding:5px">
+                @foreach($portal_chunk as $portal )
+                <li><a href="{!! "/portal/".$portal->id !!}"><i class="fa fa-smile-o">{!! $portal->name !!}</i></a></li>
+                @endforeach
             </ul>
         </div>
-        <div class="col-md-3" style="position: relative;display: inline-block;">
-            <ul >
-                <li><a><i class="fa fa-smile-o"></i></a></li>
-                <li><a><i class="fa fa-smile-o"></i></a></li>
-                <li><a><i class="fa fa-smile-o"></i></a></li>
-            </ul>
-        </div>
-        <div class="col-md-3" style="position: relative;display: inline-block;">
-            <ul >
-                <li><a><i class="fa fa-smile-o"></i></a></li>
-                <li><a><i class="fa fa-smile-o"></i></a></li>
-                <li><a><i class="fa fa-smile-o"></i></a></li>
-            </ul>
-        </div>
-        <div class="col-md-3" style="position: relative;display: inline-block;">
-            <ul >
-                <li><a><i class="fa fa-smile-o"></i></a></li>
-                <li><a><i class="fa fa-smile-o"></i></a></li>
-                <li><a><i class="fa fa-smile-o"></i></a></li>
-            </ul>
-        </div>
+        @endforeach
+        @endif
     </div>
     <!--    第一行-->
     <div class="row">
@@ -91,25 +72,18 @@
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="panel panel-info">
                 <div class="panel-heading">
-                    <h3 class="panel-title">最新咨询</h3>
+                    <h3 class="panel-title"></h3>
                 </div>
                 <div class="panel-body">
                     <ul>
+                        @if(isset($articles))
+                        @for($i=0;$i<5;++$i)
                         <li>
-                            <h5>标题一</h5>
-                            <span>这是第一条测试动态信息</span>
-                            <span>2015-12-12</span>
+                            <span style="font-weight: 800">{!! $articles[$i]->title or "default"!!}</span>
+                            <span>{!! date('Y-m-d',$articles[$i]->cretated_at) or 0!!}</span>
                         </li>
-                        <li>
-                            <h5>标题二</h5>
-                            <p1>这是第二条测试动态信息</p1>
-                            <span>2015-12-12</span>
-                        </li>
-                        <li>
-                            <h5>标题三</h5>
-                            <p1>这是第三条测试动态信息</p1>
-                            <span>2015-12-12</span>
-                        </li>
+                        @endfor
+                        @endif
                     </ul>
                 </div>
             </div>

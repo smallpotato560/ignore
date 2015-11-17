@@ -8,13 +8,18 @@
 
 namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
+use App\Portal;
 use Illuminate\Http\RedirectResponse;
 
 class RootController extends Controller
 {
     public function create()
     {
-        return view("index");
+        $model = new Portal();
+        $portals = $model->getPortals(["parent"=>0]);
+        if($portals && is_array($portals))
+            return view("index",["portals"=>array_chunk($portals,3)]);
+        dd("error");
     }
 
     public function getTopPortals()
