@@ -55,5 +55,8 @@ Route::group(['prefix'=>'ajax/admin','namespace'=>'Admin'],function()
     Route::post("/modify","AdminAjaxController@ajaxModify");
 
 });
-
+//test domain
+Route::group(['prefix'=>'test/'],function(){
+    Route::get('article',"TestController@article");
+});
 

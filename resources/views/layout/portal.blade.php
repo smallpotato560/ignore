@@ -3,6 +3,12 @@
     @yield("css")
 </head>
 <body>
+<div class="navigation">
+    @yield('nav')
+</div>
+<div class="container">
+    @yield('banner')
+</div>
 <div class="container">
 
     <div class="row">

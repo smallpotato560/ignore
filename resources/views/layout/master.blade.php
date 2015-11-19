@@ -4,25 +4,19 @@
 </head>
 
 <body>
-    <div class="nav">
+    <div class="navigation">
         @yield('nav')
     </div>
     <div class="container">
-        <div class="banner">
-            @yield("banner")
-        </div>
+        @yield("banner")
     </div>
 
     <div class="container">
-        <div class="content">
-            @yield('content')
-        </div>
+        @yield('content')
     </div>
 
     <div class="container">
-        <div class="footer">
-            @yield('footer')
-        </div>
+        @yield('footer')
     </div>
 </body>
 </html>

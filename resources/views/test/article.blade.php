@@ -21,7 +21,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">上海自由贸易区</a>
+            <a class="navbar-brand" href="#">上海自由贸易区</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -53,13 +53,12 @@
 </nav>
 <div class="container">
     <div class="page-header">
-        <h2>{!! $article->title or 'null' !!}</h2>
+        <h1>Title</h1>
 
     </div>
-    <div class="content">
-        {!! $article->content or "something wrong" !!}
+    <div class="">
+
     </div>
-    <div style="padding-top: 20px"></div>
     <small class="pull-left">作者: xxx</small>
     <small class="pull-right">发布于 2015-11-01</small>
     <div class="clearfix"></div>
