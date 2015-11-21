@@ -4,12 +4,10 @@
     @yield("css")
 </head>
 <body>
-<div class="container">
-    @yield("header")
-</div>
+@yield("nav")
 <div class="container-fluid">
     <div class="row">
-        <div class="col-lg-2">
+        <div class="col-lg-3">
             @yield("sidebar")
         </div>
 

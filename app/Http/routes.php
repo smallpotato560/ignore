@@ -10,53 +10,71 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-//home page
 use Illuminate\Support\Facades\Route;
 
-Route::get('/',"RootController@create");
+//Root Domain
+Route::group(['prefix'=>'/'],function(){
+    Route::get('/',"RootController@create");
+    Route::get('login','Auth\LoginController@create');
+    Route::post('login','Auth\LoginController@store');
+    Route::post('signup','Auth\SignUpController@store');
+});
+//User Domain
+Route::group(['prefix'=>'/user'],function(){
+    Route::get('/logout/{email}','Auth\LoginController@logout');
+    Route::get('/{email}','UserController@create');
+});
 
-//Auth
-Route::get('login','Auth\LoginController@create');
-Route::post('login','Auth\LoginController@store');
-Route::post('signup','Auth\SignUpController@store');
-Route::get('/user/logout/{email}','Auth\LoginController@logout');
-Route::get('/user/error',function(){
-   return view("errors.503");
+//Article Domain
+Route::group(['prefix'=>'/article'],function(){
+    Route::get('/{id}','ArticleController@create');
 });
-Route::get('/user/{email}','UserController@create');
-Route::get('/article/{id}','ArticleController@create');
-Route::post('/portal/create',"PortalController@store");
-Route::get('/portal/show',"PortalController@create");
-Route::get("/admin/",function(){
-   return redirect()->action('Auth\LoginController@create');
+//Portal Domain
+Route::group(['prefix'=>'/portal'],function(){
+    Route::get("/{id}","PortalController@create");
+    Route::get('/show',"PortalController@create");
+    Route::post('/create',"PortalController@store");
+
 });
-Route::get("/portal/{id}","PortalController@create");
-//http://vhost/admin/
-//if(@$username=='root')
-Route::group(['prefix'=>'admin','namespace'=>'Admin'],function()
+
+//Admin Domain
+Route::group(['prefix'=>'/admin','namespace'=>'Admin'],function()
 {
+
+    Route::get("/",function(){
+        return redirect()->action('Auth\LoginController@create');
+    });
     Route::get('/home','AdminHomeController@home');
-    Route::get('/articles','AdminHomeController@ls');
-    Route::get('/test','AdminHomeController@test');
     Route::get('/publish','AdminHomeController@publish');
     Route::post('/home','AdminHomeController@store');
-    Route::get('/rich','AdminHomeController@rich');
     Route::any('/sss','AdminHomeController@store');
 
 });
 
-//Ajax admin
-Route::group(['prefix'=>'ajax/admin','namespace'=>'Admin'],function()
+//Error Domain
+Route::group(['prefix'=>'/error'],function(){
+    Route::get('503',function(){
+        return view("errors.503");
+    });
+});
+
+//Ajax domain
+Route::group(['prefix'=>'/ajax/'],function()
 {
-    Route::post('/home','AdminAjaxController@ajaxHome');
-    Route::post('/setting','AdminAjaxController@setting');
-    Route::patch('/publish','AdminAjaxController@ajaxPublish');
-    Route::post('/help','AdminAjaxController@help');
-    Route::post("/modify","AdminAjaxController@ajaxModify");
+//    Admin Ajax
+    Route::group(['prefix'=>'admin','namespace'=>'Admin'],function(){
+        Route::post('/home','AdminAjaxController@ajaxHome');
+        Route::post('/setting','AdminAjaxController@setting');
+        Route::patch('/publish','AdminAjaxController@ajaxPublish');
+        Route::post('/help','AdminAjaxController@help');
+        Route::post("/modify","AdminAjaxController@ajaxModify");
+
+    });
 
 });
+
 //test domain
-Route::group(['prefix'=>'test/'],function(){
+Route::group(['prefix'=>'/test/'],function(){
     Route::get('article',"TestController@article");
 });
 

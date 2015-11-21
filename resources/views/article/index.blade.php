@@ -31,8 +31,6 @@
                 <li><a href="#">Link</a></li>
             </ul>
 
-
-
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#">Link</a></li>
                 <li class="dropdown">
@@ -51,18 +49,33 @@
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
-<div class="container">
-    <div class="page-header">
-        <h2>{!! $article->title or 'null' !!}</h2>
-
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-offset-2 col-md-8">
+            <i class="fa fa-user fa-2x pull-left"><span style="color: green">hahha</span></i>
+            <i class="fa fa-times-circle fa-2x pull-right">发布于 1997-0-0</i>
+            <div class="clearfix"></div>
+        </div>
     </div>
-    <div class="content">
-        {!! $article->content or "something wrong" !!}
+    <div class="row">
+        <div class="col-md-offset-2 col-md-8">
+            <h1 class="text-center">{!! $article->title or 'null' !!}</h1>
+            {!! $article->content or "something wrong" !!}
+        </div>
     </div>
-    <div style="padding-top: 20px"></div>
-    <small class="pull-left">作者: xxx</small>
-    <small class="pull-right">发布于 2015-11-01</small>
-    <div class="clearfix"></div>
+    <div class="row">
+        <div class="col-md-offset-2 col-md-8">
+            <div class="pull-left">
+                <a><i class="fa fa-heart-o fa-2x"></i></a>
+                <a><i class="fa fa-comment-o fa-2x"></i></a>
+            </div>
+           <div class="pull-right">
+               <a><i class="fa fa-bookmark-o fa-2x"></i></a>
+               <a><i class="fa fa-share-square-o fa-2x"></i></a>
+               <a><i class="fa fa-ellipsis-h fa-2x"></i></a>
+           </div>
+        </div>
+    </div>
 </div>
 </body>
 </html>
