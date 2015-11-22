@@ -1,5 +1,5 @@
-@section('nav')
-    {{--登陆重定向的测试--}}
+<?php $__env->startSection('nav'); ?>
+    <?php /*登陆重定向的测试*/ ?>
     <nav class="navbar navbar-default">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -32,23 +32,23 @@
                             </div>
                         </form>
                     </li>
-                    @if(!empty($email = session("email")))
+                    <?php if(!empty($email = session("email"))): ?>
                         <li class="dropdown">
                             <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="fa fa-user" style="padding-top: 3px">{!! $email !!}</i>
+                                <i class="fa fa-user" style="padding-top: 3px"><?php echo $email; ?></i>
                                 <b class="caret"></b>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a href="/user/{!! $email or "error" !!}"><i class="fa fa-info"> Info</i></a></li>
-                                <li><a href="/user/logout/{!! $email or "error"!!}"><i class="fa fa-lock"></i> Logout</a></li>
+                                <li><a href="/user/<?php echo isset($email) ? $email : "error"; ?>"><i class="fa fa-info"> Info</i></a></li>
+                                <li><a href="/user/logout/<?php echo isset($email) ? $email : "error"; ?>"><i class="fa fa-lock"></i> Logout</a></li>
                             </ul>
                         </li>
-                    @else
+                    <?php else: ?>
                         <li ><a href="/login">注册/登陆</a></li>
-                    @endif
+                    <?php endif; ?>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>
 
-@endsection
+<?php $__env->stopSection(); ?>

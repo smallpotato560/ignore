@@ -28,6 +28,11 @@ class Portal extends Model
         return $result?$result:null;
     }
 
+    public static function paginate($attributes=array(),$size=10,$order='updated_at',$asc='desc')
+    {
+        $result = DB::table('portals')->where($attributes)->orderBy($order,$asc)->paginate($size);
+        return $result?$result:null;
+    }
 
     public static function deletePortal()
     {

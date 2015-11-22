@@ -1,0 +1,35 @@
+<?php $__env->startSection("signin"); ?>
+<div id="signin-pane">
+    <div class="tile" style="display: block">
+        <div  class="pull-left">
+            <button id="signin" class="btn btn-primary signin">Signin</button>
+        </div>
+        <div  class="pull-right">
+            <button class="btn btn-default signup">Signup</button>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <?php echo Form::open(["url"=>"/login"]); ?>
+
+    <div class="form-group">
+        <?php echo Form::label(null,"Email",["class"=>"text-primary"]); ?>
+
+        <?php echo Form::email("email",null,["class"=>"form-control"]); ?>
+
+    </div>
+    <?php /*<div class="form-group">*/ ?>
+    <?php /*<?php echo Form::label(null,"Username",["class"=>"text-primary"]); ?>*/ ?>
+    <?php /*<?php echo Form::text("name",null,["class"=>"form-control"]); ?>*/ ?>
+    <?php /*</div>*/ ?>
+    <div class="form-group">
+        <?php echo Form::label(null,"Password",["class"=>"text-primary"]); ?>
+
+        <?php echo Form::password("password",["class"=>"form-control"]); ?>
+
+    </div>
+    <?php echo Form::submit("submit",["class"=>"btn btn-primary btn-block"]); ?>
+
+    <?php echo Form::close(); ?>
+
+</div>
+<?php $__env->stopSection(); ?>

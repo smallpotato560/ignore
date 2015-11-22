@@ -38,16 +38,17 @@ Route::group(['prefix'=>'/portal'],function(){
 });
 
 //Admin Domain
-Route::group(['prefix'=>'/admin','namespace'=>'Admin'],function()
+Route::group(['prefix'=>'/admin','namespace'=>'Admin','middleware'=>'testauth'],function()
 {
 
     Route::get("/",function(){
         return redirect()->action('Auth\LoginController@create');
     });
     Route::get('/home','AdminHomeController@home');
-    Route::get('/publish','AdminHomeController@publish');
+    Route::get('/publish/{id}','AdminHomeController@edit');
     Route::post('/home','AdminHomeController@store');
     Route::any('/sss','AdminHomeController@store');
+
 
 });
 
@@ -68,13 +69,16 @@ Route::group(['prefix'=>'/ajax/'],function()
         Route::patch('/publish','AdminAjaxController@ajaxPublish');
         Route::post('/help','AdminAjaxController@help');
         Route::post("/modify","AdminAjaxController@ajaxModify");
+        Route::get("/modify","AdminAjaxController@ajaxModify");
 
     });
 
 });
 
 //test domain
-Route::group(['prefix'=>'/test/'],function(){
-    Route::get('article',"TestController@article");
+Route::group(['prefix'=>'/test/','namespace'=>'Test'],function(){
+    Route::get('article',"GlobalTestController@article");
+    Route::get('paginate','GlobalTestController@paginate');
+    Route::get('testpage','GlobalTestController@testpage');
 });
 

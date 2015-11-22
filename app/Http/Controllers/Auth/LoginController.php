@@ -48,6 +48,7 @@ class LoginController extends Controller
         if($user = $usermodel->getAuthIdentifier($all['email'])){
             $payload = $usermodel->getAuthPassword($all["email"]);
             if($payload && \Crypt::decrypt($payload) == $all["password"]) {
+                \Cookie::make(md5('session_token'),\Session::getToken());
                 session(["email"=>$all["email"]]);
                 return redirect()->action("RootController@create")->withInput($all);
             }

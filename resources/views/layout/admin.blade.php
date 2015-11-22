@@ -14,6 +14,7 @@
     <div class="col-lg-9" id="show" style="overflow: auto">
         @yield("content")
     </div>
+
     </div>
 </div>
 <div class="container-fluid">

@@ -24,11 +24,21 @@ class AdminAjaxController extends AdminHomeController
         return view('ajax.admin.setting')->renderSections();
     }
 
-    public function ajaxPublish()
+    public function ajaxPublish(Request $request)
     {
+        $id = (int)$request->get('id');
         $portal = new Portal();
         $portals = $portal->getPortals();
-        return (view('ajax/admin/publish',["portals"=>$portals])->renderSections());
+        $data = array(
+            "portals"=>$portals
+        );
+        if(isset($id) && $id>0) {
+            $model = new Article();
+            $article = $model->getArticle(["id"=>$id]);
+            $data['article']=$article;
+        }
+
+        return (view('ajax/admin/publish',$data)->renderSections());
     }
 
     public function help()
@@ -39,7 +49,7 @@ class AdminAjaxController extends AdminHomeController
     public function ajaxModify()
     {
         $article = new Article();
-        $result = (array)$article->getArticles();
+        $result = $article->paginateArticles(array(),10,'updated_at');
         return (view('ajax/admin/modify',["all"=>$result])->renderSections());
     }
 }

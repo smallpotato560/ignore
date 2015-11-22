@@ -29,7 +29,7 @@ class PortalController extends Controller
     public function create($id)
     {
         $model = new Article();
-        $articles = $model->getArticles(["Portal_id"=>$id]);
+        $articles = $model->paginateArticles(["Portal_id"=>$id],3);
         $model = new Portal();
         while(($hasParent[] = $model->getPortal(["id"=>$id],["parent","name"]))) {
             $current = current($hasParent);

@@ -1,0 +1,11 @@
+<?php $__env->startSection("error"); ?>
+    <?php if($errors->any()): ?>
+        <ul class="alert alert-danger">
+            <?php foreach($errors->all() as $error): ?>
+                <li style="list-style: none">
+                    <?php echo $error ?>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    <?php endif; ?>
+<?php $__env->stopSection(); ?>

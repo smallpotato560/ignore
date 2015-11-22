@@ -1,0 +1,10 @@
+<html>
+<head>
+    <?php echo $__env->yieldContent("css"); ?>
+</head>
+<body>
+    <div class="container">
+        <?php echo $__env->yieldContent("info"); ?>
+    </div>
+</body>
+</html>

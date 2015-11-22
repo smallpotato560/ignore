@@ -1,0 +1,6 @@
+
+<?php echo $__env->make("auth.error", array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make("auth.signup", array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make("auth.signin", array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make("bootstrap", array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make("layout.login", array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

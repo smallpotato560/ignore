@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Session;
 
 class UserController extends Controller
 {
@@ -27,6 +28,8 @@ class UserController extends Controller
     public function create()
     {
         //
+        var_dump(\Session::all());
+        die;
         return view("user.create");
     }
 

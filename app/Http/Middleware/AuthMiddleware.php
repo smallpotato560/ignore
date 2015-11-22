@@ -1,14 +1,10 @@
 <?php
 
 namespace App\Http\Middleware;
-<<<<<<< HEAD
-
-use Closure;
-
-=======
 use App\Http\Controllers\Auth\LoginController;
 use Closure;
->>>>>>> 043e292d78ac2e07cdf5085e1d5087e6b69dc788
+use Illuminate\Support\Facades\Crypt;
+
 class AuthMiddleware
 {
     /**
@@ -20,14 +16,14 @@ class AuthMiddleware
      */
     public function handle($request, Closure $next)
     {
-<<<<<<< HEAD
-        return $next($request);
-=======
+        $bad_session = \Cookie::get('laravel_session');
+        var_dump($bad_session);
+        $token = \Session::getToken();
+        var_dump(md5($token));
+        var_dump($bad_session == $token);
+        dd();
         if(!empty($email = session("email")))
             return $next($request);
-        $request->cookie();
-        cookie();
         return redirect()->action('RootController@create');
->>>>>>> 043e292d78ac2e07cdf5085e1d5087e6b69dc788
     }
 }

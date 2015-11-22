@@ -1,4 +1,4 @@
-@section("sidebar")
+<?php $__env->startSection("sidebar"); ?>
     <ul class="nav nav-pills nav-stacked">
         <li role="presentation"  class="active">
             <a href="#" id="index" class="fa fa-home" onclick="javascript:toHome();"><span>首页</span></a>
@@ -16,4 +16,4 @@
             <a href="#" id="help"  class="fa fa-question" onclick="javascript:toHelp();"><span>帮助</span></a>
         </li>
     </ul>
- @endsection
+ <?php $__env->stopSection(); ?>

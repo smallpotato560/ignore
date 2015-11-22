@@ -1,0 +1,24 @@
+<?php /*管理页面首页模版*/ ?>
+<html lang="zh-CN">
+<head>
+    <?php echo $__env->yieldContent("css"); ?>
+</head>
+<body>
+<?php echo $__env->yieldContent("nav"); ?>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-3">
+            <?php echo $__env->yieldContent("sidebar"); ?>
+        </div>
+
+    <div class="col-lg-9" id="show" style="overflow: auto">
+        <?php echo $__env->yieldContent("content"); ?>
+    </div>
+
+    </div>
+</div>
+<div class="container-fluid">
+    <?php /*<?php echo $__env->yieldContent("footer"); ?>*/ ?>
+</div>
+</body>
+</html>
