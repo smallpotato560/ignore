@@ -28,8 +28,6 @@ class UserController extends Controller
     public function create()
     {
         //
-        var_dump(\Session::all());
-        die;
         return view("user.create");
     }
 
