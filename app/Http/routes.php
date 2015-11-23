@@ -11,7 +11,6 @@
 |
 */
 use Illuminate\Support\Facades\Route;
-
 //Root Domain
 Route::group(['prefix'=>'/'],function(){
     Route::get('/',"RootController@create");
@@ -20,9 +19,9 @@ Route::group(['prefix'=>'/'],function(){
     Route::post('signup','Auth\SignUpController@store');
 });
 //User Domain
-Route::group(['prefix'=>'/user'],function(){
-    Route::get('/logout/{email}','Auth\LoginController@logout');
+Route::group(['prefix'=>'/user/'],function(){
     Route::get('/{email}','UserController@create');
+    Route::get('/logout/{email}','Auth\LoginController@logout');
 });
 
 //Article Domain
@@ -34,35 +33,29 @@ Route::group(['prefix'=>'/portal'],function(){
     Route::get("/{id}","PortalController@create");
     Route::get('/show',"PortalController@create");
     Route::post('/create',"PortalController@store");
-
 });
-
 //Admin Domain
 Route::group(['prefix'=>'/admin','namespace'=>'Admin','middleware'=>'testauth'],function()
 {
-
     Route::get("/",function(){
         return redirect()->action('Auth\LoginController@create');
     });
     Route::get('/home','AdminHomeController@home');
-    Route::get('/publish/{id}','AdminHomeController@edit');
+    Route::get('/publish','AdminHomeController@publish');
     Route::post('/home','AdminHomeController@store');
     Route::any('/sss','AdminHomeController@store');
-
-
 });
-
 //Error Domain
 Route::group(['prefix'=>'/error'],function(){
     Route::get('503',function(){
         return view("errors.503");
     });
 });
-
 //Ajax domain
 Route::group(['prefix'=>'/ajax/'],function()
 {
 //    Admin Ajax
+
     Route::group(['prefix'=>'admin','namespace'=>'Admin'],function(){
         Route::post('/home','AdminAjaxController@ajaxHome');
         Route::post('/setting','AdminAjaxController@setting');
@@ -70,11 +63,8 @@ Route::group(['prefix'=>'/ajax/'],function()
         Route::post('/help','AdminAjaxController@help');
         Route::post("/modify","AdminAjaxController@ajaxModify");
         Route::get("/modify","AdminAjaxController@ajaxModify");
-
     });
-
 });
-
 //test domain
 Route::group(['prefix'=>'/test/','namespace'=>'Test'],function(){
     Route::get('article',"GlobalTestController@article");
