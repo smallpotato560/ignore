@@ -4,18 +4,17 @@
     @yield("css")
 </head>
 <body>
-<div class="container">
-    @yield("header")
-</div>
+@yield("nav")
 <div class="container-fluid">
     <div class="row">
-        <div class="col-lg-2">
+        <div class="col-lg-3">
             @yield("sidebar")
         </div>
 
     <div class="col-lg-9" id="show" style="overflow: auto">
         @yield("content")
     </div>
+
     </div>
 </div>
 <div class="container-fluid">

@@ -1,0 +1,22 @@
+<html xmlns="http://www.w3.org/1999/html" lang="zh-CN">
+<head>
+    <?php echo $__env->yieldContent('css'); ?>
+</head>
+
+<body>
+    <div class="navigation">
+        <?php echo $__env->yieldContent('nav'); ?>
+    </div>
+    <div class="container">
+        <?php echo $__env->yieldContent("banner"); ?>
+    </div>
+
+    <div class="container">
+        <?php echo $__env->yieldContent('content'); ?>
+    </div>
+
+    <div class="container">
+        <?php echo $__env->yieldContent('footer'); ?>
+    </div>
+</body>
+</html>

@@ -1,0 +1,6 @@
+<?php $__env->startSection('footer'); ?>
+    <p class="text-center text-primary">
+        Copyright 2010
+    </p>
+
+<?php $__env->stopSection(); ?>

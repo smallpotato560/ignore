@@ -1,0 +1,33 @@
+<?php $__env->startSection('publish'); ?>
+        <?php /*工具栏*/ ?>
+        <?php echo Form::open(['url'=>'/admin/sss','id'=>'publish_form','charset'=>'utf-8']); ?>
+
+        <div class="form-inline">
+            <div class="form-group">
+                <label class=""><h3><strong>发布到</strong></h3></label>
+                <select name="Portal_id" class="form-control">
+                    <?php foreach($portals as $portal): ?>
+                    <option selected  value="<?php echo isset($portal->id) ? $portal->id : "1"; ?>"><?php echo isset($portal->name) ? $portal->name : "政务公开"; ?></option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <?php echo Form::label(null,'标题',["class"=>"text-info"]); ?>
+
+            <?php echo Form::text('title',isset($article->title)?$article->title:null,["class"=>"form-control","placeholder"=>"标题","style"=>"padding:0px;",]); ?>
+
+        </div>
+        <div style="margin: 20px auto;">
+            <textarea id="editor1" name="content"  placeholder="在这里输入正文...">
+                <?php echo isset($article->content) ? $article->content : ''; ?>
+
+            </textarea>
+        </div>
+        <?php /*提交按钮*/ ?>
+        <?php echo Form::submit('提交',['class'=>'btn btn-primary btn-block',]); ?>
+
+        <?php echo Form::close(); ?>
+
+<?php $__env->stopSection(); ?>

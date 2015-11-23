@@ -63,11 +63,14 @@ class Article extends Model
         $article = self::getArticles($article);
         return $article[0];
     }
+    public static function paginateArticles($attributes=array(),$size=10,$order='id')
+    {
+        $result = DB::table('articles')->where($attributes)->orderBy($order)->paginate($size);
+        return $result?$result:null;
+    }
     public static function getArticles($article=array())
     {
-
         $result = DB::table("articles")->select()->where($article)->get();
         return $result?$result:null;
-
     }
 }

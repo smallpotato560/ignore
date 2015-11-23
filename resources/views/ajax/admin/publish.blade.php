@@ -1,5 +1,4 @@
 @section('publish')
-
         {{--工具栏--}}
         {!! Form::open(['url'=>'/admin/sss','id'=>'publish_form','charset'=>'utf-8']) !!}
         <div class="form-inline">
@@ -15,10 +14,12 @@
 
         <div class="form-group">
             {!! Form::label(null,'标题',["class"=>"text-info"])!!}
-            {!! Form::text('title',null,["class"=>"form-control","placeholder"=>"标题","style"=>"padding:0px;"]) !!}
+            {!! Form::text('title',isset($article->title)?$article->title:null,["class"=>"form-control","placeholder"=>"标题","style"=>"padding:0px;",]) !!}
         </div>
         <div style="margin: 20px auto;">
-            <textarea id="editor1" name="content"  placeholder="在这里输入正文..."></textarea>
+            <textarea id="editor1" name="content"  placeholder="在这里输入正文...">
+                {!! $article->content or '' !!}
+            </textarea>
         </div>
         {{--提交按钮--}}
         {!! Form::submit('提交',['class'=>'btn btn-primary btn-block',]) !!}

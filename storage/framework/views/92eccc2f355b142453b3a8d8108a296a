@@ -1,0 +1,94 @@
+<?php $__env->startSection('content'); ?>
+<?php /*<div class="container">*/ ?>
+    <?php /*门户点*/ ?>
+    <div class="row">
+        <?php if($portals): ?>
+        <?php foreach($portals as $portal_chunk): ?>
+        <?php /*unit template*/ ?>
+        <div class="col-md-3" style="position: relative;display: inline-block;">
+            <ul style="padding:5px">
+                <?php foreach($portal_chunk as $portal ): ?>
+                <li><a href="<?php echo "/portal/".$portal->id; ?>"><i class="fa fa-smile-o"><?php echo $portal->name; ?></i></a></li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+        <?php endforeach; ?>
+        <?php endif; ?>
+    </div>
+    <!--    第一行-->
+    <div class="row">
+        <!--        项目一-->
+        <div class="col-lg-7 col-md-12 col-sm-12 col-xs-12">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title">动态要闻</h3>
+                </div>
+                <div class="panel-body">
+                    <ul>
+                        <li>
+                            <h5 class="text-success">标题一</h5>
+                            <span>这是第一条测试动态信息</span>
+                            <span>2015-12-12</span>
+                        </li>
+                        <li>
+                            <h5>标题二</h5>
+                            <p1>这是第二条测试动态信息</p1>
+                            <span>2015-12-12</span>
+                        </li>
+                        <li>
+                            <h5>标题三</h5>
+                            <p1>这是第三条测试动态信息</p1>
+                            <span>2015-12-12</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--轮播-->
+        <div id="carousel-example-generic" class="carousel slide col-lg-5 col-md-12 col-sm-12" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#carousel-example-generic" data-slide-to=<?php echo isset($img_cnt) ? $img_cnt : '0'; ?> <?php if(1>0): ?>class="active"<?php endif; ?>></li>
+            </ol>
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+                <?php for($i=0;$i<1;++$i): ?>
+                <div class="item <?php if($i==0): ?>active"<?php endif; ?>>
+                    <img class="img-rounded" src="<?php echo isset($img["url"]) ? $img["url"] : "img/xys.jpg"; ?>" alt="">
+                    <div class="carousel-caption">
+                        <h1><?php echo isset($img_title) ? $img_title : "外高桥保税区"; ?></h1>
+                        <p><?php echo isset($img["intro"]) ? $img["intro"] : "这是一段简介,最好不要少于十五字!"; ?></p>
+                    </div>
+                </div>
+                <?php endfor; ?>
+            </div>
+
+        </div>
+    </div>
+        <!--   第一行结束-->
+        <!--        第二行开始-->
+    <div class="row">
+            <!--        项目一-->
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title"></h3>
+                </div>
+                <div class="panel-body">
+                    <ul>
+                        <?php if(isset($articles)): ?>
+                        <?php for($i=0;$i<5;++$i): ?>
+                        <li>
+                            <span style="font-weight: 800"><?php echo isset($articles[$i]->title) ? $articles[$i]->title : "default"; ?></span>
+                            <span><?php echo date('Y-m-d',$articles[$i]->cretated_at) or 0; ?></span>
+                        </li>
+                        <?php endfor; ?>
+                        <?php endif; ?>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--第二行结束-->
+<?php /*</div>*/ ?>
+<?php $__env->stopSection(); ?>
