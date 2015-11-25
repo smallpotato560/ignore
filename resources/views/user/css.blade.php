@@ -16,9 +16,12 @@
     body {
         font-family: Arial,Verdana;
     }
-    .container div{
-        border: solid 1px red
-    }
+    /*div .container{*/
+        /*border: solid 1px red*/
+    /*}*/
+    /*div .container-fluid .row{*/
+        /*border: solid 1px red*/
+    /*}*/
     p {
         margin: 0;
         padding: 0;

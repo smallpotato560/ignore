@@ -7,15 +7,15 @@
     <div class="navigation">
         @yield('nav')
     </div>
-    <div class="container">
+    <div class="container-fluid">
         @yield("banner")
     </div>
 
-    <div class="container">
+    <div class="container-fluid">
         @yield('content')
     </div>
 
-    <div class="container">
+    <div class="container-fluid">
         @yield('footer')
     </div>
 </body>
