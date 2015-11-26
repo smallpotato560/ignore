@@ -66,7 +66,7 @@
     <div class="row">
         <div class="col-md-offset-2 col-md-8">
             <div class="pull-left">
-                <a><i class="fa fa-heart-o fa-2x"></i></a>
+                <a href="javascript:like({!! '\'like\''.','.$article->id.','.'1' !!})"><i id='like' class="fa fa-heart-o fa-2x"></i></a>
                 <a><i class="fa fa-comment-o fa-2x"></i></a>
             </div>
            <div class="pull-right">
@@ -77,5 +77,35 @@
         </div>
     </div>
 </div>
+<script>
+    function like(id,uid,aid){
+        var cn = $('#'+id).attr('class');
+        if(cn=='fa fa-heart-o fa-2x') {
+            $('#'+id).attr('class','fa fa-heart fa-2x');
+        }else{
+            $('#'+id).attr('class','fa fa-heart-o fa-2x');
+        }
+        alert(cn);
+        //$.ajaxSetup({
+        //    headers: {
+        //        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        //    }
+        //});
+        //$.ajax(
+        //    {
+        //        type: 'patch',
+        //        dataType:'json',
+        //        url: '/ajax/user/like',
+        //        data:{
+        //            'User_id':uid,
+        //            'Article_id':aid,
+        //        },
+        //        success: function (data) {
+        //            alert(data['msg']);
+        //
+        //        }
+        //    });
+    }
+</script>
 </body>
 </html>

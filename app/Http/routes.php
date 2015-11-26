@@ -37,13 +37,11 @@ Route::group(['prefix'=>'/portal'],function(){
 //Admin Domain
 Route::group(['prefix'=>'/admin','namespace'=>'Admin','middleware'=>'testauth'],function()
 {
-    Route::get("/",function(){
-        return redirect()->action('Auth\LoginController@create');
-    });
     Route::get('/home','AdminHomeController@home');
-    Route::get('/publish','AdminHomeController@publish');
     Route::post('/home','AdminHomeController@store');
-    Route::any('/sss','AdminHomeController@store');
+    Route::post('/sss','AdminHomeController@create');
+    Route::post('/sss/{id}','AdminHomeController@store');
+    Route::post('/upload','AdminHomeController@uploadBanner');
 });
 //Error Domain
 Route::group(['prefix'=>'/error'],function(){
@@ -55,7 +53,6 @@ Route::group(['prefix'=>'/error'],function(){
 Route::group(['prefix'=>'/ajax/'],function()
 {
 //    Admin Ajax
-
     Route::group(['prefix'=>'admin','namespace'=>'Admin'],function(){
         Route::post('/home','AdminAjaxController@ajaxHome');
         Route::post('/setting','AdminAjaxController@setting');
@@ -63,6 +60,9 @@ Route::group(['prefix'=>'/ajax/'],function()
         Route::post('/help','AdminAjaxController@help');
         Route::post("/modify","AdminAjaxController@ajaxModify");
         Route::get("/modify","AdminAjaxController@ajaxModify");
+    });
+    Route::group(['prefix'=>'user'],function(){
+        Route::any('like','UserLikeController@create');
     });
 });
 //test domain

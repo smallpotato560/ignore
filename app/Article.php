@@ -1,15 +1,14 @@
 <?php
 
 namespace App;
-
-use Illuminate\Database\Eloquent\Model;
 use DB;
+use Illuminate\Database\Eloquent\Model;
 use Mockery\CountValidator\Exception;
 
 class Article extends Model
 {
     //
-    protected $table = 'articles';
+    const table = 'articles';
     protected $hidden = ["_token"];
     //
     protected $xtable = 'article_extend';
@@ -19,20 +18,8 @@ class Article extends Model
     {
 
     }
-    //获取扩展字段
-    public function getArticleExtends($Article_id)
-    {
-        //just test how Eloquent worked
-        $ex =  self::where('Articles_id','=',$Article_id)->all();
-        foreach($ex as $val) {
-            var_dump($val);
-        }
-    }
-    //合并本条记录的所有字段
-    public function merge($Article_id)
-    {
 
-    }
+
     public function __construct(array $attributes=array())
     {
         parent::__construct($attributes);
@@ -51,7 +38,18 @@ class Article extends Model
 
     public static function modifyArticle($article=array())
     {
+        if(isset($article['id'])) {
+            $id = $article['id'];
+            unset($article['id']);
+            try {
+                $result = DB::table(self::table)->where(['id' => $id])->update($article);
 
+            } catch(Exception $e) {
+                return false;
+            }
+            return $result;
+        }
+        return null;
     }
 
     public static function deleteArticle($id)
@@ -63,11 +61,26 @@ class Article extends Model
         $article = self::getArticles($article);
         return $article[0];
     }
+
+    public  static  function isExist($id)
+    {
+        try{
+            $result=DB::table(self::table)->where(['id'=>$id])->get(['id']);
+        } catch(Exception $e){
+            return false;
+        }
+        if(isset($result[0])){
+            return $result[0];
+        }
+        return null;
+    }
+
     public static function paginateArticles($attributes=array(),$size=10,$order='id')
     {
         $result = DB::table('articles')->where($attributes)->orderBy($order)->paginate($size);
         return $result?$result:null;
     }
+
     public static function getArticles($article=array())
     {
         $result = DB::table("articles")->select()->where($article)->get();

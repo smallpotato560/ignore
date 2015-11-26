@@ -19,7 +19,7 @@ class RootController extends Controller
         $portals = $model->getPortals(["parent"=>0]);
         if($portals && is_array($portals))
             return view("index",["portals"=>array_chunk($portals,3)]);
-        dd("error");
+        return view("index");
     }
 
     public function getTopPortals()

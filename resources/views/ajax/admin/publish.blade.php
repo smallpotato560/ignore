@@ -1,13 +1,17 @@
 @section('publish')
         {{--工具栏--}}
-        {!! Form::open(['url'=>'/admin/sss','id'=>'publish_form','charset'=>'utf-8']) !!}
+        {!! Form::open(['url'=>'/admin/sss/'.(isset($article->id)?$article->id:''),'id'=>'publish_form','charset'=>'utf-8']) !!}
         <div class="form-inline">
             <div class="form-group">
                 <label class=""><h3><strong>发布到</strong></h3></label>
                 <select name="Portal_id" class="form-control">
-                    @foreach($portals as $portal)
-                    <option selected  value="{!! $portal->id or "1"!!}">{!! $portal->name or "政务公开" !!}</option>
-                    @endforeach
+                    @if(isset($portals)&&!empty($portals))
+                        @foreach($portals as $portal)
+                        <option selected  value="{!! $portal->id or "1"!!}">{!! $portal->name or "政务公开" !!}</option>
+                        @endforeach
+                    @else
+                        <option selected  value="0">暂无门户点</option>
+                    @endif
                 </select>
             </div>
         </div>
@@ -22,6 +26,10 @@
             </textarea>
         </div>
         {{--提交按钮--}}
-        {!! Form::submit('提交',['class'=>'btn btn-primary btn-block',]) !!}
+        @if(isset($portals)&&!empty($portals))
+            {!! Form::submit('提交',['class'=>'btn btn-primary btn-block',]) !!}
+        @else
+            {!! Form::submit('不可用',['class'=>'btn btn-danger btn-block disabled','disabled'=>'disabled']) !!}
+        @endif
         {!! Form::close() !!}
 @endsection

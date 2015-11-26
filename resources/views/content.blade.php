@@ -2,17 +2,22 @@
 {{--<div class="container">--}}
     {{--门户点--}}
     <div class="row">
-        @if($portals)
-        @foreach($portals as $portal_chunk)
-        {{--unit template--}}
-        <div class="col-md-3" style="position: relative;display: inline-block;">
-            <ul style="padding:5px">
-                @foreach($portal_chunk as $portal )
-                <li><a href="{!! "/portal/".$portal->id !!}"><i class="fa fa-smile-o">{!! $portal->name !!}</i></a></li>
-                @endforeach
-            </ul>
-        </div>
-        @endforeach
+        <?php $c=0;?>
+        @if(isset($portals))
+            @foreach($portals as $portal_chunk)
+            {{--unit template--}}
+                @if($c++<=3)
+                    <div class="col-md-3" style="position: relative;display: inline-block;">
+                        <ul style="padding:5px">
+                            @foreach($portal_chunk as $portal )
+                                <li><a href="{!! "/portal/".$portal->id !!}"><i class="fa fa-smile-o">{!! $portal->name !!}</i></a></li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+            @endforeach
+        @else
+
         @endif
     </div>
     <!--    第一行-->

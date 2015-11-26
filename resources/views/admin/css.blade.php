@@ -11,17 +11,11 @@
 {{--<link href="bootstrap/css/bootstrap-combined.min.css" rel="stylesheet">--}}
 <link href="master.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="../font-awesome-4.4.0/css/font-awesome.min.css">
-{{--Bootstrap extends JS--}}
-<script type="text/javascript" src="bootstrap/js/jquery2.1.min.js"></script>
-<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="public/js/wysiwyg.min.js"></script>
-<script type="text/javascript" src="public/js/wysiwyg-editor.min.js"></script>
-<script type="text/javascript" src="public/js/coolclock.js"></script>
-<!-- github.io delivers wrong content-type - but you may want to include FontAwesome in 'wysiwyg-editor.css' -->
 <link rel="stylesheet" type="text/css" href="public/css/wysiwyg-editor.min.css" />
+<link rel="stylesheet" type="text/css" href="public/css/fileinput.min.css">
 <style>
     li{
-      list-style: none;
+        list-style: none;
     }
     #title{
         height:50px;
@@ -85,7 +79,6 @@
     td{
         padding: 5px;
     }
-
     td a{
         min-height: 80px;
         width: 80px;
@@ -93,5 +86,4 @@
         border: 1px solid #e0e0e0;
     }
 </style>
-<script src="master.js"></script>
 @endsection

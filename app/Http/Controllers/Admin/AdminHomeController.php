@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -8,11 +9,6 @@ use Illuminate\Support\Facades\Input;
 
 class AdminHomeController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return Response
-     */
     public function home()
     {
         return view('admin.create');
@@ -22,9 +18,20 @@ class AdminHomeController extends Controller
      *
      * @return Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        return view('admin/create');
+        $all = $request->all();
+        $model = new \App\Article();
+        if(isset($all['_token']));
+        unset($all["_token"]);
+        $intro = explode('。',strip_tags($all["content"]),2);
+        $intro = implode('。',$intro)."...";
+        $all["intro"] = $intro;
+        $all['created_at']=Carbon::now();
+        $result = $model->newArticle($all);
+        if($request) {
+            echo '<script>window.location.href=\'/admin/home\';</script>';
+        }
     }
 
     /**
@@ -33,30 +40,27 @@ class AdminHomeController extends Controller
      * @param  Request  $request
      * @return Response
      */
-    public function store(Request $request)
+    public function store(Request $request,$id)
     {
         //
-        $all = $request->get('content');
-        var_dump($all);
-        die;
+        $all = $request->all();
         $model = new \App\Article();
-        unset($all["_token"]);
+        if(isset($all['_token']));
+            unset($all["_token"]);
         $intro = explode('。',strip_tags($all["content"]),2);
         $intro = implode('。',$intro)."...";
         $all["intro"] = $intro;
-        $result = $model->newArticle($all);
+        if($id && !$model->isExist($id)) {
+            $result = $model->newArticle($all);
+        }
+        $all['id']=$id;
+        $all['updated_at']=Carbon::now();
+        $result = $model->modifyArticle($all);
+        if($request) {
+            echo '<script>window.location.href=\'/admin/home\';</script>';
+        }
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function show($id)
-    {
-        //
-    }
     /**
      * Show the form for editing the specified resource.
      *
@@ -72,27 +76,11 @@ class AdminHomeController extends Controller
         return view('admin/publish',['article'=>$article,'portals'=>$portals]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  Request  $request
-     * @param  int  $id
-     * @return Response
-     */
-    public function update(Request $request, $id)
+    public function uploadBanner(Request $request)
     {
-        //
+        $all = $request->all();
+        if(isset($all['file']))
+            die(json_encode(['code'=>200,'msg'=>'successful']));
+        die(json_encode(['code'=>404,'msg'=>'not found']));
     }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
-
 }
