@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\RootController;
+use App\User;
+use Carbon\Carbon;
 use Illuminate\Auth\Guard;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\RedirectResponse;
@@ -9,6 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Session;
 use Mockery\Exception;
 use Illuminate\Contracts\Encryption\DecryptException;
 
@@ -48,8 +51,12 @@ class LoginController extends Controller
         if($user = $usermodel->getAuthIdentifier($all['email'])){
             $payload = $usermodel->getAuthPassword($all["email"]);
             if($payload && \Crypt::decrypt($payload) == $all["password"]) {
-                \Cookie::make(md5('session_token'),\Session::getToken());
                 session(["email"=>$all["email"]]);
+                \Session::set('id',$user->id);
+                \Session::set('name',$user->name);
+                $login_at = Carbon::now();
+                $result = $usermodel->modifyUser(['login_at'=>$login_at]);
+                \Session::set('login_at',$login_at);
                 return redirect()->action("RootController@create")->withInput($all);
             }
         }

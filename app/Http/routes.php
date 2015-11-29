@@ -22,6 +22,7 @@ Route::group(['prefix'=>'/'],function(){
 Route::group(['prefix'=>'/user/'],function(){
     Route::get('/{email}','UserController@create');
     Route::get('/logout/{email}','Auth\LoginController@logout');
+    Route::get('/unlike/{Aid}','UserController@unlike');
 });
 
 //Article Domain

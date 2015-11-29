@@ -15,6 +15,7 @@ class RootController extends Controller
 {
     public function create()
     {
+//        dd(\Session::all());
         $model = new Portal();
         $portals = $model->getPortals(["parent"=>0]);
         if($portals && is_array($portals))

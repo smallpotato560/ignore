@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\UserLikeModel;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Session;
+use App\Article;
 
 class UserController extends Controller
 {
@@ -28,7 +29,29 @@ class UserController extends Controller
     public function create()
     {
         //
-        return view("user.create");
+        $usrlike = new UserLikeModel();
+        if($Uid = \Session::get('id')) {
+            $attributes=['User_id'=>$Uid];
+            $alllikes = $usrlike->getAll($attributes,['Article_id']);
+            $article_model = new Article();
+            $articles=null;
+            foreach($alllikes as $Aid){
+                $articles[]=$article_model->getArticle(['id'=>$Aid->Article_id]);
+            }
+        }
+        return view("user.create",['articles'=>$articles,'alllikes'=>$alllikes]);
+    }
+    public function unlike($Aid)
+    {
+        $usrlike_model = new UserLikeModel();
+        $Uid=\Session::get('id');
+        $id = $usrlike_model->islike(['User_id'=>$Uid,'Article_id'=>$Aid]);
+        if($id) {
+            $result = $usrlike_model->unlike($id);
+            if($result){
+                return \Redirect::action('UserController@create');
+            }
+        }
     }
 
     /**

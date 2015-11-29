@@ -1,4 +1,5 @@
-@section("info")
+ @section("info")
+     {{--侧栏--}}
     <div class="row">
         <div class="panel panel-default col-lg-3 col-md-3" style="padding: 0 !important;">
             <div class="panel-heading" >
@@ -8,7 +9,7 @@
                 </div>
 
                 <div class="text-center">
-                    <a style="border-radius: 100%" >
+                    <a  href="/user/{!! \Session::get('email') !!}" style="border-radius: 100%" >
                         <i class="fa fa-user fa-4x"></i>
                     </a>
                     {{--<img src="" class="img-circle" height="120px" width="100px">--}}
@@ -16,8 +17,8 @@
 
                 <div>
                     <a><i class="fa fa-user"></i></a>
-                    <label class="text text-primary"><font>UserName</font></label>
-                    <p id="name">Linus</p>
+                    <label class="text text-primary">用户名</label>
+                    <p id="name">{!! \Session::get('name')?\Session::get('name'):'出错啦!'!!}</p>
                 </div>
 
             </div>
@@ -34,7 +35,7 @@
                         <a href="#" id="app" class="fa fa-pencil" onclick="javascript:0;"><span>操作3</span></a>
                     </li>
                     <li role="presentation">
-                        <a href="#" id="setting" class="fa fa-cog" onclick="javascript:0;"><span>操作4</span></a>
+                        <a href="?p=l" id="setting" class="fa fa-cog" onclick="javascript:0;"><span>收藏</span></a>
                     </li>
                     <li role="presentation">
                         <a href="#" id="help"  class="fa fa-question" onclick="javascript:0;"><span>操作5</span></a>
@@ -43,31 +44,26 @@
 
             </div>
         </div>
-
+    {{--多功能--}}
         <div class="col-lg-9 col-md-9">
+            {{--收藏--}}
+            @if(isset($_GET['p']) && $_GET['p']=='l')
             <div class="container-fluid">
+                <?php $alllikes->setPath('./'.\Session::get('email'));?>
+                <?php echo $alllikes->appends(['p' => 'l'])->render(); ?>
                 {{--<div class="row">--}}
-                    <ul class="pagination">
-                        <li class="{!! 1?"disabled":'' !!}"><a href='#'>«</a></li>
-                        {{--@for($page=1;$page<=$all->lastPage();++$page)--}}
-                        {{--<li class="{!! ($current==$page)?"active":'' !!}">--}}
-                        {{--<a href="javascript:paginate({!! $page or '' !!})">{!! $page or 1 !!}</a>--}}
-                        {{--</li>--}}
-                        {{--@endfor--}}
-                        <li  class="{!! 1?"disabled":'' !!}"><a href={!! 1 !!}>1</a></li>
-                        <li  class="{!! 1?"disabled":'' !!}"><a href={!! 2 !!}>2</a></li>
-                        <li  class="{!! 1?"disabled":'' !!}"><a href={!! 3 !!}>3</a></li>
-                        <li  class="{!! 1?"disabled":'' !!}"><a href={!! 4 !!}>4</a></li>
-                        <li  class="{!! 1?"disabled":'' !!}"><a href={!! 5 !!}>5</a></li>
-                        <li  class="{!! 1?"disabled":'' !!}"><a href='#'>»</a></li>
-                    </ul>
                     <div class="pull-right">
                         <div style="padding-bottom:20px "></div>
-                        {!! Form::open() !!}
-                        {!! Form::label(null,'当前页面 1 共5页') !!}
-                        {!! '<span>1</span>' !!}
+                        {!! Form::open(['method'=>'get']) !!}
+                        {!! Form::label(null,'当前页面'.$alllikes->currentPage(). '共'.$alllikes->lastPage().'页') !!}
                         {!! Form::label(null,'跳转到') !!}
-                        {!! Form::input('redirect',null) !!}
+                        {!! Form::text('p','l',['class'=>'hidden']) !!}
+                        <div class="input-group">
+                            {!! Form::text('page',null,['class'=>'form-control']) !!}
+                            <span  class = 'input-group-btn'>
+                                {!! Form::submit('提交',['class'=>'btn btn-primary',]) !!}
+                            </span>
+                        </div>
                         {!! Form::close() !!}
                     </div>
                 {{--</div>--}}
@@ -75,65 +71,49 @@
             </div>
 
             <div class="container-fluid">
-
-                <div class="row">
-                    <div class="col-sm-12 col-md-12">
-                        <div class="thumbnail">
-                            <div class="caption">
-                                <h3 style="max-height: 25px;overflow: hidden">{!! $article->title or "default" !!}</h3>
-                                <p>{!! $article->intro or "" !!}</p>
-                                <p><a href="{!! '/article/' !!}" class="btn btn-primary" role="button">浏览</a>
-                                    <a href="{!! '/article/' !!}" class="btn btn-default" role="button">收藏</a></p>
+            @if(isset($articles) && !empty($articles))
+                    @foreach($articles as $article)
+                        <div class="row">
+                            <div class="col-sm-12 col-md-12">
+                                <div class="thumbnail">
+                                    <div class="caption">
+                                        <h3 style="max-height: 25px;overflow: hidden">{!! $article->title or "default" !!}</h3>
+                                        <p>{!! $article->intro or "" !!}</p>
+                                        <p><a href="{!! '/article/'.$article->id !!}" class="btn btn-primary" role="button">浏览</a>
+                                            <a href="{!! '/user/unlike/'.$article->id !!}" class="btn btn-default" role="button">取消收藏</a></p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-sm-12 col-md-12">
-                        <div class="thumbnail">
-                            <div class="caption">
-                                <h3 style="max-height: 25px;overflow: hidden">{!! $article->title or "default" !!}</h3>
-                                <p>{!! $article->intro or "" !!}</p>
-                                <p><a href="{!! '/article/' !!}" class="btn btn-primary" role="button">浏览</a>
-                                    <a href="{!! '/article/' !!}" class="btn btn-default" role="button">收藏</a></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-sm-12 col-md-12">
-                        <div class="thumbnail">
-                            <div class="caption">
-                                <h3 style="max-height: 25px;overflow: hidden">{!! $article->title or "default" !!}</h3>
-                                <p>{!! $article->intro or "" !!}</p>
-                                <p><a href="{!! '/article/' !!}" class="btn btn-primary" role="button">浏览</a>
-                                    <a href="{!! '/article/' !!}" class="btn btn-default" role="button">收藏</a></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+                    @endforeach
+                @else
+                <p>你似乎还没收藏文章呢!</p>
+                @endif
             </div>
 
             <div class="container-fluid">
-                <ul class="pagination">
-                    <li class="{!! 1?"disabled":'' !!}"><a href='#'>«</a></li>
-                    {{--@for($page=1;$page<=$all->lastPage();++$page)--}}
-                        {{--<li class="{!! ($current==$page)?"active":'' !!}">--}}
-                            {{--<a href="javascript:paginate({!! $page or '' !!})">{!! $page or 1 !!}</a>--}}
-                        {{--</li>--}}
-                    {{--@endfor--}}
-                    <li  class="{!! 1?"disabled":'' !!}"><a href={!! 1 !!}>1</a></li>
-                    <li  class="{!! 1?"disabled":'' !!}"><a href={!! 2 !!}>2</a></li>
-                    <li  class="{!! 1?"disabled":'' !!}"><a href={!! 3 !!}>3</a></li>
-                    <li  class="{!! 1?"disabled":'' !!}"><a href={!! 4 !!}>4</a></li>
-                    <li  class="{!! 1?"disabled":'' !!}"><a href={!! 5 !!}>5</a></li>
-                    <li  class="{!! 1?"disabled":'' !!}"><a href='#'>»</a></li>
-                </ul>
+                <?php $alllikes->setPath('./'.\Session::get('email'));?>
+                <?php echo $alllikes->appends(['p' => 'l'])->render(); ?>
             </div>
-
+                {{--默认,信息修改页--}}
+            @elseif(!isset($_GET['p']))
+            <div class="container-fluid">
+                {!! Form::open() !!}
+                <div class="form-group">
+                    {!! Form::label('null','用户名',['class'=>'']) !!}
+                    {!! Form::text('name',null,['class'=>'']) !!}
+                </div>
+                <div class="form-group">
+                    {!! Form::label('null','电子邮件',['class'=>'']) !!}
+                    {!! Form::text('email',null,['class'=>'']) !!}
+                </div>
+                <div class="form-group">
+                    {!! Form::label('null','电子邮件',['class'=>'']) !!}
+                    {!! Form::text('email',null,['class'=>'']) !!}
+                </div>
+                {!! Form::close() !!}
+            </div>
+            @endif
         </div>
     </div>
 @endsection

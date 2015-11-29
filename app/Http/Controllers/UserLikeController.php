@@ -28,11 +28,11 @@ class UserLikeController extends Controller
     public function create(Request $request)
     {
         $Aid = $request->get('Article_id');
-        $Uid = $request->get('User_id');
+        $Uid = \Session::get('id');
         if($Aid&&$Uid) {
             $attributes=['Article_id'=>$Aid,'User_id'=>$Uid];
             $usrlike = new UserLikeModel();
-            $result = $usrlike->like($attributes);
+            $result = $usrlike->ulike($attributes);
             if($result)
                 die(json_encode(['code'=>200,'msg'=>'成功']));
             die(json_encode(['code'=>500,'msg'=>'失败']));
