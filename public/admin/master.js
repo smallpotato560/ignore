@@ -627,26 +627,92 @@ function paginate(page) {
 
 }
 
-function like(id,uid,aid){
-    var cn = $(id).attr('class')
-    alert(cn);
-    //$.ajaxSetup({
-    //    headers: {
-    //        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-    //    }
-    //});
-    //$.ajax(
-    //    {
-    //        type: 'patch',
-    //        dataType:'json',
-    //        url: '/ajax/user/like',
-    //        data:{
-    //            'User_id':uid,
-    //            'Article_id':aid,
-    //        },
-    //        success: function (data) {
-    //            alert(data['msg']);
-    //
-    //        }
-    //    });
+function paginateusr(page) {
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+    $.ajax(
+        {
+            type: 'get',
+            dataType:'json',
+            url: '/ajax/admin/setusr',
+            data:{'page':page},
+            success: function (data) {
+                var show = document.getElementById('show');
+                show.innerHTML = data["setusr"];
+            }
+        });
+}
+
+function paginateportal(page) {
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+    $.ajax(
+        {
+            type: 'get',
+            dataType:'json',
+            url: '/ajax/admin/setportal',
+            data:{'page':page},
+            success: function (data) {
+                var show = document.getElementById('show');
+                show.innerHTML = data["setportal"];
+            }
+        });
+}
+
+function setusr(search) {
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+    $.ajax(
+        {
+            type: 'patch',
+            dataType:'json',
+            url: '/ajax/admin/setusr',
+            data:{'search':search},
+            success: function (data) {
+                var e=document.getElementById("show");
+                e.innerHTML=data["setusr"];
+            }
+        });
+}
+//其实通过ajax一个数据过去，通过一个控制器方法判断返回的HTML代码就好了，如果一个页面使用了ajax，那么这个ajax得到的页面里的所有交互都要使用ajax？
+function setportal(searche) {
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+    $.ajax(
+        {
+            type: 'patch',
+            dataType:'json',
+            url: '/ajax/admin/setportal',
+            data:{'search':searche},
+            success: function (data) {
+                var e=document.getElementById("show");
+                e.innerHTML=data["setportal"];
+            }
+        });
+}
+
+function muser(){
+    $.ajax(
+        {
+            type: 'patch',
+            dataType:'json',
+            url: '/ajax/admin/muser',
+            //data:{'search':search},
+            success: function (data) {
+                var e=document.getElementById("show");
+                e.innerHTML=data["muser"];
+            }
+        });
 }

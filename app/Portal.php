@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use DB;
+use Mockery\CountValidator\Exception;
 
 class Portal extends Model
 {
@@ -30,7 +31,14 @@ class Portal extends Model
 
     public static function paginate($attributes=array(),$size=10,$order='updated_at',$asc='desc')
     {
-        $result = DB::table('portals')->where($attributes)->orderBy($order,$asc)->paginate($size);
+        $select = DB::table('portals');
+        if(!empty($attributes))
+            $select->where($attributes);
+        try{
+            $result = $select->orderBy($order,$asc)->paginate($size);
+        }catch (Exception $e){
+            dd($e->getMessage());
+        }
         return $result?$result:null;
     }
 

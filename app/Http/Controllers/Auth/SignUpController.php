@@ -7,7 +7,7 @@ use Illuminate\Auth\Guard;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use Carbon\Carbon;
 class SignUpController extends Controller
 {
     /**
@@ -46,16 +46,33 @@ class SignUpController extends Controller
             $password =$all["password"];
             $payload = \Crypt::encrypt($password);
             $all["password"] = $payload;
-            if($user = $usermodel->create($all)){
-                return redirect()->action("RootController@create")->withInput($all);
+            $all['role']=5;
+            if(isset($all['_token']))
+                unset($all['_token']);
+            $user = $usermodel->newUser($all);
+            if($user){
+                $login = $this->login($all);
+                return $login;
             }
             dd("signup failed!");
-
         } catch(QueryException $e) {
             $message = $e->getMessage();
             $code= $e->getCode();
             dd(["message"=>$message,"code"=>$code]);
         }
+    }
+    public function login($all)
+    {
+        $usermodel = new \App\User();
+        $user = $usermodel->getAuthIdentifier($all['email']);
+        session(["email"=>$all["email"]]);
+        \Session::set('id',$user->id);
+        \Session::set('name',$user->name);
+        \Session::set('r',$user->role);
+        $login_at = Carbon::now();
+        $result = $usermodel->modifyUser(['id'=>$user->id,'login_at'=>$login_at]);
+        \Session::set('login_at',$login_at);
+        return redirect()->action("RootController@create");
     }
 
     /**

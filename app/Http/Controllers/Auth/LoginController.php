@@ -14,6 +14,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Session;
 use Mockery\Exception;
 use Illuminate\Contracts\Encryption\DecryptException;
+use App\Role;
 
 class LoginController extends Controller
 {
@@ -47,6 +48,12 @@ class LoginController extends Controller
     public function store(Requests\LoginRequest $request)
     {
         $all = $request->all();
+        return $this->login($all);
+        dd("signin failed");
+    }
+
+    public function login($all)
+    {
         $usermodel = new \App\User();
         if($user = $usermodel->getAuthIdentifier($all['email'])){
             $payload = $usermodel->getAuthPassword($all["email"]);
@@ -54,15 +61,15 @@ class LoginController extends Controller
                 session(["email"=>$all["email"]]);
                 \Session::set('id',$user->id);
                 \Session::set('name',$user->name);
+                \Session::set('r',$user->role);
+//                $role_model = new Role();
                 $login_at = Carbon::now();
-                $result = $usermodel->modifyUser(['login_at'=>$login_at]);
+                $result = $usermodel->modifyUser(['id'=>$user->id,'login_at'=>$login_at]);
                 \Session::set('login_at',$login_at);
                 return redirect()->action("RootController@create")->withInput($all);
             }
         }
-        dd("signin failed");
     }
-
     /**
      * Display the specified resource.
      *
@@ -109,7 +116,9 @@ class LoginController extends Controller
     }
     public function logout($email="")
     {
-        session(["email"=>null]);
+        $usermodel = new User();
+        $result = $usermodel->modifyUser(['id'=>\Session::get('id'),'logout_at'=>Carbon::now()]);
+        \Session::flush();
         return redirect()->action("RootController@create");
     }
 }

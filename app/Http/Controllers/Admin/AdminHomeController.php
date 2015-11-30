@@ -79,8 +79,11 @@ class AdminHomeController extends Controller
     public function uploadBanner(Request $request)
     {
         $all = $request->all();
-        if(isset($all['file']))
-            die(json_encode(['code'=>200,'msg'=>'successful']));
+        if(isset($all['file'])) {
+            if(is_file('config'))
+                mkdir('config');
+            die(json_encode(['code' => 200, 'msg' => 'successful']));
+        }
         die(json_encode(['code'=>404,'msg'=>'not found']));
     }
 }

@@ -52,7 +52,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      */
     public function getAuthIdentifier($email="")
     {
-        $user = DB::table("users")->where("email",$email)->first(['id','name']);
+        $user = DB::table("users")->where("email",$email)->first(['id','name','role']);
         return $user?$user:null;
     }
 
@@ -75,6 +75,19 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     public function getRememberToken()
     {
 
+    }
+    public function paginateUser($search=null,$size=10,$order='id',$asc='asc')
+    {
+        $result =null;
+        $select = \DB::table($this->table);
+        try {
+            if($search)
+                $select->where('name',$search);
+            $result = $select->orderBy($order, $asc)->paginate($size);
+        }catch (Exception $e){
+            dd($e->getMessage());
+        }
+        return $result;
     }
     public function newUser($attributes=[])
     {

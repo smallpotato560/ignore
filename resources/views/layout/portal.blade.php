@@ -24,16 +24,16 @@
     </div>
     @foreach($all as $article)
     <div class="row">
-    <div class="col-sm-12 col-md-12">
-    <div class="thumbnail">
-    <div class="caption">
-    <h3 style="max-height: 25px;overflow: hidden">{!! $article->title or "default" !!}</h3>
-    <p>{!! $article->intro or "" !!}</p>
-    <p><a href="{!! '/article/'.$article->id !!}" class="btn btn-primary" role="button">浏览</a>
-    <a href="{!! '/article/'.$article->id !!}}" class="btn btn-default" role="button">收藏</a></p>
-    </div>
-    </div>
-    </div>
+        <div class="col-sm-12 col-md-12">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h3 style="max-height: 25px;overflow: hidden">{!! $article->title or "default" !!}</h3>
+                    <p>{!! $article->intro or "" !!}</p>
+                    <p><a href="{!! '/article/'.$article->id !!}" class="btn btn-primary" role="button">浏览</a>
+                    <a href="{!! '/article/'.$article->id !!}}" class="btn btn-default" role="button">收藏</a></p>
+                </div>
+            </div>
+        </div>
     </div>
     @endforeach
     <div class="text-center">
