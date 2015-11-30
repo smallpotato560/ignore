@@ -1,6 +1,6 @@
 @section("info")
     <div class="row">
-        <div class="panel panel-default col-lg-3 col-md-3" style="padding: 0 !important;">
+        <div class="col-lg-3 col-md-3 panel panel-default"  style="padding: 0 !important;">
             <div class="panel-heading" >
 
                 <div class="panel-title">
@@ -43,7 +43,6 @@
 
             </div>
         </div>
-
         <div class="col-lg-9 col-md-9">
             <div class="container-fluid">
                 {{--<div class="row">--}}
