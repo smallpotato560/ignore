@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Article;
+use App\UserLikeAtom;
+use App\UserLikeModel;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -15,22 +17,24 @@ class ArticleController extends Controller
      *
      * @return Response
      */
-    public function index()
+    public function index($Uid)
     {
-        //
+        if($Uid) {
+            $attributes = ['User_id' => $Uid];
+            $usrlike = new UserLikeModel();
+            $result = $usrlike->getAll($attributes);
+        }
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return Response
-     */
+    //收藏或者取消收藏
     public function create($id)
     {
         //
         $model = new Article();
         $article = $model->getArticle(["id"=>$id]);
-        return view("article.index",["article"=>$article]);
+        $usrlike = new UserLikeModel();
+        $islike = $usrlike->islike(['Article_id'=>$id,'User_id'=>\Session::get('id')]);
+        return view("article.index",["article"=>$article,'islike'=>$islike]);
 
     }
 
@@ -80,14 +84,4 @@ class ArticleController extends Controller
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }

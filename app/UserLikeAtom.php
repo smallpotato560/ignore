@@ -16,7 +16,19 @@ class UserLikeAtom extends Model
         $select = DB::table(self::table);
         $result = null;
         try {
-            $result = $select->where($attributes)->select()->first($columns);
+            $result = $select->where($attributes)->select($columns)->first($columns);
+        } catch (Exception $e) {
+            dd($e->getMessage());
+        }
+        return $result;
+    }
+
+    public static function getAll($attributes=[],$columns=['*'],$size=15)
+    {
+        $select = DB::table(self::table);
+        $result = null;
+        try {
+            $result = $select->where($attributes)->select($columns)->paginate($size,$columns);
         } catch (Exception $e) {
             dd($e->getMessage());
         }
@@ -43,5 +55,10 @@ class UserLikeAtom extends Model
             dd($e->getMessage());
         }
         return $result;
+    }
+    public static function delResource($id)
+    {
+        $result = DB::table(self::table)->delete($id);
+        return $result?true:false;
     }
 }

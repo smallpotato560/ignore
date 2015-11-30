@@ -9,6 +9,8 @@ use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 use DB;
+use Mockery\CountValidator\Exception;
+
 class User extends Model implements AuthenticatableContract, CanResetPasswordContract{
     use Authenticatable, CanResetPassword;
     /**
@@ -50,7 +52,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      */
     public function getAuthIdentifier($email="")
     {
-        $user = DB::table("users")->where("email",$email)->first(["id"]);
+        $user = DB::table("users")->where("email",$email)->first(['id','name']);
         return $user?$user:null;
     }
 
@@ -73,5 +75,33 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     public function getRememberToken()
     {
 
+    }
+    public function newUser($attributes=[])
+    {
+        $id = null;
+        if(!$attributes)
+            return $id;
+        try{
+            $select = \DB::table('users');
+            $id = $select->insertGetId($attributes);
+        }catch (Exception $e){
+            dd($e->getMessage());
+        }
+        return $id;
+    }
+    public function modifyUser($attributes=[])
+    {
+        $result = null;
+        if(!isset($attributes['id']))
+            return $result;
+        $id=$attributes['id'];
+        unset($attributes['id']);
+        try{
+            $select = \DB::table($this->table);
+            $result = $select->where(['id'=>$id])->update($attributes);
+        }catch (Exception $e){
+            dd($e->getMessage());
+        }
+        return $result?true:false;
     }
 }
