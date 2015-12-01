@@ -56,7 +56,7 @@ class AdminAjaxController extends AdminHomeController
 
     public function setusr(Request $request)
     {
-        //»ñÈ¡ËùÓĞÓÃ»§ĞÅÏ¢ÒÔ¼°·ÖÒ³
+        //è·å–æ‰€æœ‰ç”¨æˆ·ä¿¡æ¯ä»¥åŠåˆ†é¡µ
 
         $search =$request->get('search',null);
         $usr_model = new User();
@@ -69,7 +69,7 @@ class AdminAjaxController extends AdminHomeController
 
     public function setportal(Request $request)
     {
-        //»ñÈ¡ËùÓĞÃÅ»§µãĞÅÏ¢ÒÔ¼°·ÖÒ³
+        //è·å–æ‰€æœ‰é—¨æˆ·ç‚¹ä¿¡æ¯ä»¥åŠåˆ†é¡µ
         $search =$request->get('search',null);
 //        $page = $request->get('page',null);
         $portal_model = new Portal();
@@ -83,12 +83,57 @@ class AdminAjaxController extends AdminHomeController
         return view('ajax/admin/setportal',$data)->renderSections();
     }
 
-    public function modifyuser()
+    public function modifyuser(Request $request)
     {
-        return view('ajax/admin/muser')->renderSections();
+        $id = $request->get('id',null);
+        $user_model = new User();
+        $user = $user_model->getUser(['id'=>$id]);
+        $data=['id'=>$id,'user'=>$user];
+        return view('ajax/admin/muser',$data)->renderSections();
     }
-    public function modifyportal()
+    public function modifyportal(Request $request)
     {
-
+        $id = $request->get('id',null);
+        $portal_model = new Portal();
+        $portal = $portal_model->getPortal(['id'=>$id]);
+        $data=['id'=>$id,'portal'=>$portal];
+        return view('ajax/admin/mportal',$data)->renderSections();
+    }
+    public function save(Request $request)
+    {
+        $method = $request->get('method',null);
+        switch($method){
+            case 'save-u':
+                $user_model = new User();
+                $attributes=[
+                    'id'=>$request->get('id',null),
+                    'name'=>$request->get('name',null),
+                    'email'=>$request->get('email',null),
+                    'role'=>$request->get('role',null),
+                ];
+                $result = $user_model->modifyUser($attributes);
+                $code= $result?200:201;
+                $msg = $result?'æˆåŠŸ':'å¤±è´¥';
+                die(json_encode(['code'=>$code,'msg'=>$msg]));
+            case 'save-p':
+                $portal_model = new Portal();
+                $attributes=[
+                    'id'=>$request->get('id',null),
+                    'name'=>$request->get('name',null),
+//                    'parent'=>$request->get('parent',null),
+                ];
+                $results = $portal_model->modifyPortal($attributes);
+                $code = $results?200:201;
+                $msg = $results?'æˆåŠŸ':'å¤±è´¥';
+                die(json_encode(['code'=>$code,'msg'=>$msg]));
+            case 'del-p':
+                $portal_model = new Portal();
+                $id=$request->get('id',null);
+                $results = $portal_model->deletePortal($id);
+                $code = $results?200:201;
+                $msg = $results?'æˆåŠŸ':'å¤±è´¥' ;
+                die(json_encode(['code'=>$code,'msg'=>$msg]));
+            default:break;
+        }
     }
 }

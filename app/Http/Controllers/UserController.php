@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 use App\UserLikeModel;
 use App\Http\Requests;
@@ -30,7 +31,9 @@ class UserController extends Controller
     {
         //
         $usrlike = new UserLikeModel();
+        $user_model = new User();
         if($Uid = \Session::get('id')) {
+            $user = $user_model->getUser(['id'=>$Uid]);
             $attributes=['User_id'=>$Uid];
             $alllikes = $usrlike->getAll($attributes,['Article_id']);
             $article_model = new Article();
@@ -39,7 +42,7 @@ class UserController extends Controller
                 $articles[]=$article_model->getArticle(['id'=>$Aid->Article_id]);
             }
         }
-        return view("user.create",['articles'=>$articles,'alllikes'=>$alllikes]);
+        return view("user.create",['articles'=>$articles,'alllikes'=>$alllikes,'user'=>$user]);
     }
     public function unlike($Aid)
     {
@@ -49,7 +52,7 @@ class UserController extends Controller
         if($id) {
             $result = $usrlike_model->unlike($id);
             if($result){
-                return \Redirect::action('UserController@create');
+                return \Redirect::action('UserController@create',['email'=>\Session::get('email','error'),'p'=>'l']);
             }
         }
     }

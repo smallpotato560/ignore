@@ -42,8 +42,32 @@ class Portal extends Model
         return $result?$result:null;
     }
 
-    public static function deletePortal()
+    public static function deletePortal($id)
     {
+        if(!$id)
+            return null;
+        $select = DB::table('portals');
+        try{
+            $result = $select->delete($id);
+        }catch (Exception $e){
+            dd($e->getMessage());
+        }
+        return $result?true:false;
+    }
 
+    public static function  modifyPortal($attributes=[])
+    {
+        $result = null;
+        if(!isset($attributes['id']))
+            return $result;
+        $id=$attributes['id'];
+        unset($attributes['id']);
+        try{
+            $select = \DB::table('portals');
+            $result = $select->where(['id'=>$id])->update($attributes);
+        }catch (Exception $e){
+            dd($e->getMessage());
+        }
+        return $result?true:false;
     }
 }

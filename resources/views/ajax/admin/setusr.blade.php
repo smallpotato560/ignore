@@ -40,7 +40,7 @@
                     <td><span>{!! $user->login_at or 'null' !!}</span></td>
                     <td> <span>{!! $user->login_at>$user->logout_at?'在线':'离线' !!}</span></td>
                     <td><span>{!! $user->created_at !!}</span></td>
-                    <td> <a href="javascript:muser();">详情</a></td>
+                    <td> <a href="javascript:muser({!!  $user->id !!});">详情</a></td>
                 </tr>
             @endforeach
         @endif

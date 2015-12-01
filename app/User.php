@@ -76,6 +76,19 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     {
 
     }
+    public function getUser($attributes=[])
+    {
+        if(!$attributes)
+            return null;
+        $select = \DB::table($this->table);
+        try{
+            $result = null;
+            $result = $select->where($attributes)->first();
+        }catch (Exception $e){
+            dd($e->getMessage());
+        }
+        return $result;
+    }
     public function paginateUser($search=null,$size=10,$order='id',$asc='asc')
     {
         $result =null;

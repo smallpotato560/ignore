@@ -33,7 +33,7 @@
                     <td><span>{!! $portal->name or 'null' !!}</span></td>
                      <td><span>{!! $portal->parent or 'null' !!}</span></td>
                     <td><span>{!! $portal->created_at or 'null' !!}</span></td>
-                    <td><a>详情</a></td>
+                    <td><a href="javascript:mportal({!! $portal->id !!})">详情</a></td>
                 </tr>
             @endforeach
         @endif

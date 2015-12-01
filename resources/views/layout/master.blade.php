@@ -21,7 +21,7 @@
 <script type="text/javascript" rel="script" src="bootstrap/js/newsbox.min.js"></script>
 <script>
     $(".demo1").bootstrapNews({
-        newsPerPage: 5,
+        newsPerPage: 2,
         autoplay: true,
         pauseOnHover:true,
         direction: 'up',

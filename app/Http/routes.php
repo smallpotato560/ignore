@@ -68,6 +68,8 @@ Route::group(['prefix' => '/ajax/','middleware'=>'acl'], function () {
         Route::get('/setportal', 'AdminAjaxController@setportal');
         Route::get('/setusr', 'AdminAjaxController@setusr');
         Route::patch('/muser', 'AdminAjaxController@modifyuser');
+        Route::post('/save','AdminAjaxController@save');
+        Route::patch('/mportal','AdminAjaxController@modifyPortal');
     });
     Route::group(['prefix' => 'user'], function () {
         Route::any('like', 'UserLikeController@create');
