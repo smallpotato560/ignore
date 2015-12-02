@@ -3,11 +3,8 @@
     <div class="row">
         <!--postion 1-->
         <!--标签纵览 -->
-        <div class="col-lg-6">
-            <hr>
-            <br/>
-            <br/>
-            <br/>
+        <div class="col-lg-12">
+            <br>
             <!--Horizontal Tab-->
             <div id="parentHorizontalTab">
                 <ul class="resp-tabs-list hor_1">
@@ -15,8 +12,7 @@
                 </ul>
                 <div class="resp-tabs-container hor_1">
                     <div>
-                        <p>
-                            <!--vertical Tabs-->
+                        <p><!--vertical Tabs-->
                         <div id="ChildVerticalTab_1">
                             <ul class="resp-tabs-list ver_1">
                                 @foreach($portals as $portal)
@@ -25,83 +21,35 @@
                             </ul>
                             <div class="resp-tabs-container ver_1">
                                 <div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nibh urna, euismod ut ornare non, volutpat vel tortor. Integer laoreet placerat suscipit. Sed sodales scelerisque commodo. Nam porta cursus lectus. Proin nunc erat, gravida a facilisis quis, ornare id lectus. Proin consectetur nibh quis urna gravida mollis.</p>
+                                    <p>今日要闻记录关于上海自由贸易区的当日热点</p>
                                 </div>
                                 <div>
-                                    <p>Lorem ipsum dolor sit amet, lerisque commodo. Nam porta cursus lectusconsectetur adipiscing elit. Vestibulum nibh urna, euismod ut ornare non, volutpat vel tortor. Integer laoreet placerat suscipit. Sed sodales sce. Proin nunc erat, gravida a facilisis quis, ornare id lectus</p>
+                                    <p>图片新闻是以图片记录新闻的一种方式</p>
                                 </div>
                                 <div>
-                                    <p>Suspendisse blandit velit Integer laoreet placerat suscipit. Sed sodales scelerisque commodo. Nam porta cursus lectus. Proin nunc erat, gravida a facilisis quis, ornare id lectus. Proin consectetur nibh quis Integer laoreet placerat suscipit. Sed sodales scelerisque commodo. Nam porta cursus lectus. Proin nunc erat, gravida a facilisis quis, ornare id lectus. Proin consectetur nibh quis urna gravid urna gravid eget erat suscipit in malesuada odio venenatis.</p>
-                                </div>
-                                <div>
-                                    <p>d ut ornare non, volutpat vel tortor. InLorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nibh urna, euismod ut ornare non, volutpat vel tortor. Integer laoreet placerat suscipit. Sed sodales scelerisque commodo. Nam porta cursus lectus. Proin nunc erat, gravida a facilisis quis, ornare id lectus. Proin consectetur nibh quis urna gravida mollis.t in malesuada odio venenatis.</p>
+                                    <p>媒体眼中的上海自由贸易区</p>
                                 </div>
                             </div>
                         </div>
                         </p>
+                        <br/><br/><br/><br/><br/><br/><br/><br/>
+                        <br/><br/><br/><br/><br/><br/><br/>
+                        <br/><br/><br/><br/><br/><br/><br/>
                         <div id="nested-tabInfo">
-                        <p>Go:<i class="fa fa-link"><a href="{!! '/portal/'.$portal->id !!}"><span class="tabName"></span></a></i></p>
+                            <p>
+                                <i class="fa fa-link">
+                                    <a href="{!! '/portal/'.$portal->id !!}">
+                                        <span class="tabName"></span>
+                                    </a>
+                                </i>
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!--postion 2-->
-        <!--今日新闻-->
-        @if(isset($positions[2]))
-        <?php $id=$positions[2];?>
-        <div class="col-lg-6">
-            <section class="cd-horizontal-timeline">
-                <div class="timeline">
-                    <div class="events-wrapper">
-                        <div class="events">
-                            <ol>
-                                <li><a href="#0" data-date="16/01/2014" class="selected">16 Jan</a></li>
-                                <?php $c=0;?>
-                                <?php if(isset($articles[$id])):?>
-                                    <?php foreach($articles[$id] as $article):?>
-                                        <li>
-                                            <a href="#0" data-date="{!! date('d/m/Y',strtotime($article->created_at)) !!}" class="{!! $c<=0?'selected':'' !!}">
-                                                {!! date('d',strtotime($article->created_at)).' '.date('M',strtotime($article->created_at)) !!}
-                                            </a>
-                                        </li>
-                                        <?php $c++;?>
-                                    <?php endforeach;?>
-                                <?php endif;?>
-                            </ol>
-                            <span class="filling-line" aria-hidden="true"></span>
-                        </div> <!-- .events -->
-                    </div> <!-- .events-wrapper -->
-
-                    <ul class="cd-timeline-navigation">
-                        <li><a href="#0" class="prev inactive">Prev</a></li>
-                        <li><a href="#0" class="next">Next</a></li>
-                    </ul> <!-- .cd-timeline-navigation -->
-                </div> <!-- .timeline -->
-
-                <div class="events-content">
-                    <ol>
-                        <li class="selected" data-date="16/01/2014"></li>
-                        <?php $c=0;?>
-                        @if(isset($articles[$id]))
-                            @foreach($articles[$id] as $article)
-                                <li class="{!! $c<=0?'selected':'' !!}" data-date="{!! date('d/m/Y',strtotime($article->created_at)) !!}">
-                                    <h2>{!! $article->title !!}</h2>
-                                    <em>{!! $article->created_at !!}</em>
-                                    <p>
-                                       {!! $article->intro or null !!}
-                                    </p>
-                                </li>
-                                <?php $c++;?>
-                            @endforeach
-                        @endif
-                    </ol>
-                </div> <!-- .events-content -->
-            </section>
-        </div>
-        @endif
     </div>
-
+    <br>
     <div class="row">
         <!--postion 3--->
         <!-- 新闻轮训-->
@@ -131,9 +79,9 @@
                                                         </td>
                                                         <td>
                                                             <h5>
-                                                                <a href="#">{!! $article->title !!}</a>
+                                                                <a href="{!!"/article/".$article->id !!}">{!! $article->title !!}</a>
                                                             </h5>
-                                                            <p>{!! $article->intro !!}</p>
+                                                            <p style="min-height: 120px;overflow: hidden">{!! $article->intro !!}</p>
                                                         </td>
 
                                                 </table>

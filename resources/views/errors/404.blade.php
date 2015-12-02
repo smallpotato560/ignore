@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<meta charset="utf-8">
 <head>
     <title>404 页面未找到</title>
 

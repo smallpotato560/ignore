@@ -54,9 +54,9 @@ Route::group(['prefix'=>'/error'],function(){
 });
 //Ajax domain
 
-Route::group(['prefix' => '/ajax/','middleware'=>'acl'], function () {
+Route::group(['prefix' => '/ajax/'], function () {
 //    Admin Ajax
-    Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
+    Route::group(['prefix' => 'admin','middleware'=>'acl','namespace' => 'Admin'], function () {
         Route::post('/home', 'AdminAjaxController@ajaxHome');
         Route::post('/setting', 'AdminAjaxController@setting');
         Route::patch('/publish', 'AdminAjaxController@ajaxPublish');

@@ -11,6 +11,7 @@
 <script type="text/javascript" src="../bootstrap/js/jquery2.1.min.js"></script>
 <script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
 <body>
+{{--登陆重定向的测试--}}
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -21,39 +22,63 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">上海自由贸易区</a>
+            <a class="navbar-brand" href="/"><i class="fa fa-smile-o"></i>上海自由贸易区</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-left">
-                <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-                <li><a href="#">Link</a></li>
+                {{--<li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>--}}
+                {{--<li><a href="#">Link</a></li>--}}
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Link</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                        <i class="fa fa-user"></i> <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#">Separated link</a></li>
-                    </ul>
+                {{--<li><a href="#">Link</a></li>--}}
+                <li>
+                    <form class="navbar-form navbar-left" role="search">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search">
+                                <span class="input-group-btn">
+                                    <button type="submit" class="btn btn-default form-control"><i class="fa fa-search"></i></button>
+                                </span>
+                        </div>
+                    </form>
                 </li>
+                @if(!empty($email = session("email")))
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-user" style="padding-top: 3px"></i>
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="/user/{!! $email or "error" !!}">
+                                    <i class="fa fa-info"></i>
+                                    <span>个人信息</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/user/logout/{!! $email or "error"!!}">
+                                    <i class="fa fa-lock"></i>
+                                    <span>注销</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                @else
+                    <li ><a href="/login">注册/登陆</a></li>
+                @endif
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
-<div class="container-fluid">
+
+<div class="container">
     <div class="row">
-        <div class="col-md-offset-2 col-md-8">
-            <i class="fa fa-user fa-2x pull-left"><span style="color: green">hahha</span></i>
-            <i class="fa fa-times-circle fa-2x pull-right">发布于 1997-0-0</i>
+        <div class="col-md-12">
+            <i class="fa fa-user  pull-left" style="font-size: 16px"><span style="color: green">{!! $author->name or null !!}</span></i>
+            <i class="fa fa-times-circle  pull-right" style="font-size: 16px">{!! $article->created_at or null !!}</i>
             <div class="clearfix"></div>
         </div>
     </div>
@@ -83,12 +108,6 @@
 </div>
 <script>
     function like(id,aid){
-        var cn = $('#'+id).attr('class');
-        if(cn=='fa fa-heart-o fa-2x') {
-            $('#'+id).attr('class','fa fa-heart fa-2x');
-        }else{
-            $('#'+id).attr('class','fa fa-heart-o fa-2x');
-        }
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -103,8 +122,15 @@
                     'Article_id':aid,
                 },
                 success: function (data) {
+                    if(data['code']==200) {
+                        var cn = $('#' + id).attr('class');
+                        if (cn == 'fa fa-heart-o fa-2x') {
+                            $('#' + id).attr('class', 'fa fa-heart fa-2x');
+                        } else {
+                            $('#' + id).attr('class', 'fa fa-heart-o fa-2x');
+                        }
+                    }
                     alert(data['msg']);
-
                 }
             });
     }

@@ -27,14 +27,14 @@
                             </ul>
                         </div>
                         <div class="col-xs-3">
-                            <h4>旗下网站</h4>
+                            <h4>友情网站</h4>
                             <ul class="list-unstyled">
                                 {{--<li><a target="_blank" href="http://www.golaravel.com/">Laravel中文网</a></li>--}}
                                 {{--<li><a target="_blank" href="http://www.ghostchina.com/">Ghost中国</a></li>--}}
                             </ul>
                         </div>
                         <div class="col-xs-3">
-                            <h4>赞助商</h4>
+                            <h4>赞助平台</h4>
                             <ul class="list-unstyled">
                                 {{--<li><a target="_blank" href="http://www.ucloud.cn/">UCloud</a></li>--}}
                                 {{--<li><a target="_blank" href="https://www.upyun.com">又拍云</a></li>--}}

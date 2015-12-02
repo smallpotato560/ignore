@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Article;
+use App\User;
 use App\UserLikeAtom;
 use App\UserLikeModel;
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -34,7 +34,11 @@ class ArticleController extends Controller
         $article = $model->getArticle(["id"=>$id]);
         $usrlike = new UserLikeModel();
         $islike = $usrlike->islike(['Article_id'=>$id,'User_id'=>\Session::get('id')]);
-        return view("article.index",["article"=>$article,'islike'=>$islike]);
+        $user_model = new User();
+        if($article) {
+            $user = $user_model->getUser(['id' => $article->Users_id]);
+        }
+        return view("article.index",["article"=>$article,'islike'=>$islike,'author'=>$user]);
 
     }
 

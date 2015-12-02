@@ -44,7 +44,8 @@ class AdminHomeController extends Controller
     {
         //
         $all = $request->all();
-        $all['Users_id']=\Session::get('id',null);
+        if(!isset($all['id']) || !$all['id'])
+            $all['Users_id']=\Session::get('id',null);
         $model = new \App\Article();
         if(isset($all['_token']));
             unset($all["_token"]);

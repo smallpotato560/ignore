@@ -16,7 +16,7 @@
                 </li>
                 @foreach($hasParent as $item)
                     <li>
-                        <a href="../">{!! $item->name !!}</a> <span class="divider"></span>
+                        <a href="#">{!! $item->name !!}</a> <span class="divider"></span>
                     </li>
                 @endforeach
             </ul>
