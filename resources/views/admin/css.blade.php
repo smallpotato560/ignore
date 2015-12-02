@@ -8,7 +8,6 @@
 <title>后台管理页面</title>
 <!-- Bootstrap core CSS -->
 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-{{--<link href="bootstrap/css/bootstrap-combined.min.css" rel="stylesheet">--}}
 <link href="master.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="../font-awesome-4.4.0/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="public/css/wysiwyg-editor.min.css" />

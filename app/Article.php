@@ -52,8 +52,14 @@ class Article extends Model
         return null;
     }
 
-    public static function deleteArticle($id)
+    public static function deleteArticle($attributes=[])
     {
+        try{
+            $result = \DB::table(self::table)->where($attributes)->delete();
+        }catch (Exception $e){
+            dd($e->getMessage());
+        }
+        return $result?true:false;
 
     }
     public static function getArticle($article=array())
@@ -75,9 +81,9 @@ class Article extends Model
         return null;
     }
 
-    public static function paginateArticles($attributes=array(),$size=10,$order='id')
+    public static function paginateArticles($attributes=array(),$size=10,$order='id',$asc='asc')
     {
-        $result = DB::table('articles')->where($attributes)->orderBy($order)->paginate($size);
+        $result = DB::table('articles')->where($attributes)->orderBy($order,$asc)->paginate($size);
         return $result?$result:null;
     }
 

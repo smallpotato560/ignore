@@ -44,10 +44,11 @@ class AdminHomeController extends Controller
     {
         //
         $all = $request->all();
+        $all['Users_id']=\Session::get('id',null);
         $model = new \App\Article();
         if(isset($all['_token']));
             unset($all["_token"]);
-        $intro = explode('。',strip_tags($all["content"]),2);
+        $intro = explode('。',strip_tags($all["content"]),1);
         $intro = implode('。',$intro)."...";
         $all["intro"] = $intro;
         if($id && !$model->isExist($id)) {

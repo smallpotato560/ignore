@@ -12,7 +12,6 @@ function toHome() {
             success: function (data) {
                 var show = document.getElementById('show');
                 show.innerHTML = data["homepage"];
-                $('#datetimepicker').datetimepicker()
             }
         });
 

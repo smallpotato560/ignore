@@ -50,7 +50,7 @@ class AdminAjaxController extends AdminHomeController
     public function ajaxModify()
     {
         $article = new Article();
-        $result = $article->paginateArticles(array(),10,'updated_at');
+        $result = $article->paginateArticles(array(),10,'updated_at','desc');
         return (view('ajax/admin/modify',["all"=>$result])->renderSections());
     }
 
@@ -128,8 +128,10 @@ class AdminAjaxController extends AdminHomeController
                 die(json_encode(['code'=>$code,'msg'=>$msg]));
             case 'del-p':
                 $portal_model = new Portal();
+                $article_model = new Article();
                 $id=$request->get('id',null);
-                $results = $portal_model->deletePortal($id);
+                $results = $article_model->deleteArticle(['Portal_id'=>$id]);
+                $results &= $portal_model->deletePortal($id);
                 $code = $results?200:201;
                 $msg = $results?'成功':'失败' ;
                 die(json_encode(['code'=>$code,'msg'=>$msg]));

@@ -24,7 +24,6 @@
 <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="public/js/wysiwyg.min.js"></script>
 <script type="text/javascript" src="public/js/wysiwyg-editor.min.js"></script>
-<script type="text/javascript" src="public/js/coolclock.js"></script>
 <script type="text/javascript" src="public/js/fileinput.min.js"></script>
 <script src="master.js"></script>
 </body>
