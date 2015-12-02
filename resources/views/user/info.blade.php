@@ -74,24 +74,26 @@
                 @endif
 
             <div class="container-fluid">
-            @if(isset($articles) && !empty($articles))
-                    @foreach($articles as $article)
-                        <div class="row">
-                            <div class="col-sm-12 col-md-12">
-                                <div class="thumbnail">
-                                    <div class="caption">
-                                        <h3 style="max-height: 25px;overflow: hidden">{!! $article->title or "default" !!}</h3>
-                                        <p style="overflow: hidden">{!! $article->intro or "" !!}</p>
-                                        <p><a href="{!! '/article/'.$article->id !!}" class="btn btn-primary" role="button">浏览</a>
-                                            <a href="{!! '/user/unlike/'.$article->id !!}" class="btn btn-default" role="button">取消收藏</a></p>
-                                    </div>
+            @if(isset($articles) && !$articles)
+                @foreach($articles as $article)
+                    <div class="row">
+                        <div class="col-sm-12 col-md-12">
+                            <div class="thumbnail">
+                                <div class="caption">
+                                    <h3 style="max-height: 25px;overflow: hidden">{!! $article->title or "default" !!}</h3>
+                                    <p style="overflow: hidden">{!! $article->intro or "" !!}</p>
+                                    <p>
+                                        <a href="{!! '/article/'.$article->id !!}" class="btn btn-primary" role="button">浏览</a>
+                                        <a href="{!! '/user/unlike/'.$article->id !!}" class="btn btn-default" role="button">取消收藏</a>
+                                    </p>
                                 </div>
                             </div>
                         </div>
-                    @endforeach
-                @else
+                    </div>
+                @endforeach
+            @else
                 <p>你似乎还没收藏文章呢!</p>
-                @endif
+            @endif
             </div>
 
             <div class="container-fluid">

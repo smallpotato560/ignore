@@ -8,7 +8,7 @@
                 <select name="Portal_id" class="form-control">
                     @if(isset($portals)&&!empty($portals))
                         @foreach($portals as $portal)
-                        <option {!! ($portal->id==$article->Portal_id)?'selected':'' !!}  value="{!! $portal->id or "0"!!}">{!! $portal->name or "" !!}</option>
+                        <option {!! (isset($article->Portal_id)&&$portal->id==$article->Portal_id)?'selected':'' !!}  value="{!! $portal->id or "0"!!}">{!! $portal->name or "" !!}</option>
                         @endforeach
                     @else
                         <option selected  value="0">暂无门户点</option>
