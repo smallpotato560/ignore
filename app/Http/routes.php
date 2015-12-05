@@ -86,7 +86,7 @@ Route::group(['prefix'=>'/test/','namespace'=>'Test'],function(){
 Route::group(['prefix'=>'api','namespace'=>'API'],function(){
     ///api/sign domain
     Route::group(['prefix'=>'sign'],function(){
-        Route::post('in','SignController@in');
+        Route::any('in','SignController@in');
         Route::post('up','SignController@up');
     });
 });
