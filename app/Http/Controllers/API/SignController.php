@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\User;
+use Carbon;
 
 class SignController extends Controller
 {
@@ -19,7 +20,7 @@ class SignController extends Controller
         if($user = $usermodel->getAuthIdentifier($email)){
             $payload = $usermodel->getAuthPassword($email);
             if($payload && \Crypt::decrypt($payload) == $password) {
-                $login_at = Carbon::now();
+                $login_at = \Carbon\Carbon::now();
                 \Session::set('login_at',$login_at);
                 \Session::set('email',$email);
                 \Session::set('id',$user->id);
