@@ -108,7 +108,7 @@
             <div class="carousel-inner" role="listbox">
                 @for($i=0;$i<1;++$i)
                     <div class="item @if($i==0)active"@endif>
-                        <img class="img-rounded"  src="{!! $img["url"] or "img/xys.jpg" !!}" alt="">
+                        <img class="img-rounded"  src="{!! $img["url"] or "img/jq.jpg" !!}" alt="">
                         <div class="carousel-caption">
                             <h1>{!! $img_title or "外高桥保税区" !!}</h1>
                             <p>{!! $img["intro"] or "这是一段简介,最好不要少于十五字!" !!}</p>

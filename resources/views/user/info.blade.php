@@ -74,8 +74,11 @@
                 @endif
 
             <div class="container-fluid">
-            @if(isset($articles) && !$articles)
-                @foreach($articles as $article)
+
+            @if(isset($articles) && $articles!=null)
+                    {!! dd($articles) !!}
+                @foreach((array)$articles as $article)
+                    {!! dd($article) !!}
                     <div class="row">
                         <div class="col-sm-12 col-md-12">
                             <div class="thumbnail">

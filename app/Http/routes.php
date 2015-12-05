@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -81,5 +80,14 @@ Route::group(['prefix'=>'/test/','namespace'=>'Test'],function(){
     Route::get('article',"GlobalTestController@article");
     Route::get('paginate','GlobalTestController@paginate');
     Route::get('testpage','GlobalTestController@testpage');
+});
+
+//API domain
+Route::group(['prefix'=>'api','namespace'=>'API'],function(){
+    ///api/sign domain
+    Route::group(['prefix'=>'sign'],function(){
+        Route::post('in','SignController@in');
+        Route::post('up','SignController@up');
+    });
 });
 

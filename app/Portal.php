@@ -19,7 +19,11 @@ class Portal extends Model
 
     public static function getPortal($attr=array(),$column="*")
     {
-        $result = DB::table("portals")->select()->where($attr)->first($column);
+        try{
+            $result = DB::table("portals")->select()->where($attr)->first($column);
+        }catch (Exception $e){
+            dd($e->getMessage());
+        }
         return $result?$result:null;
     }
 
