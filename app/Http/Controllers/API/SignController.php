@@ -30,6 +30,7 @@ class SignController extends Controller
                 if($result) {
                     $response['s']=1;
                     $response['msg']='登录成功!';
+                    $response['session_id']=\Session::getId();
                     die(json_encode($response));
                 }
             }

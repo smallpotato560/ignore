@@ -89,5 +89,10 @@ Route::group(['prefix'=>'api','namespace'=>'API'],function(){
         Route::any('in','SignController@in');
         Route::post('up','SignController@up');
     });
+    //api/user domain
+    Route::group(['prefix'=>'user'],function(){
+        Route::any('show','UserController@show');
+        Route::post('up','SignController@up');
+    });
 });
 
