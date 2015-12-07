@@ -28,8 +28,9 @@ class SignController extends Controller
                 \Session::set('r',$user->role);
                 $result = $usermodel->modifyUser(['id'=>$user->id,'login_at'=>$login_at]);
                 if($result) {
-                    $response['s']=1;
+                    $response['s']='1';
                     $response['msg']='登录成功!';
+                    $response['name']=\Session::get('name',null);
                     $response['session_id']=\Session::getId();
                     die(json_encode($response));
                 }
@@ -41,4 +42,9 @@ class SignController extends Controller
     }
     public function up(Request $request)
     {}
+
+    public function out()
+    {
+
+    }
 }

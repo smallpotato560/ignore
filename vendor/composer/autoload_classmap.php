@@ -13,6 +13,7 @@ return array(
     'CreatePrivileges' => $baseDir . '/database/migrations/2015_11_10_162025_create_privileges.php',
     'CreateRoles' => $baseDir . '/database/migrations/2015_11_10_161509_create_roles.php',
     'CreateTags' => $baseDir . '/database/migrations/2015_10_26_082440_create_tags.php',
+    'CreateUserlike' => $baseDir . '/database/migrations/2015_11_25_144039_create_userlike.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/2014_10_12_000000_create_users_table.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
     'File_Iterator' => $vendorDir . '/phpunit/php-file-iterator/src/Iterator.php',

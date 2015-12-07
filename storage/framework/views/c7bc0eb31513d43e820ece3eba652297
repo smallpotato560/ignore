@@ -1,14 +1,157 @@
-<?php $__env->startSection("info"); ?>
+ <?php $__env->startSection("info"); ?>
+     <?php /*侧栏*/ ?>
     <div class="row">
-        <?php $email = session("email") ?>
-            <span class="col-lg-offset-0 col-lg-3" style="border: solid 1px #e0e0e0;height: 100px;width:100px;text-align: center">Photo</span>
-            <a class="col-lg-3"><i class="fa fa-user"><?php echo isset($email) ? $email : "default"; ?></i></a>
-            <div class="clearfix"></div>
-    </div>
-    <div class="row">
-        <label class="text text-primary"><font>UserName</font></label>
-        <p id="name" style="height: 24px;width: 500px;border: solid 1px #e0e0e0">Linus</p>
-        <label class="text-primary"><font>UserRole</font></label>
-        <p id="user-role" style="height: 24px;width: 500px;border: solid 1px #e0e0e0">Normal</p>
+        <div class="col-lg-3 col-md-3 panel panel-default"  style="padding: 0 !important;">
+            <div class="panel-heading" >
+
+                <div class="panel-title">
+                    <span>个人信息</span>
+                </div>
+
+                <div class="text-center">
+                    <a  href="/user/<?php echo isset($user->email)?$user->email:'出错啦!'; ?>" style="border-radius: 100%" >
+                        <i class="fa fa-user fa-4x"></i>
+                    </a>
+                    <?php /*<img src="" class="img-circle" height="120px" width="100px">*/ ?>
+                </div>
+
+                <div>
+                    <a><i class="fa fa-user"></i></a>
+                    <label class="text text-primary">用户名</label>
+                    <p id="name"><?php echo isset($user->name)?$user->name:'出错啦!'; ?></p>
+                </div>
+
+            </div>
+            <div class="panel-body">
+
+                <ul class="nav nav-stacked">
+                    <li role="presentation">
+                        <a href="#" id="index" class="fa fa-home" onclick="javascript:0;"><span>操作1</span></a>
+                    </li>
+                    <li role="presentation">
+                        <a href="#" id="lib"  class="fa fa-send" onclick="javascript:0;"><span>操作2</span></a>
+                    </li>
+                    <li role="presentation">
+                        <a href="?" id="app" class="fa fa-pencil" onclick="javascript:0;"><span>修改</span></a>
+                    </li>
+                    <li role="presentation">
+                        <a href="?p=l" id="setting" class="fa fa-cog" onclick="javascript:0;"><span>收藏</span></a>
+                    </li>
+                    <li role="presentation">
+                        <a href="#" id="help"  class="fa fa-question" onclick="javascript:0;"><span>操作5</span></a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    <?php /*多功能*/ ?>
+        <div class="col-lg-9 col-md-9">
+            <?php /*收藏*/ ?>
+            <?php if(isset($_GET['p']) && $_GET['p']=='l'): ?>
+                <?php /*分页*/ ?>
+                <?php if($alllikes->lastPage()>1): ?>
+                    <div class="container-fluid">
+                        <?php $alllikes->setPath('./'.\Session::get('email'));?>
+                        <?php echo $alllikes->appends(['p' => 'l'])->render(); ?>
+                        <?php /*<div class="row">*/ ?>
+                            <div class="pull-right">
+                                <div style="padding-bottom:20px "></div>
+                                <?php echo Form::open(['method'=>'get']); ?>
+
+                                <?php echo Form::label(null,'当前页面'.$alllikes->currentPage(). '共'.$alllikes->lastPage().'页'); ?>
+
+                                <?php echo Form::label(null,'跳转到'); ?>
+
+                                <?php echo Form::text('p','l',['class'=>'hidden']); ?>
+
+                                <div class="input-group">
+                                    <?php echo Form::text('page',null,['class'=>'form-control']); ?>
+
+                                    <span  class = 'input-group-btn'>
+                                        <?php echo Form::submit('提交',['class'=>'btn btn-primary',]); ?>
+
+                                    </span>
+                                </div>
+                                <?php echo Form::close(); ?>
+
+                            </div>
+                        <?php /*</div>*/ ?>
+                        <?php /*<div class="clearfix"></div>*/ ?>
+                    </div>
+                <?php endif; ?>
+
+            <div class="container-fluid">
+
+            <?php if(isset($articles) && $articles!=null): ?>
+                    <?php echo dd($articles); ?>
+
+                <?php foreach((array)$articles as $article): ?>
+                    <?php echo dd($article); ?>
+
+                    <div class="row">
+                        <div class="col-sm-12 col-md-12">
+                            <div class="thumbnail">
+                                <div class="caption">
+                                    <h3 style="max-height: 25px;overflow: hidden"><?php echo isset($article->title) ? $article->title : "default"; ?></h3>
+                                    <p style="overflow: hidden"><?php echo isset($article->intro) ? $article->intro : ""; ?></p>
+                                    <p>
+                                        <a href="<?php echo '/article/'.$article->id; ?>" class="btn btn-primary" role="button">浏览</a>
+                                        <a href="<?php echo '/user/unlike/'.$article->id; ?>" class="btn btn-default" role="button">取消收藏</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <p>你似乎还没收藏文章呢!</p>
+            <?php endif; ?>
+            </div>
+
+            <div class="container-fluid">
+                <?php $alllikes->setPath('./'.\Session::get('email'));?>
+                <?php echo $alllikes->appends(['p' => 'l'])->render(); ?>
+            </div>
+                <?php /*默认,信息修改页*/ ?>
+            <?php elseif(!isset($_GET['p'])): ?>
+                <div class="container-fluid">
+                    <?php echo Form::open(['id'=>'save_user_form']); ?>
+
+                    <div class="form-group">
+                        <?php echo Form::label('null','用户名',['class'=>'text-primary']); ?>
+
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                            <?php echo Form::text('name',isset($user->name)?$user->name:'出错啦!',['class'=>'form-control','readonly'=>'readonly','id'=>'modify_user_name']); ?>
+
+                            <span class="input-group-btn">
+                    <button type='button' id="ub" onclick="javascript:rot('modify_user_name','ub');" class="btn btn-warning" value="">修改</button>
+                </span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <?php echo Form::label('null','电子邮箱',['class'=>'text-primary']); ?>
+
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-google"></i></span>
+                            <?php echo Form::email('name',isset($user->email)?$user->email:'出错啦!',['class'=>'form-control','readonly'=>'readonly','id'=>'modify_user_email']); ?>
+
+                            <span class="input-group-btn">
+                                <button id='eb' type='button' class="btn btn-warning" onclick="javascript:rot('modify_user_email','eb');" value="">修改</button>
+                             </span>
+                        </div>
+                    </div>
+
+                    <button id='submit' type='button' class="btn btn-primary btn-block" onclick="javascrip:saveu();" value="">提交</button>
+                    <input id="uk" type="hidden"  value="<?php echo \Session::get('id',null); ?>">
+                    <input hidden="hidden" id="method" value="save-u">
+                    <input type="hidden" value="<?php echo csrf_token(); ?>" id="token">
+                    <?php echo Form::close(); ?>
+
+                </div>
+            </div>
+            <?php endif; ?>
+        </div>
     </div>
 <?php $__env->stopSection(); ?>

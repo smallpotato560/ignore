@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\API;
 
+use App\User;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -24,9 +25,26 @@ class UserController extends Controller
      *
      * @return Response
      */
-    public function create()
+    public function create(Request $request)
     {
         //
+        $name = $request->get('name',null);
+        $email = $request->get('eamil',null);
+        $password = \Crypt::encrypt($request->get('password',null));
+        $user_model = new User();
+        $attributes=[
+            'name'=>$name,
+            'email'=>$email,
+            'password'=>$password,
+        ];
+        $id = $user_model->newUser($attributes);
+        $response = ['s'=>0,'msg'=>'Orz'];
+        if($id>0){
+            $request['s']=1;
+            $request['msg']='OK!';
+            $request['id']=$id;
+        }
+        die(json_encode($response));
     }
 
     /**
@@ -48,10 +66,20 @@ class UserController extends Controller
      */
     public function show(Request $request)
     {
+        //Laravel 5如何通过session_id解析session
         $session_id = $request->get('session_id',null);
         $vailed = \Session::isValidId($session_id);
         if($vailed) {
-            die(json_encode(\Session::all()));
+            $handler = \Session::getHandler();
+            $session = $handler->read($session_id);
+            $session = unserialize($session);
+            $response = [
+                's'=>'1',
+                'name'=>$session['name'],
+                'r'=>$session['r'],
+                'msg'=>'成功!',
+            ];
+            die(json_encode($response));
         }
         die(json_encode(['code'=>"0"]));
     }
