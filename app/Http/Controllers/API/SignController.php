@@ -32,12 +32,16 @@ class SignController extends Controller
                     $response['msg']='登录成功!';
                     $response['name']=\Session::get('name',null);
                     $response['session_id']=\Session::getId();
+                    \Session::save();
                     die(json_encode($response));
                 }
             }
         }
         $response['s']=0;
         $response['msg']='登录失败!';
+        \Session::clear();
+        \Session::flush();
+        session_write_close();
         die(json_encode($response));
     }
     public function up(Request $request)
