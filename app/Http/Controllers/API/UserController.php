@@ -79,6 +79,7 @@ class UserController extends Controller
                     'name' => $session['name'],
                     'r' => $session['r'],
                     'msg' => '成功!',
+                    'email'=>$session['email'],
                 ];
                 die(json_encode($response));
             }
