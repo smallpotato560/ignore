@@ -73,15 +73,17 @@ class UserController extends Controller
             $handler = \Session::getHandler();
             $session = $handler->read($session_id);
             $session = unserialize($session);
-            $response = [
-                's'=>'1',
-                'name'=>$session['name'],
-                'r'=>$session['r'],
-                'msg'=>'成功!',
-            ];
-            die(json_encode($response));
+            if($session) {
+                $response = [
+                    's' => '1',
+                    'name' => $session['name'],
+                    'r' => $session['r'],
+                    'msg' => '成功!',
+                ];
+                die(json_encode($response));
+            }
         }
-        die(json_encode(['code'=>"0"]));
+        die(json_encode(['s'=>"0"]));
     }
 
     /**

@@ -31,9 +31,11 @@ class SignController extends Controller
                     $response['s']='1';
                     $response['msg']='登录成功!';
                     $response['name']=\Session::get('name',null);
-                    $response['session_id']=\Session::getId();
+                    //让laravel session 落地保存,拿到的session_id才是文件的名字之前都是缓存.
                     \Session::save();
-                    die(json_encode($response));
+                    $response['session_id']=\Session::getId();
+                    if(\Session::getId()==$response['session_id'])
+                        die(json_encode($response));
                 }
             }
         }
