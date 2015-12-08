@@ -87,12 +87,11 @@ Route::group(['prefix'=>'api','namespace'=>'API'],function(){
     ///api/sign domain
     Route::group(['prefix'=>'sign'],function(){
         Route::any('in','SignController@in');
-        Route::post('up','SignController@up');
+        Route::any('up','SignController@up');
     });
     //api/user domain
     Route::group(['prefix'=>'user'],function(){
         Route::any('show','UserController@show');
-        Route::post('up','SignController@up');
     });
 });
 

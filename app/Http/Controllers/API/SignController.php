@@ -47,7 +47,41 @@ class SignController extends Controller
         die(json_encode($response));
     }
     public function up(Request $request)
-    {}
+    {
+        $email = $request->get('email',null);
+        $password = $request->get('password',null);
+        $name = $request->get('name',null);
+        $response=[];
+        $usermodel = new \App\User();
+//        获取用户信息
+        if($user = $usermodel->getAuthIdentifier($email)==null) {
+            $password = \Crypt::encrypt($password);
+            $login_at = \Carbon\Carbon::now();
+            $id = $usermodel->newUser(['name' => $name, 'password' => $password, 'email' => $email, 'role' => 5]);
+            if ($id) {
+                \Session::set('login_at', $login_at);
+                \Session::set('email', $email);
+                \Session::set('id', $id);
+                \Session::set('name', $name);
+                \Session::set('r', '5');
+                $response['s'] = '1';
+                $response['msg'] = '注册成功!';
+                $response['name'] = \Session::get('name', null);
+                //让laravel session 落地保存,拿到的session_id才是文件的名字之前都是缓存.
+                \Session::save();
+                $response['session_id'] = \Session::getId();
+                if (\Session::getId() == $response['session_id'])
+                    die(json_encode($response));
+            }
+        }
+
+        $response['s']=0;
+        $response['msg']='用户已存在!';
+        \Session::clear();
+        \Session::flush();
+        session_write_close();
+        die(json_encode($response));
+    }
 
     public function out()
     {
