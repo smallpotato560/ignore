@@ -15,7 +15,6 @@ class AdminMiddleware
     public function handle($request, Closure $next)
     {
         $role = \Session::get('r',null);
-        var_dump($role);die;
         if($role == 1) {
             return $next($request);
         }
