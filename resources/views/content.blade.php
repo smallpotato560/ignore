@@ -83,7 +83,7 @@
                                                             <h5>
                                                                 <a href="{!!"/article/".$article->id !!}">{!! $article->title !!}</a>
                                                             </h5>
-                                                            <p style="min-height: 120px;overflow: hidden">{!! $article->intro !!}</p>
+                                                            <p style="line-height:20px;max-height: 60px;overflow: hidden">{!! $article->intro !!}</p>
                                                         </td>
 
                                                 </table>

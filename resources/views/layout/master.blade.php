@@ -26,11 +26,11 @@
 
     <script>
         $(".demo1").bootstrapNews({
-            newsPerPage: 5,
+            newsPerPage: 3,
             autoplay: true,
             pauseOnHover:true,
             direction: 'up',
-            newsTickerInterval: 4000,
+            newsTickerInterval: 5000,
             onToDo: function () {
                 //console.log(this);
             }
