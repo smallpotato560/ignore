@@ -27,8 +27,8 @@
             @foreach($all as $article)
                 <tr>
                     <td>{!! $article->id or "default" !!}</td>
-                    <td>{!! $article->Users_id or "default" !!}</td>
-                    <td>{!! $article->Portal_id or "default" !!}</td>
+                    <td>{!! $article->name or "default" !!}</td>
+                    <td>{!! $article->title or "default" !!}</td>
                     <td>{!! $article->created_at or "default" !!}</td>
                     <td><a href='{!! '/article/'.$article->id!!}'>详情</a>/<a href='{!! 'javascript:publish('.$article->id.');'!!}'>修改</a></td>
                 </tr>

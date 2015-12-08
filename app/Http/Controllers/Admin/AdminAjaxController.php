@@ -50,7 +50,14 @@ class AdminAjaxController extends AdminHomeController
     public function ajaxModify()
     {
         $article = new Article();
-        $result = $article->paginateArticles(array(),10,'updated_at','desc');
+        $user_model = new User();
+        $result = $article->paginateArticles(array(),10,'id','desc');
+        if(!$result->isEmpty()) {
+            foreach ($result->items() as $item) {
+                $user = $user_model->getUser(['id' => $item->Users_id], ['name']);
+                $item->name = $user->name;
+            }
+        }
         return (view('ajax/admin/modify',["all"=>$result])->renderSections());
     }
 

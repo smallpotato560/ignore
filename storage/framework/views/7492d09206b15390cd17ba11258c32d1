@@ -27,8 +27,8 @@
             <?php foreach($all as $article): ?>
                 <tr>
                     <td><?php echo isset($article->id) ? $article->id : "default"; ?></td>
-                    <td><?php echo isset($article->Users_id) ? $article->Users_id : "default"; ?></td>
-                    <td><?php echo isset($article->Portal_id) ? $article->Portal_id : "default"; ?></td>
+                    <td><?php echo isset($article->name) ? $article->name : "default"; ?></td>
+                    <td><?php echo isset($article->title) ? $article->title : "default"; ?></td>
                     <td><?php echo isset($article->created_at) ? $article->created_at : "default"; ?></td>
                     <td><a href='<?php echo '/article/'.$article->id; ?>'>详情</a>/<a href='<?php echo 'javascript:publish('.$article->id.');'; ?>'>修改</a></td>
                 </tr>
