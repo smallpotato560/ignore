@@ -49,7 +49,6 @@ class LoginController extends Controller
     {
         $all = $request->all();
         return $this->login($all);
-        dd("signin failed");
     }
 
     public function login($all)
@@ -62,10 +61,10 @@ class LoginController extends Controller
                 \Session::set('id',$user->id);
                 \Session::set('name',$user->name);
                 \Session::set('r',$user->role);
-//                $role_model = new Role();
                 $login_at = Carbon::now();
                 $result = $usermodel->modifyUser(['id'=>$user->id,'login_at'=>$login_at]);
                 \Session::set('login_at',$login_at);
+                \Session::save();
                 return redirect()->action("RootController@create")->withInput($all);
             }
         }
