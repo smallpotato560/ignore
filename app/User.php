@@ -76,14 +76,14 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     {
 
     }
-    public function getUser($attributes=[])
+    public function getUser($attributes=[],$columns=['*'])
     {
         if(!$attributes)
             return null;
         $select = \DB::table($this->table);
         try{
             $result = null;
-            $result = $select->where($attributes)->first();
+            $result = $select->where($attributes)->first($columns);
         }catch (Exception $e){
             dd($e->getMessage());
         }

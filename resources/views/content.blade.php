@@ -20,29 +20,31 @@
                                 @endforeach
                             </ul>
                             <div class="resp-tabs-container ver_1">
-                                <div>
-                                    <p>今日要闻记录关于上海自由贸易区的当日热点</p>
-                                </div>
-                                <div>
-                                    <p>图片新闻是以图片记录新闻的一种方式</p>
-                                </div>
-                                <div>
-                                    <p>媒体眼中的上海自由贸易区</p>
-                                </div>
+                                @foreach($portals as $portal)
+                                    <div>
+                                        <p>
+                                         <i class="fa fa-info-circle pull-left">
+                                             简介
+                                         </i>
+                                         <i class="fa fa-link pull-right">
+                                            <a href="{!! '/portal/'.$portal->id !!}">点击浏览</a>
+                                         </i>
+                                        </p>
+                                        <div class="clearfix"></div>
+                                        <br>
+                                        <p>{!! $portal->intro or null !!}</p>
+                                    </div>
+                                @endforeach
                             </div>
                         </div>
                         </p>
-                        <br/><br/><br/><br/><br/><br/><br/><br/>
-                        <br/><br/><br/><br/><br/><br/><br/>
-                        <br/><br/><br/><br/><br/><br/><br/>
+
                         <div id="nested-tabInfo">
                             <p>
-                                <i class="fa fa-link">
-                                    <a href="{!! '/portal/'.$portal->id !!}">
-                                        <span class="tabName"></span>
-                                    </a>
+                                <i class="fa fa-adn">
+                                    <span class="tabName">今日要闻</span>
                                 </i>
-                            </p>
+                            <p/>
                         </div>
                     </div>
                 </div>

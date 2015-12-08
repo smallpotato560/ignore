@@ -97,7 +97,7 @@
                 {
                     type: 'POST',
                     dataType:'json',
-                    url: '/ajax/admin/save',
+                    url: '/ajax/user/save',
                     data:{
                         'id':id.val(),
                         'name':username.val(),

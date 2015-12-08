@@ -5,7 +5,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <meta name="csrf-token" content="{{ csrf_token() }}">
-<title>{!! session("email") or "default" !!}</title>
+<title>{!! "欢迎回来".\Session::get('name','出错啦').'!' !!}</title>
 <!-- Bootstrap core CSS -->
 <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="../font-awesome-4.4.0/css/font-awesome.min.css">

@@ -76,9 +76,9 @@
             <div class="container-fluid">
 
             @if(isset($articles) && $articles!=null)
-                    {!! dd($articles) !!}
+                    {{--{!! dd($articles) !!}--}}
                 @foreach((array)$articles as $article)
-                    {!! dd($article) !!}
+                    {{--{!! dd($article) !!}--}}
                     <div class="row">
                         <div class="col-sm-12 col-md-12">
                             <div class="thumbnail">
@@ -113,8 +113,8 @@
                             <span class="input-group-addon"><i class="fa fa-user"></i></span>
                             {!! Form::text('name',isset($user->name)?$user->name:'出错啦!',['class'=>'form-control','readonly'=>'readonly','id'=>'modify_user_name']) !!}
                             <span class="input-group-btn">
-                    <button type='button' id="ub" onclick="javascript:rot('modify_user_name','ub');" class="btn btn-warning" value="">修改</button>
-                </span>
+                                <button type='button' id="ub" onclick="javascript:rot('modify_user_name','ub');" class="btn btn-warning" value="">修改</button>
+                            </span>
                         </div>
                     </div>
 
@@ -125,7 +125,7 @@
                             {!! Form::email('name',isset($user->email)?$user->email:'出错啦!',['class'=>'form-control','readonly'=>'readonly','id'=>'modify_user_email']) !!}
                             <span class="input-group-btn">
                                 <button id='eb' type='button' class="btn btn-warning" onclick="javascript:rot('modify_user_email','eb');" value="">修改</button>
-                             </span>
+                            </span>
                         </div>
                     </div>
 

@@ -52,7 +52,6 @@ Route::group(['prefix'=>'/error'],function(){
     });
 });
 //Ajax domain
-
 Route::group(['prefix' => '/ajax/'], function () {
 //    Admin Ajax
     Route::group(['prefix' => 'admin','middleware'=>'acl','namespace' => 'Admin'], function () {
@@ -72,6 +71,7 @@ Route::group(['prefix' => '/ajax/'], function () {
     });
     Route::group(['prefix' => 'user'], function () {
         Route::any('like', 'UserLikeController@create');
+        Route::post('/save','Admin\AdminAjaxController@save');
     });
 });
 
@@ -84,14 +84,24 @@ Route::group(['prefix'=>'/test/','namespace'=>'Test'],function(){
 
 //API domain
 Route::group(['prefix'=>'api','namespace'=>'API'],function(){
+
     ///api/sign domain
     Route::group(['prefix'=>'sign'],function(){
         Route::any('in','SignController@in');
         Route::any('up','SignController@up');
     });
+
     //api/user domain
     Route::group(['prefix'=>'user'],function(){
         Route::any('show','UserController@show');
+        Route::group(['prefix'=>'like'],function(){
+            Route::any('show/{id}','UserLikeController@show');
+        });
+    });
+
+    //api/portal domain
+    Route::group(['prefix'=>'userlike'],function(){
+        Route::any('show/{id}','PortalController@show');
     });
 });
 

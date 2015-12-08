@@ -22,6 +22,7 @@
             </ul>
         </div>
     </div>
+    @if(isset($all) && !$all->isEmpty())
     @foreach($all as $article)
     <div class="row">
         <div class="col-sm-12 col-md-12">
@@ -40,6 +41,9 @@
         <?php $all->setPath('./'.$item->id);?>
         {!! $all->render() !!}
     </div>
+    @else
+        <h3 class="text-warning">什么都没有呢!</h3>
+    @endif
     </div>
 
 </div>

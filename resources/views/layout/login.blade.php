@@ -25,12 +25,15 @@
     });
 </script>
 {{--登陆表单--}}
-<div class="container">
+<div class="container-fluid">
     <div class="row">
-        <div class="col-lg-offset-3 col-lg-6 col-md-offset-3 col-md-6 col-sm-offset-4 col-sm-4 col-xs-offset-4 col-xs-4 text-center">
-            @yield("signin")
-            @yield("signup")
-            @yield("error")
+        <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 col-lg-offset-1 col-lg-offset-1">
+            <div class="thumbnail">
+                <br>
+                @yield("signin")
+                @yield("signup")
+                @yield("error")
+            </div>
         </div>
     </div>
 </div>

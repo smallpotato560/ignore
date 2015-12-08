@@ -2,15 +2,14 @@
 
 namespace App\Http\Controllers\API;
 
-use App\Article;
+use Illuminate\Http\Request;
 use App\User;
 use App\UserLikeModel;
-use Illuminate\Http\Request;
-
+use App\Article;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class PortalController extends Controller
+class UserLikeController extends Controller
 {
     /**
      * Display a listing of the resource.

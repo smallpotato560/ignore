@@ -10,6 +10,13 @@
 <link rel="stylesheet" href="../font-awesome-4.4.0/css/font-awesome.min.css">
 <script type="text/javascript" src="../bootstrap/js/jquery2.1.min.js"></script>
 <script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
+<style>
+    #article_content *{
+        word-break: break-all !important;
+        word-wrap: break-word !important;
+        width: 75%;
+    }
+</style>
 <body>
 {{--登陆重定向的测试--}}
 <nav class="navbar navbar-default">
@@ -88,7 +95,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-offset-2 col-md-8">
+        <div id='article_content' class="col-md-offset-2 col-md-8">
             {!! $article->content or "something wrong" !!}
         </div>
     </div>

@@ -26,7 +26,7 @@
 
     <script>
         $(".demo1").bootstrapNews({
-            newsPerPage: 2,
+            newsPerPage: 5,
             autoplay: true,
             pauseOnHover:true,
             direction: 'up',
