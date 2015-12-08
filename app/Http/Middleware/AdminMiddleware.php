@@ -14,8 +14,9 @@ class AdminMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if($role = \Session::get('r',null)==1)
+        if($role = \Session::get('r',null)==1) {
             return $next($request);
-        abort(404,'404 ҳ��δ�ҵ�');
+        }
+        abort(404,'404 页面未找到');
     }
 }
