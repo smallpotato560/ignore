@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Carbon\Carbon;
+use Mockery\CountValidator\Exception;
+
 class SignUpController extends Controller
 {
     /**
@@ -55,7 +57,7 @@ class SignUpController extends Controller
                 return $login;
             }
             dd("signup failed!");
-        } catch(QueryException $e) {
+        } catch(Exception $e) {
             $message = $e->getMessage();
             $code= $e->getCode();
             dd(["message"=>$message,"code"=>$code]);
